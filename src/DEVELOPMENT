@@ -1,0 +1,104 @@
+== General Design Notes==
+
+* Although many values are optional, the library doesn't differentiate between set and not set values. The approach taken is to not write out values which are still on the default value in order to keep objects small.
+The downside of this is that an xml object could be modified although no values have been modified (because default values are not written out again).
+
+== Libraries ==
+
+=== libkolabxml ===
+Dependencies:
+* boost
+* xerces
+
+The core library providing the xml-serialization functions and containers for all types.
+
+=== libkolabkcal ===
+Dependencies:
+* libkolabxml
+* kcalcore
+* kdecore
+
+Library to provide converters to KCalCore containers as well as advanced functionality from KCalCore (such as expansion of recurrences) through SWIG bindings.
+
+=== kolabxmlkcal (deprecated) ===
+
+First approach which does a direct mapping from xml to KCalCore containers. 
+It turned out to be quite complicated to write generic enough code which would work for both, the Kolab containers and the KCalCore containers.
+Also the performance and memory overhead of the additional intermediate representation should be minimal, therefore this approach was abandonend.
+
+== Code architecture ==
+
+Care was taken to implement each conversion/mapping only once. The code makes heavy use of templates to achieve this.
+Due to the different formats the conversion functions were split up among formats (not much to share between those).
+
+xCal: genericxcalconversions.h, xcalconversions.h (genericxcalconversions are implementations which work for both Kolab Containers and KCalCore containers)
+xCard: kolabxcardconversions.h
+kolab: kolabconversions.h (TODO)
+
+All conversions are typesafe as far as possible (i.e. a conversion from uint to int is always done through a numeric cast), to make sure there are no hard-to-track-down edge cases (such as an overflow).
+
+== Kolab Containers ==
+
+While SWIG can handle all possible return values, the resulting code uses either a newly allocated object (return by value / or return by const reference), or passes back a pointer (return by reference/pointer).
+So return by const reference doesn't save anything for the bindings (it could potentially for c++ code).
+Returning references contains the danger of dangling pointers if the reference outlives the object.
+
+Datamembers are not directly exposed to provide binary compatibilty through the d-pointer.
+
+Providing non-const references to the value through an accessor function doesn't work because it couldn't be called on const objects (even to read the value).
+
+Therefore providing a setter + a getter which returns by copy seems the safest way. A const ref getter could be provided if needed (I doubt it would ever help).
+
+The containers do not use inheritance to ensure maximum compatibilty with SWIG (although SWIG provides inheritance for some languages).
+They were also designed to be easily copieable and make therefore minimal use of pointers. Due to this design taking a copy of a container should be very efficient and problems like object slicing can not occur.
+
+The containers are meant to not contain any logic, all logic should be implemented in the serialization functions.
+
+The validity of the containers can be checked using the isValid() function. This function is used to check if a value has been set, and does not really verifiy the validity of the values in terms of what ranges/combinations are allowed.
+
+=== Why KCalCore containers were not directly used ===
+
+KCalCore provides containers for all ical based functionality (events/todos/journals).
+
+They were not directly used because:
+- dependencies: depends on kdelibs and qt (event qt gui). Some serious work would be needed to be able to ship those containers with a minimum set of dependencies.
+- SWIG: It seems difficult to properly wrap those containers using SWIG (inheritance heavily used, Qt containers (for which we have no bindings), not easily copiable (special copy memberfucntion is needed due to internal use of pointers))
+- Consistency: because we anyways have containers out of the scope of KCalCore, we can provide this way a consistent interface, which represents exactly the Kolab defined functionality (while KCalCore would be a close, but not a perfect match).
+
+Overall using our own containers seems like the safer and more flexible approach. This way it's also possible to provide a reading/writing library with a minimum set of dependencies.
+
+== SWIG language bindings ==
+
+Bindings for PHP and Python are provided through SWIG.
+
+"make install" produces two directories with the necessary files in build/lib/pythonbindings and build/lib/phpbindings.
+The test script should show the usage of the bindings.
+
+== Performance ==
+
+The biggest performance hog is the initialization of the parser. First, when loading the schema from disk upon initialization, parsing a single file took ~16ms on my machine (just for comparison).
+After compiling the schema to a binary representation, it still took ~7ms. By reusing the parser it went down to ~0.35ms.
+
+Writing the files is not validating and therefore always fast (doesn't need a special parser or alike). Once the parser is initialized, reading is roughly as fast as writing.
+
+Currently the parser is kept in a singleton (XMLParserWrapper).
+Alternatively one could control the lifetime from the bindings through an initialization object which keeps the parser alive through a shared pointer. This way the parser could be initialized on demand and the memory used by the parser could be freed between runs. 
+
+For further performance improvements read this: http://xerces.apache.org/xerces2-j/faq-performance.html
+
+== Error Handling ==
+
+All exceptions which could be thrown are caught within the serializing functions. There shouldn't be any uncaught exceptions because the bindings code doesn't handle that.
+If an error occurs a message is printed to the standard error output and a default constructed value is returned.
+
+Writing doesn't provide any validation (as it is hardly useful for the reason that it's anyways not possible to correct the mistake). For debugging purposes the document can be parsed again after writing. Validity is only ensured by typesafety, but range errors are easily possible.
+
+
+
+=== The XSD based development checklist ===
+-Don't forget to add an element for each attribute in the style off: <xs:element name="pref" type="xcard:prefParamType" substitutionGroup="xcard:baseParameter"/>
+ Otherwise you won't get the serialization/deserialization code (or respectively just wrong code), which still compiles though and looks correct from the outside.
+
+-If you have modified the xsd's make sure to run "make clean && make" in the toplevel make directory, otherwise the schema is not recompiles => parsing errors
+
+-Make sure you add new .xsd to the compiled schemas, otherwise you'll get "no declaration found" errors.

@@ -1,0 +1,5 @@
+schemas/*: Apache v2 (see http://www.calconnect.org/artifacts/ical-art.shtml)
+compiled/xsdbin.cxx: not copyrighted - public domain
+compiled/grammar-input-stream.*: not copyrighted - public domain
+src/base64.*: Copyright (C) 2004-2008 René Nyffenegger
+everything else: LGPLv3 or later

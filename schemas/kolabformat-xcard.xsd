@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:ietf:params:xml:ns:vcard-4.0"
+    xmlns="urn:ietf:params:xml:ns:vcard-4.0"
+    elementFormDefault="qualified">
+
+    <xs:include schemaLocation="xCard.xsd" />
+
+    <xs:complexType name="KolabVersion" >
+        <xs:complexContent mixed="false">
+            <xs:extension base="BasePropertyType">
+                <xs:sequence>
+                    <xs:element name="text" type="xs:string" default="3.0dev1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="x-kolab-version" type="KolabVersion" substitutionGroup="baseProperty" /> 
+    
+    <xs:complexType name="CustomType" >
+        <xs:complexContent mixed="false">
+            <xs:extension base="BasePropertyType">
+                <xs:sequence>
+                    <xs:element name="identifier" type="xs:string"/>
+                    <xs:element name="value" type="xs:string"/>
+                </xs:sequence>
+           </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="x-custom" type="CustomType" substitutionGroup="baseProperty" />
+
+    <xs:simpleType name="CryptoTypeValueType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="PGP/INLINE"/>
+            <xs:enumeration value="PGP/MIME"/>
+            <xs:enumeration value="S/MIME"/>
+            <xs:enumeration value="S/MIMEOpaque"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PrefTypeValueType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="Never"/>
+            <xs:enumeration value="Always"/>
+            <xs:enumeration value="IfPossible"/>
+            <xs:enumeration value="Ask"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="CryptoType" >
+        <xs:complexContent mixed="false">
+            <xs:extension base="BasePropertyType">
+                <xs:sequence>
+                    <xs:element name="allowed" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="text" type="CryptoTypeValueType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="signpref" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="text" type="PrefTypeValueType" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="encryptpref" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="text" type="PrefTypeValueType" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+           </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="x-crypto" type="CryptoType" substitutionGroup="baseProperty" />
+
+    <xs:complexType name="VcardsType">
+        <xs:sequence>
+            <xs:element name="vcard">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uid" type="uidPropType"/>
+                        <xs:element name="x-kolab-version" type="KolabVersion"/>
+                        <xs:element name="prodid" type="prodidPropType"/>
+                        <xs:element name="rev" type="revPropType"/>
+                        <xs:element name="categories" type="categoriesPropType" minOccurs="0" />
+                        <xs:element name="kind" type="kindPropType"/>
+                        <xs:element name="fn" type="fnPropType"/>
+                        <xs:element name="n" type="nPropType" minOccurs="0"/>
+                        <xs:element name="note" type="notePropType" minOccurs="0"/>
+                        <xs:element name="fburl" type="fburlPropType" minOccurs="0"/>
+                        <xs:element name="title" type="titlePropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="group" type="affiliationPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="url" type="urlPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="adr" type="adrPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="nickname" type="nicknamePropType" minOccurs="0"/>
+                        <xs:element name="related" type="relatedPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="bday" type="bdayPropType" minOccurs="0"/>
+                        <xs:element name="anniversary" type="anniversaryPropType" minOccurs="0"/>
+                        <xs:element name="photo" type="photoPropType" minOccurs="0"/>
+                        <xs:element name="gender" type="genderPropType" minOccurs="0"/>
+                        <xs:element name="lang" type="langPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="tel" type="telPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="impp" type="imppPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="email" type="emailPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="geo" type="geoPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="key" type="keyPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="x-crypto" type="CryptoType" minOccurs="0"/>
+                        <xs:element name="member" type="memberPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="vcards" type="VcardsType"/>
+    
+</xs:schema>

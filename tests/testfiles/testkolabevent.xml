@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<kolab:event xmlns:kolab="http://kolab.org" xmlns="urn:ietf:params:xml:ns:icalendar-2.0">
+
+  <vevent>
+    <properties>
+      <dtstart>
+        <date>2011-11-10+10:10</date>
+      </dtstart>
+      <rrule>
+        <recur>
+           <count>2</count>
+          <byhour>3</byhour>
+          <freq>DAILY</freq>
+          
+        </recur>
+      </rrule>
+      <x-custom-property>
+         <unknown>blabla</unknown>
+      </x-custom-property>       
+      <x-unknown-property>
+         <unknown>blibla</unknown>
+      </x-unknown-property>       
+    </properties>
+    <components>
+      <valarm/>
+    </components>
+  </vevent>
+
+</kolab:event>

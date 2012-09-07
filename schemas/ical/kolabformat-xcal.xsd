@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:ietf:params:xml:ns:icalendar-2.0"
+    xmlns="urn:ietf:params:xml:ns:icalendar-2.0"
+    elementFormDefault="qualified">
+
+    <xs:include schemaLocation="iCalendar-props.xsd" />
+
+<!--Custom Parameters-->
+
+    <xs:complexType name="XlabelParamType" mixed="false">
+        <xs:complexContent>
+            <xs:extension base="TextParameterType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="x-label" type="XlabelParamType" substitutionGroup="baseParameter"/>
+
+    <xs:complexType name="XuidParamType" mixed="false">
+        <xs:complexContent>
+            <xs:extension base="TextParameterType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="x-uid" type="XuidParamType" substitutionGroup="baseParameter"/>
+
+    <xs:complexType name="XFBevent" mixed="false">
+        <xs:complexContent>
+            <xs:extension base="BaseParameterType">
+                <xs:sequence>
+                    <xs:element name="uid" type="xs:string"/>
+                    <xs:element name="summary" type="xs:string"/>
+                    <xs:element name="location" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="x-event" type="XFBevent" substitutionGroup="baseParameter"/>
+
+<!--            -->
+
+    <xs:complexType name="KolabVersion" >
+        <xs:complexContent mixed="false">
+            <xs:extension base="BasePropertyType">
+                <xs:sequence>
+                    <xs:element name="text" type="xs:string" default="3.0dev1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="x-kolab-version" type="KolabVersion" substitutionGroup="baseProperty" /> 
+
+    <xs:complexType name="CustomType" >
+        <xs:complexContent mixed="false">
+            <xs:extension base="BasePropertyType">
+                <xs:sequence>
+                    <xs:element name="identifier" type="xs:string"/>
+                    <xs:element name="value" type="xs:string"/>
+                </xs:sequence>
+           </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ContactType">
+        <xs:complexContent mixed="false">
+            <xs:extension base="CalAddressPropertyType"/>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- 3.6.6 Alarm Component -->
+    <xs:complexType name="ValarmType" mixed="false">
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="action" type="ActionPropType"/>
+                        <xs:element name="summary" type="TextPropertyType" minOccurs="0"/>
+                        <xs:element name="description" type="TextPropertyType" minOccurs="0"/>
+                        <xs:element name="attendee" type="ContactType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="attach" type="AttachPropType" minOccurs="0"/>
+                        <xs:element name="trigger" type="TriggerPropType"/>
+                        <xs:element name="duration" type="DurationPropType" minOccurs="0"/>
+                        <xs:element name="repeat" type="RepeatPropType" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KolabEvent" >
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uid" type="UidPropType"/>
+                        <xs:element name="created" type="CreatedPropType"/>
+                        <xs:element name="dtstamp" type="DtstampPropType"/>
+                        <xs:element name="sequence" type="SequencePropType" minOccurs="0"/>
+                        <xs:element name="class" type="ClassPropType" minOccurs="0"/>
+                        <xs:element name="categories" type="CategoriesPropType" minOccurs="0"/>
+                        <xs:element name="dtstart" type="DtstartPropType" minOccurs="0"/>
+                        <xs:element name="dtend" type="DtendPropType" minOccurs="0"/>
+                        <xs:element name="duration" type="DurationPropType" minOccurs="0"/>
+                        <xs:element name="transp" type="TranspPropType" minOccurs="0"/>
+                        <xs:element name="rrule" type="RrulePropType" minOccurs="0"/>
+                        <xs:element name="rdate" type="RdatePropType" minOccurs="0"/>
+                        <xs:element name="exdate" type="ExdatePropType" minOccurs="0"/>
+                        <xs:element name="recurrence-id" type="RecurrenceIdPropType" minOccurs="0"/>
+                        <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
+                        <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="priority" type="PriorityPropType" minOccurs="0"/>
+                        <xs:element name="status" type="StatusPropType" minOccurs="0"/>
+                        <xs:element name="location" type="LocationPropType" minOccurs="0"/>
+                        <xs:element name="organizer" type="OrganizerPropType" minOccurs="0"/>
+                        <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="attach" type="AttachPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="components" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="valarm" type="ValarmType" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KolabTodo" >
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uid" type="UidPropType"/>
+                        <xs:element name="created" type="CreatedPropType"/>
+                        <xs:element name="dtstamp" type="DtstampPropType"/>
+                        <xs:element name="sequence" type="SequencePropType" minOccurs="0"/>
+                        <xs:element name="class" type="ClassPropType" minOccurs="0"/>
+                        <xs:element name="categories" type="CategoriesPropType" minOccurs="0"/>
+                        <xs:element name="related-to" type="RelatedToPropType" minOccurs="0"  maxOccurs="unbounded"/>
+                        <xs:element name="dtstart" type="DtstartPropType" minOccurs="0"/>
+                        <xs:element name="due" type="DuePropType" minOccurs="0"/>
+                        <xs:element name="rrule" type="RrulePropType" minOccurs="0"/>
+                        <xs:element name="rdate" type="RdatePropType" minOccurs="0"/>
+                        <xs:element name="exdate" type="ExdatePropType" minOccurs="0"/>
+                        <xs:element name="recurrence-id" type="RecurrenceIdPropType" minOccurs="0"/>
+                        <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
+                        <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="priority" type="PriorityPropType" minOccurs="0"/>
+                        <xs:element name="status" type="StatusPropType" minOccurs="0"/>
+                        <xs:element name="percent-complete" type="PercentCompletePropType" minOccurs="0"/>
+                        <xs:element name="location" type="LocationPropType" minOccurs="0"/>
+                        <xs:element name="organizer" type="OrganizerPropType" minOccurs="0"/>
+                        <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="attach" type="AttachPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="components" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="valarm" type="ValarmType" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType> 
+    
+    <xs:complexType name="KolabJournal" >
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uid" type="UidPropType"/>
+                        <xs:element name="created" type="CreatedPropType"/>
+                        <xs:element name="dtstamp" type="DtstampPropType"/>
+                        <xs:element name="sequence" type="SequencePropType" minOccurs="0"/>
+                        <xs:element name="class" type="ClassPropType" minOccurs="0"/>
+                        <xs:element name="categories" type="CategoriesPropType" minOccurs="0"/>
+                        <xs:element name="related-to" type="RelatedToPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="dtstart" type="DtstartPropType" minOccurs="0"/>
+                        <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
+                        <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="status" type="StatusPropType" minOccurs="0"/>
+                        <xs:element name="contact" type="ContactPropType" minOccurs="0"/>
+                        <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="attach" type="AttachPropType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KolabFreebusy" >
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uid" type="UidPropType"/>
+                        <xs:element name="dtstamp" type="DtstampPropType"/>
+                        <xs:element name="dtstart" type="DtstartPropType" minOccurs="0"/>
+                        <xs:element name="dtend" type="DtendPropType" minOccurs="0"/>
+                        <xs:element name="organizer" type="OrganizerPropType" minOccurs="0"/>
+                        <xs:element name="freebusy" type="FreebusyPropType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType> 
+
+    <xs:complexType name="VcalendarType" mixed="false">
+        <xs:sequence>
+            <xs:element name="properties">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="prodid" type="ProdidPropType"/>
+                        <xs:element name="version" type="VersionPropType"/>
+                        <xs:element name="x-kolab-version" type="KolabVersion"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="components">
+                 <xs:complexType>
+                    <xs:choice>
+                        <xs:element name="vevent" type="KolabEvent" maxOccurs="unbounded"/>
+                        <xs:element name="vtodo" type="KolabTodo" maxOccurs="unbounded"/>
+                        <xs:element name="vjournal" type="KolabJournal" maxOccurs="unbounded"/>
+                        <xs:element name="vfreebusy" type="KolabFreebusy" maxOccurs="unbounded"/>
+                    </xs:choice>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="IcalendarType">
+        <xs:sequence>
+            <xs:element name="vcalendar" type="VcalendarType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="icalendar" type="IcalendarType"/>
+    
+    
+    
+</xs:schema>
