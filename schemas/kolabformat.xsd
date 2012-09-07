@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://kolab.org"
+    xmlns="http://kolab.org"
+    elementFormDefault="qualified">
+
+
+    
+    <xs:complexType name="KolabBase">
+        <xs:attribute name="version" type="xs:string" fixed="3.0dev1" />
+    </xs:complexType>
+
+
+  
+  <xs:complexType name="attachmentPropType">
+    <xs:sequence> 
+      <xs:element name="parameters">
+          <xs:complexType>
+            <xs:sequence> 
+                <xs:element name="fmttype" type="xs:string" />
+                <xs:element name="x-label" type="xs:string" minOccurs="0"/>
+                <xs:element name="encoding" type="xs:string" fixed="BASE64" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+      </xs:element>
+      <xs:choice>
+        <xs:element name="uri" type="xs:string" />
+        <xs:element name="binary" type="xs:string" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="attachment" type="attachmentPropType" />  
+
+  
+  <xs:simpleType name="classifcationPropType">
+    <xs:restriction base="xs:token">
+        <xs:enumeration value="PUBLIC"/>
+        <xs:enumeration value="PRIVATE"/>
+        <xs:enumeration value="CONFIDENTIAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:element name="classification" type="classifcationPropType" />  
+
+
+  <xs:complexType name="CustomType" >
+    <xs:sequence>
+      <xs:element name="identifier" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="x-custom" type="CustomType" />  
+
+  
+  <xs:complexType name="Note">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="categories" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="classification" type="classifcationPropType" minOccurs="0" />
+          <xs:element name="attachment" type="attachmentPropType"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="summary" type="xs:string" minOccurs="0" />
+          <xs:element name="description" type="xs:string" minOccurs="0" />
+          <xs:element name="color" type="xs:string" minOccurs="0" />
+          <xs:element name="x-custom" type="CustomType"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="note" type="Note"/>
+
+
+  <xs:simpleType name="ConfigurationType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="dictionary"/>
+      <xs:enumeration value="categorycolor"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="type" type="Configuration"/>
+
+
+  <xs:complexType name="CategoryColor" mixed="true" >
+    <xs:sequence>
+      <xs:element name="category" type="xs:string"/>
+      <xs:element name="categorycolor" type="CategoryColor" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="color" type="xs:string" />
+  </xs:complexType>
+  
+  <xs:element name="categorycolor" type="CategoryColor"/>
+
+  
+  <xs:complexType name="Configuration">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="type" type="ConfigurationType"/>
+          <!-- Dictionary -->
+          <xs:element name="language" type="xs:string" minOccurs="0"/>
+          <xs:element name="e" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Categorycolor -->
+          <xs:element name="categorycolor" type="CategoryColor" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="configuration" type="Configuration"/>
+
+
+</xs:schema>

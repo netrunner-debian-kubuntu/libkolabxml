@@ -1,0 +1,20 @@
+Code needed to compile schemas so they can be embeeded into the binary.
+
+According to the xsd example in xsd/examples/cxx/tree/embedded/
+
+xsdbin.cxx
+  Tool for converting one or more XML Schema files to the compressed binary
+  representation. The output is written as a pair of C++ source files 
+  containing the array with the binary data. Use the --help option to see
+  the tool's usage information.
+
+library-schema.hxx
+library-schema.cxx
+  Binary representation of the library.xsd schema. These files are generated
+  by the xsdbin tool.
+
+grammar-input-stream.hxx
+grammar-input-stream.cxx
+  Input stream implementation with the special-purpose schema grammar 
+  decompression algorithm. It is used to load the binary schema representation
+  produced by the xsdbin tool.

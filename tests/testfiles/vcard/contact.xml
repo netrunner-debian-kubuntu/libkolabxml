@@ -1,0 +1,32 @@
+<vcards xmlns="urn:ietf:params:xml:ns:vcard-4.0">
+
+  <vcard>
+    <uid>
+      <uri>urn:uuid:K4pNZM8dES</uri>
+    </uid>
+    <x-kolab-version>
+      <text>3.0dev1</text>
+    </x-kolab-version>
+    <prodid>
+      <text>Libkolabxml-0.3.0</text>
+    </prodid>
+    <rev>
+      <timestamp>20120422T231004Z</timestamp>
+    </rev>
+    <kind>
+      <text>individual</text>
+    </kind>
+    <fn>
+      <text>Testcontact</text>
+    </fn>
+    <n>
+      <surname>Testcontact</surname>
+      <given/>
+      <additional/>
+      <prefix/>
+      <suffix/>
+    </n>
+  </vcard>
+
+</vcards>
+

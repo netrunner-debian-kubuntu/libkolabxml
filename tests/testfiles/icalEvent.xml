@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Copy of an example event from the xCal RFC-->
+<icalendar xmlns="urn:ietf:params:xml:ns:icalendar-2.0" >
+     <vcalendar>
+       <properties>
+         <prodid>
+           <text>-//Example Inc.//Example Client//EN</text>
+         </prodid>
+         <version>
+           <text>2.0</text>
+         </version>
+         <x-kolab-version > <!--xmlns="http://kolab.org"-->
+             <text>3.0dev1</text>
+         </x-kolab-version>
+       </properties>
+       <components>
+         <vevent>
+           <properties>
+             <uid>
+               <text>00959BC664CA650E933C892C@example.com</text>
+             </uid>
+             <created>
+               <date-time>2006-02-06T00:11:21Z</date-time>
+             </created>
+             <dtstamp>
+               <date-time>2006-02-06T00:11:21Z</date-time>
+             </dtstamp>
+             <dtstart>
+               <parameters>
+                 <tzid><text>/kolab.org/Europe/Zurich</text></tzid>
+               </parameters>
+               <date-time>2006-01-02T12:00:00</date-time>
+             </dtstart>
+             <duration>
+               <duration>PT1H</duration>
+             </duration>
+             <rrule>
+               <recur>
+                 <freq>DAILY</freq>
+                 <count>5</count>
+               </recur>
+             </rrule>
+             <rdate>
+               <parameters>
+                 <tzid><text>/kolab.org/Europe/Zurich</text></tzid>
+               </parameters>
+               <date-time>2007-02-06T00:11:21</date-time>
+       <!--        <period>
+                 <start>2006-01-02T15:00:00</start>
+                 <duration>PT2H</duration>
+               </period>-->
+             </rdate>
+             <summary>
+               <text>Event #2</text>
+             </summary>
+             <description>
+               <text>Test.&#x0a;Test.
+Test.</text>
+             </description>
+
+           </properties>
+         </vevent>
+<!--         <vevent>
+           <properties>
+             <dtstamp>
+               <date-time>2006-02-06T00:11:21Z</date-time>
+             </dtstamp>
+             <dtstart>
+               <parameters>
+                 <tzid><text>Europe/Zurich</text></tzid>
+               </parameters>
+               <date-time>2006-01-04T14:00:00</date-time>
+             </dtstart>
+             <duration>
+               <duration>PT1H</duration>
+             </duration>
+             <recurrence-id>
+               <parameters>
+                 <tzid><text>Europe/Zurich</text></tzid>
+               </parameters>
+               <date-time>2006-01-04T12:00:00</date-time>
+             </recurrence-id>
+             <summary>
+               <text>Event #2 bis</text>
+             </summary>
+
+           </properties>
+           <components/>
+         </vevent>-->
+       </components>
+     </vcalendar>
+</icalendar>

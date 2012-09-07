@@ -1,0 +1,11 @@
+
+
+== Attention to Distributors ==
+
+* 0.7: Headers are now installed into $INCLUDE_INSTALL_DIR/kolabxml
+* 0.7: libkolabxml now depends on libcurl
+
+== 0.7.0 ==
+
+* The Licence situation has been clarified, see COPYING for further information
+* Added F/B Container

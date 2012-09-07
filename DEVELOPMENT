@@ -1,0 +1,22 @@
+Branch layout:
+
+  master
+
+    The latest and greatest.
+
+  libkolabxml<major>.<minor>
+
+    Version branch for the <major>.<minor> product
+    series.
+
+  dev/*
+
+    Temporary development branches.
+
+Versioning:
+
+  According to http://wiki.kolab.org/KEP:5
+
+  <major>.<minor>.<teeny>
+
+  Where major stands for the major format version, minor for larger releases and teeny for bugfix releases.
