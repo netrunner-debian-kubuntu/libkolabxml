@@ -3,5 +3,5 @@
 %:
 	dh $@ --parallel
 
-#override_dh_auto_configure:
-#	dh_auto_configure -- -DINCLUDE_INSTALL_DIR=include/kolab
+override_dh_auto_configure:
+	dh_auto_configure -- -DSWIG=/usr/bin/swig2.0
