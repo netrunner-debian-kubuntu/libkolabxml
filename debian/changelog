@@ -1,3 +1,9 @@
+libkolabxml (0.8.1-1) unstable; urgency=low
+
+  * Build for Debian Wheezy
+
+ -- Jeroen van Meeuwen <vanmeeuwen@kolabsys.com>  Fri,  7 Sep 2012 14:07:50 +0100
+
 libkolabxml (0.7.0-0ubuntu2) quantal; urgency=low
 
   * Add libcurl4-gnutls-dev build-dep
