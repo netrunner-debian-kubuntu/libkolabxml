@@ -23,7 +23,3 @@ override_dh_install:
 	mkdir -p debian/tmp/usr/share/php
 	mv debian/tmp/usr/lib/php5/$(PHPAPI)/kolabformat.php debian/tmp/usr/share/php/kolabformat.php
 	dh_install
-
-binary-arch:
-	dpkg-shlibdeps debian/tmp/usr/lib/libkolabxml.so.*
-	echo "php:Depends=phpapi-$(php-config5 --phpapi)" >> debian/php-kolabformat.substvars
