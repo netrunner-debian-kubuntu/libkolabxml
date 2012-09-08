@@ -1,3 +1,13 @@
+libkolabxml (0.8.1-2) unstable; urgency=low
+
+  [ Jeroen van Meeuwen (Kolab Systems) ]
+  * Make the variables used be explicitely executed in shell
+  * Attempt to include shlibs with libkolabxml0
+
+  [ Kolab Systems User ]
+
+ -- Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>  Sat, 08 Sep 2012 19:25:44 +0200
+
 libkolabxml (0.8.1-1) unstable; urgency=low
 
   * Build for Debian Wheezy
