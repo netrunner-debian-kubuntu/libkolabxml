@@ -1,7 +1,29 @@
 #!/usr/bin/make -f
 
+PHPAPI := $$(php-config --phpapi)
+PYTHON_SITELIB := $$(python -c 'from distutils.sysconfig import get_python_lib; print get_python_lib()')
+PYTHON_SITEARCH := $$(python -c 'from distutils.sysconfig import get_python_lib; print get_python_lib(1)')
+
 %:
 	dh $@ --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DSWIG=/usr/bin/swig2.0
+	dh_auto_configure -- \
+		-DSWIG=/usr/bin/swig2.0 \
+		-DPHP_BINDINGS=ON \
+		-DPHP4_EXECUTABLE=/usr/bin/php5 \
+		-DPHP4_INCLUDE_PATH=/usr/include/php5/ \
+		-DPHP_INSTALL_DIR=/usr/lib/php5/$(PHPAPI) \
+		-DPYTHON_BINDINGS=ON \
+		-DPYTHON_INSTALL_DIR=$(PYTHON_SITEARCH)
+
+override_dh_install:
+	mkdir -p debian/tmp/etc/php.d/mods-available
+	echo "extension=kolabformat.so" > debian/tmp/etc/php.d/mods-available/kolabformat.ini
+	mkdir -p debian/tmp/usr/share/php
+	mv debian/tmp/usr/lib/php5/$(PHPAPI)/kolabformat.php debian/tmp/usr/share/php/kolabformat.php
+	dh_install
+
+binary-arch:
+	dpkg-shlibdeps debian/tmp/usr/lib/libkolabxml.so.*
+	echo "php:Depends=phpapi-$(php-config5 --phpapi)" >> debian/php-kolabformat.substvars

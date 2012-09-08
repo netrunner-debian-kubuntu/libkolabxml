@@ -1,8 +1,7 @@
 Source: libkolabxml
 Section: libs
 Priority: optional
-Maintainer: Kubuntu Developers <kubuntu-devel@lists.ubuntu.com>
-XSBC-Original-Maintainer: Jonathan Riddell <jriddell@ubuntu.com>
+Maintainer: Jeroen van Meeuwen <vanmeeuwen@kolabsys.com>
 Build-Depends: cmake,
                debhelper (>= 9),
                libxerces-c-dev,
@@ -13,15 +12,33 @@ Build-Depends: cmake,
                libboost-thread1.49-dev,
                swig2.0,
                libcurl4-gnutls-dev,
+               php5-dev,
+               python-dev,
 Standards-Version: 3.9.3
 Homepage: http://git.kolab.org/libkolabxml
 
 Package: libkolabxml0
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends},
+	${shlibs:Depends}
 Description: Kolab Format 3.0 serialization, read and write library
  libkolabxml is a slim, lightweight Kolab Format 3.0 serialization,
  read and write library.
+
+Package: php-kolabformat
+Architecture: any
+Depends: libkolabxml0 (= ${binary:Version}),
+	${php:Depends},
+	libc6
+Description: PHP bindings for Kolab Format 3.0
+
+Package: python-kolabformat
+Architecture: any
+Section: python
+Depends: libkolabxml0 (= ${binary:Version}),
+	python,
+	libc6
+Description: Python bindings for Kolab Format 3.0
 
 Package: libkolabxml-dev
 Section: libdevel

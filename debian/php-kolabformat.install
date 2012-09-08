@@ -1,0 +1,3 @@
+etc/php.d/mods-available/kolabformat.ini
+usr/lib/php5/*/*kolabformat.so
+usr/share/php/kolabformat.php
