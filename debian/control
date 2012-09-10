@@ -1,7 +1,7 @@
 Source: libkolabxml
 Section: libs
 Priority: optional
-Maintainer: Jeroen van Meeuwen <vanmeeuwen@kolabsys.com>
+Maintainer: Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>
 Build-Depends: cmake,
                debhelper (>= 9),
                libxerces-c-dev,
