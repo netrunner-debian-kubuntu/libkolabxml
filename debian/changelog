@@ -1,7 +1,7 @@
 libkolabxml (0.8.1-2) unstable; urgency=low
 
   [ Jeroen van Meeuwen (Kolab Systems) ]
-  * Make the variables used be explicitely executed in shell
+  * Make the variables used be explicitly executed in shell
   * Attempt to include shlibs with libkolabxml0
 
   [ Kolab Systems User ]
