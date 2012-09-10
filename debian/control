@@ -30,8 +30,7 @@ Architecture: any
 Depends: libkolabxml0 (= ${binary:Version}),
 	${misc:Depends},
 	${shlibs:Depends},
-	phpapi-20100525,
-	libc6
+	phpapi-20100525
 Description: PHP bindings for Kolab Format 3.0
  This package provides PHP bindings for Kolab Format 3.0 XML parsing
 
@@ -41,8 +40,7 @@ Section: python
 Depends: libkolabxml0 (= ${binary:Version}),
 	python,
 	${misc:Depends},
-	${shlibs:Depends},
-	libc6
+	${shlibs:Depends}
 Description: Python bindings for Kolab Format 3.0
  This package provides Python bindings for Kolab Format 3.0 XML parsing
 
