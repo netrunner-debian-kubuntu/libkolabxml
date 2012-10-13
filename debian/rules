@@ -7,6 +7,9 @@ PYTHON_SITEARCH := $(shell python -c 'from distutils.sysconfig import get_python
 %:
 	dh $@ --parallel
 
+binary-arch:
+	echo "php:Depends=phpapi-$(php-config5 --phpapi)" > debian/substvars
+
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DSWIG=/usr/bin/swig2.0 \

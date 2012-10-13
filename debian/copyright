@@ -49,6 +49,8 @@ License: Apache-2.0
 Files: compiled/xsdbin.cxx compiled/grammar-input-stream.*
 Copyright: not copyrighted
 License: public-domain
+ I guess Lintian requires some text here,
+ explaining why this is public domain.
 
 Files: src/base64.*
 Copyright: 2004-2008 René Nyffenegger
