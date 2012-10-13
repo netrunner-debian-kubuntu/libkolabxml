@@ -6,10 +6,10 @@ PYTHON_SITEARCH := $(shell python -c 'from distutils.sysconfig import get_python
 
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
+export DH_OPTIONS=-v
 
 %:
 	dh $@ --parallel
-
 
 binary-arch:
 	echo "php:Depends=phpapi-$(php-config5 --phpapi)" > debian/substvars
