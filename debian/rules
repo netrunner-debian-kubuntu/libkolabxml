@@ -12,7 +12,7 @@ export DH_OPTIONS=-v
 	dh $@ --parallel
 
 binary-arch:
-	echo "php:Depends=phpapi-$(php-config5 --phpapi)" > debian/substvars
+	echo "php:Depends=phpapi-${PHPAPI}" >> debian/php-kolabformat.substvars
 	dh binary-arch
 
 override_dh_auto_configure:
