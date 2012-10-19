@@ -32,6 +32,7 @@ Depends: libkolabxml0 (= ${binary:Version}),
 	${misc:Depends},
 	${shlibs:Depends},
 	${php:Depends},
+    ucf
 Description: PHP bindings for Kolab Format 3.0
  This package provides PHP bindings for Kolab Format 3.0 XML parsing
 
