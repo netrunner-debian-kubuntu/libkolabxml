@@ -26,8 +26,8 @@ override_dh_auto_configure:
 		-DPYTHON_INSTALL_DIR=$(PYTHON_SITEARCH)
 
 override_dh_install:
-	mkdir -p debian/tmp/etc/php.d/mods-available
-	echo "extension=kolabformat.so" > debian/tmp/etc/php.d/mods-available/kolabformat.ini
+	mkdir -p debian/tmp/usr/share/php5/kolab
+	echo "extension=kolabformat.so" > debian/tmp/usr/share/php5/kolab/kolabformat.ini
 	mkdir -p debian/tmp/usr/share/php
 	mv debian/tmp/usr/lib/php5/$(PHPAPI)/kolabformat.php debian/tmp/usr/share/php/kolabformat.php
-	dh_install
+	dh_install --fail-missing

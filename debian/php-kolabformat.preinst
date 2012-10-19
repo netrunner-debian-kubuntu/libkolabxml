@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+#EXTRA#
+#DEBHELPER#
+
+inifile=kolabformat.ini
+
+dpkg-maintscript-helper mv_conffile /etc/php5/conf.d/${inifile} /etc/php5/mods-available/${inifile} 0.8.1-3~ -- "$@";
+
+exit 0
