@@ -14,7 +14,7 @@ priority=30
 if [ "$1" = "configure" ]; then
 
 	# Register new conffile with UCF
-	ucf /usr/share/php5/${module}/${inifile} ${inidir}/${inifile}
+	ucf /usr/share/php5/kolab/${inifile} ${inidir}/${inifile}
 	ucfr --force ${package} ${inidir}/${inifile}
 
 	# Move pre-extension manager conffile
