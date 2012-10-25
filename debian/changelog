@@ -1,7 +1,11 @@
-libkolabxml (0.8.1-4) unstable; urgency=low
+libkolabxml (0.8.1-5) unstable; urgency=low
 
+  [ Paul Klos ]
   * Install kolabformat.ini to usr/share/php5/kolab
   * Have maintainer scripts manage kolabformat.ini
+
+  [ Jeroen van Meeuwen ]
+  * Rebuild
 
  -- Paul Klos <kolab@klos2day.nl>  Fri, 19 Oct 2012 20:02:17 +0200
 
