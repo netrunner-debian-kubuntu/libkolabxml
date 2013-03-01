@@ -1,3 +1,9 @@
+libkolabxml (0.8.3-1) unstable; urgency=low
+
+  * Imported upstream version 0.8.3
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 01 Mar 2013 11:12:38 +0100
+
 libkolabxml (0.8.1-5) unstable; urgency=low
 
   [ Paul Klos ]
