@@ -25,8 +25,10 @@ class BindingsTest : public QObject
     void categorycolorConfigurationCompletness();
     void dictionaryConfigurationCompletness();
     void noteCompletness();
+    void fileCompletness();
     void eventCompletness();
     void eventDuration();
+    void eventExceptions();
     void todoCompletness();
     void dueDateDateOnly();
     void journalCompletness();

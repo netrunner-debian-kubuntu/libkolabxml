@@ -33,6 +33,7 @@
 #include "kolabnote.h"
 #include "shared_conversions.h"
 #include "kolabconfiguration.h"
+#include "kolabfile.h"
 #include "base64.h"
 
 namespace Kolab {
@@ -269,6 +270,79 @@ std::string serializeObject <Kolab::Note> (const Kolab::Note &note, const std::s
     return std::string();
 }
 
+template <>
+std::string serializeObject <Kolab::File> (const Kolab::File &file, const std::string prod)
+{
+    clearErrors();
+    try {
+        const std::string &uid = getUID(file.uid());
+        setCreatedUid(uid);
+        
+        KolabXSD::File::creation_date_type created(0,0,0,0,0,0);
+        if (file.created().isValid()) {
+            created = fromDateTime(file.created());
+        } else {
+            created = fromDateTime(timestamp());
+        }
+        KolabXSD::File::last_modification_date_type lastModificationDate(0,0,0,0,0,0);
+        if (file.lastModified().isValid()) {
+            lastModificationDate = fromDateTime(file.lastModified());
+        } else {
+//             WARNING("missing last_modification_date, fallback to current timestamp");
+            lastModificationDate = fromDateTime(timestamp());
+        }
+        if (file.file().label().empty()) {
+            ERROR("missing filename");
+        }
+
+        KolabXSD::File n(uid, getProductId(prod), created, lastModificationDate, fromAttachment(file.file()));
+
+        if (!file.categories().empty()) {
+            KolabXSD::File::categories_sequence categories;
+            const std::vector<std::string> &l = file.categories();
+            BOOST_FOREACH(const std::string &c, l) {
+                categories.push_back(c);
+            }
+            n.categories(categories);
+        }
+        switch (file.classification()) {
+            case Kolab::ClassPublic:
+                n.classification(KolabXSD::File::classification_type::PUBLIC);
+                break;
+            case Kolab::ClassPrivate:
+                n.classification(KolabXSD::File::classification_type::PRIVATE);
+                break;
+            case Kolab::ClassConfidential:
+                n.classification(KolabXSD::File::classification_type::CONFIDENTIAL);
+                break;
+            default:
+                ERROR("unknown classification");
+        }
+        
+        n.note(file.note());
+
+        if (!file.customProperties().empty()) {
+            const std::vector<Kolab::CustomProperty> &l = file.customProperties();
+            BOOST_FOREACH(const Kolab::CustomProperty &a, l) {
+                n.x_custom().push_back(KolabXSD::CustomType(a.identifier, a.value));
+            }
+        }
+
+        xml_schema::namespace_infomap map;
+        map[""].name = KOLAB_NAMESPACE;
+
+        std::ostringstream ostringstream;
+        KolabXSD::file(ostringstream, n, map);
+        return ostringstream.str();
+    } catch  (const xml_schema::exception& e) {
+        std::cerr <<  e << std::endl;
+    } catch (...) {
+        CRITICAL("Unhandled exception");
+    }
+    CRITICAL("Failed to write file!");
+    return std::string();
+}
+
 template <typename T>
 boost::shared_ptr<T> deserializeObject(const std::string& s, bool isUrl);
 
@@ -427,6 +501,87 @@ boost::shared_ptr<Kolab::Configuration> deserializeObject <Kolab::Configuration>
     }
     CRITICAL("Failed to read configuration!");
     return boost::shared_ptr<Kolab::Configuration>();
+}
+
+template <>
+boost::shared_ptr<Kolab::File> deserializeObject <Kolab::File> (const std::string& s, bool isUrl)
+{
+    clearErrors();
+    try {
+        std::auto_ptr<KolabXSD::File> file;
+        if (isUrl) {
+            xsd::cxx::xml::dom::auto_ptr <xercesc::DOMDocument > doc = XMLParserWrapper::inst().parseFile(s);
+            if (doc.get()) {
+                file = KolabXSD::file(doc);
+            }
+        } else {
+            xsd::cxx::xml::dom::auto_ptr <xercesc::DOMDocument > doc = XMLParserWrapper::inst().parseString(s);
+            if (doc.get()) {
+                file = KolabXSD::file(doc);
+            }
+        }
+
+        if (!file.get()) {
+            CRITICAL("failed to parse file!");
+            return boost::shared_ptr<Kolab::File>();
+        }
+
+        boost::shared_ptr<Kolab::File> n = boost::shared_ptr<Kolab::File>(new Kolab::File);
+        n->setUid(file->uid());
+        n->setCreated(*toDate(file->creation_date()));
+        n->setLastModified(*toDate(file->last_modification_date()));
+        std::vector<std::string> categories;
+        std::copy(file->categories().begin(), file->categories().end(), std::back_inserter(categories));
+        n->setCategories(categories);
+        if (file->classification()) {
+            switch (*file->classification()) {
+                case KolabXSD::File::classification_type::PUBLIC:
+                    n->setClassification(Kolab::ClassPublic);
+                    break;
+                case KolabXSD::File::classification_type::PRIVATE:
+                    n->setClassification(Kolab::ClassPrivate);
+                    break;
+                case KolabXSD::File::classification_type::CONFIDENTIAL:
+                    n->setClassification(Kolab::ClassConfidential);
+                    break;
+                default:
+                    ERROR("unknown classification");
+            }
+        }
+
+        const Kolab::Attachment &attachment = toAttachment(file->file());
+        if (attachment.label().empty()) {
+            ERROR("Missing filename");
+        }
+        if (!attachment.isValid()) {
+            ERROR("invalid attachment");
+        }
+        n->setFile(attachment);
+        
+        if (file->note()) {
+            n->setNote(*file->note());
+        }
+        
+        setProductId( file->prodid() );
+        //         setFormatVersion( vcards->vcard().version().text() );
+        //         global_xCardVersion = vcalendar.properties().version().text();
+        setKolabVersion( file->version() );
+        
+        if (!file->x_custom().empty()) {
+            std::vector<Kolab::CustomProperty> customProperties;
+            BOOST_FOREACH(const KolabXSD::CustomType &p, file->x_custom()) {
+                customProperties.push_back(CustomProperty(p.identifier(), p.value()));
+            }
+            n->setCustomProperties(customProperties);
+        }
+        return n;
+    } catch  (const xml_schema::exception& e) {
+        std::cerr <<  e << std::endl;
+    } catch (...) {
+        CRITICAL("Unhandled exception");
+    }
+    CRITICAL("Failed to read file!");
+    return boost::shared_ptr<Kolab::File>();
 }
     
     }//Namespace

@@ -300,15 +300,15 @@ std::vector< CustomProperty > Event::customProperties() const
     return d->customProperties;
 }
 
-// void Event::setExceptions(const std::vector< Event > &exceptions)
-// {
-//     d->exceptions = exceptions;
-// }
-// 
-// std::vector< Event > Event::exceptions() const
-// {
-//     return d->exceptions;
-// }
+void Event::setExceptions(const std::vector< Event > &exceptions)
+{
+    d->exceptions = exceptions;
+}
+
+std::vector< Event > Event::exceptions() const
+{
+    return d->exceptions;
+}
 
 void Event::setAlarms(const std::vector< Alarm > &alarms)
 {

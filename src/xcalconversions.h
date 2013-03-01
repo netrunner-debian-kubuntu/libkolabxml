@@ -1527,6 +1527,26 @@ template < > struct IncidenceTrait <Kolab::Event>
     {
         return components.vevent().end();
     }
+
+    static IncidencePtr resolveExceptions(const std::vector<IncidencePtr> &list)
+    {
+        IncidencePtr incidence = *list.begin();
+        std::vector<IncidenceType> exceptions;
+        for (std::vector < IncidencePtr >::const_iterator it = list.begin()+1; it != list.end(); it++) {
+            exceptions.push_back(**it);
+        }
+        incidence->setExceptions(exceptions);
+        return incidence;
+    }
+    
+    static void addExceptions(icalendar_2_0::VcalendarType::components_type &components, const Kolab::Event &event, KolabType::properties_type props)
+    {
+        BOOST_FOREACH(const Kolab::Event &exception, event.exceptions()) {
+            KolabType ex(props);
+            writeIncidence(ex, exception);
+            addIncidence(components, ex);
+        }
+    }
     
 };
 
@@ -1603,6 +1623,26 @@ template < > struct IncidenceTrait <Kolab::Todo>
         return components.vtodo().end();
     }
     
+    static IncidencePtr resolveExceptions(const std::vector<IncidencePtr> &list)
+    {
+        IncidencePtr incidence = *list.begin();
+        std::vector<IncidenceType> exceptions;
+        for (std::vector < IncidencePtr >::const_iterator it = list.begin()+1; it != list.end(); it++) {
+            exceptions.push_back(**it);
+        }
+        incidence->setExceptions(exceptions);
+        return incidence;
+    }
+    
+    static void addExceptions(icalendar_2_0::VcalendarType::components_type &components, const Kolab::Todo &event, KolabType::properties_type props)
+    {
+        BOOST_FOREACH(const Kolab::Todo &exception, event.exceptions()) {
+            KolabType ex(props);
+            writeIncidence(ex, exception);
+            addIncidence(components, ex);
+        }
+    }
+    
 };
 
 template < > struct IncidenceTrait <Kolab::Journal>
@@ -1636,6 +1676,15 @@ template < > struct IncidenceTrait <Kolab::Journal>
     static icalendar_2_0::VcalendarType::components_type::vjournal_const_iterator end(const icalendar_2_0::VcalendarType::components_type &components)
     {
         return components.vjournal().end();
+    }
+    
+    static IncidencePtr resolveExceptions(const std::vector<IncidencePtr> &list)
+    {
+        return *list.begin();
+    }
+    
+    static void addExceptions(icalendar_2_0::VcalendarType::components_type &, const Kolab::Journal &, KolabType::properties_type)
+    {
     }
     
 };
@@ -1785,6 +1834,15 @@ template < > struct IncidenceTrait <Kolab::Freebusy>
     {
         return components.vfreebusy().end();
     }
+    
+    static IncidencePtr resolveExceptions(const std::vector<IncidencePtr> &list)
+    {
+        return *list.begin();
+    }
+    
+    static void addExceptions(icalendar_2_0::VcalendarType::components_type &, const Kolab::Freebusy &, KolabType::properties_type)
+    {
+    }
 
 };
 
@@ -1825,6 +1883,8 @@ std::string serializeIncidence(const typename T::IncidenceType &incidence, const
 
         VcalendarType::components_type components;
         T::addIncidence(components, inc);
+
+        T::addExceptions(components, incidence, eventProps);
         
         VcalendarType::properties_type::prodid_type prodid(getProductId(productid));
         VcalendarType::properties_type::version_type version(XCAL_VERSION);
@@ -1893,17 +1953,11 @@ typename T::IncidencePtr deserializeIncidence(const std::string& s, bool isUrl)
         global_xCalVersion = vcalendar.properties().version().text();
         setKolabVersion( vcalendar.properties().x_kolab_version().text() );
 
-
-        //TODO resolve events, exceptions can be identified based on the recurrence-id attribute
-//         foreach (KCalCore::Event * event, events) {
-//             if (!event->hasRecurrenceId()) {
-//                 return event;
-//             }
-//         }
-        if (incidences.size() != 1) {
-            WARNING("wrong number of incidences: "+ incidences.size());
+        if (incidences.empty()) {
+            CRITICAL("no incidence in object");
+            return IncidencePtr();
         }
-        return *incidences.begin();
+        return T::resolveExceptions(incidences);
     } catch  (const xml_schema::exception& e) {
         std::cerr <<  e << std::endl;
     } catch (...) {

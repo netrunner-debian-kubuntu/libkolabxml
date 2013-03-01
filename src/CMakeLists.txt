@@ -15,6 +15,7 @@ add_library(kolabxml SHARED
     containers/kolabcontact.cpp
     containers/kolabconfiguration.cpp
     containers/kolabfreebusy.cpp
+    containers/kolabfile.cpp
     utils.cpp base64.cpp uriencode.cpp
     ../compiled/XMLParserWrapper.cpp
     ../compiled/grammar-input-stream.cxx
@@ -54,6 +55,7 @@ install( FILES
     containers/kolabcontainers.h
     containers/kolabconfiguration.h
     containers/kolabfreebusy.h
+    containers/kolabfile.h
     global_definitions.h
     DESTINATION ${INCLUDE_INSTALL_DIR})
 

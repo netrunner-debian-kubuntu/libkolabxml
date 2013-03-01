@@ -14,6 +14,7 @@
     #include "containers/kolabcontact.h"
     #include "containers/kolabnote.h"
     #include "containers/kolabconfiguration.h"
+    #include "containers/kolabfile.h"
 %}
 
 %include "std_string.i"
@@ -37,7 +38,12 @@ namespace std {
     %template(vectorurl) vector<Kolab::Url>;
     %template(vectorkey) vector<Kolab::Key>;
     %template(vectorcategorycolor) vector<Kolab::CategoryColor>;
+/*     %template(vectorevent) vector<Kolab::Event>;*/
+/*     %template(vectorevent2) vector< vector<Kolab::Event> >;*/
 };
+
+%rename(readKolabFile) Kolab::readFile;
+%rename(writeKolabFile) Kolab::writeFile;
 
 %include "global_definitions.h"
 %include "kolabformat.h"
@@ -48,3 +54,4 @@ namespace std {
 %include "containers/kolabcontact.h"
 %include "containers/kolabnote.h"
 %include "containers/kolabconfiguration.h"
+%include "containers/kolabfile.h"
