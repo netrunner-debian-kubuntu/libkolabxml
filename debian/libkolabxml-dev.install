@@ -15,3 +15,4 @@ usr/include/kolabxml/kolabcontainers.h
 usr/include/kolabxml/kolabconfiguration.h
 usr/include/kolabxml/global_definitions.h
 usr/include/kolabxml/kolabfreebusy.h
+usr/include/kolabxml/kolabfile.h
