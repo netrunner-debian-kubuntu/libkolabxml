@@ -8,6 +8,7 @@ endif()
 cmake_minimum_required(VERSION 2.6)
 
 option( BUILD_TESTS "Build the tests" TRUE )
+option( BUILD_UTILS "Build optional utils" FALSE )
 option( DIST_ONLY "Build dist targets only (does not require a compiler)" FALSE )
 option( PYTHON_BINDINGS "Build bindings for python" FALSE )
 option( PHP_BINDINGS "Build bindings for php" FALSE )
@@ -42,7 +43,7 @@ endif()
 set (Libkolabxml_VERSION_MAJOR 0)
 set (Libkolabxml_VERSION_MINOR 8)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 1)
+set (Libkolabxml_VERSION_PATCH 3)
 set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
 # set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
@@ -135,7 +136,7 @@ set( SCHEMA_SOURCEFILES
 # --generate-inline --extern-xml-schema xml-schema.xsd
 # --cxx-suffix .cpp --hxx-suffix .h   
 add_custom_command(OUTPUT ${SCHEMA_SOURCEFILES}
-    COMMAND ${XSDCXX} cxx-tree --generate-polymorphic --generate-serialization  --namespace-map http://kolab.org=KolabXSD --root-element icalendar --root-element vcards --root-element note --root-element configuration --output-dir ${CMAKE_BINARY_DIR}/bindings ${SCHEMAS}
+    COMMAND ${XSDCXX} cxx-tree --generate-polymorphic --generate-serialization  --namespace-map http://kolab.org=KolabXSD --root-element icalendar --root-element vcards --root-element note --root-element configuration --root-element file --output-dir ${CMAKE_BINARY_DIR}/bindings ${SCHEMAS}
     COMMENT "Generating XSD bindings"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     DEPENDS ${SCHEMAS}
@@ -178,6 +179,10 @@ include_directories(
 
 
 add_subdirectory(src)
+
+if (BUILD_UTILS)
+    add_subdirectory(utils)
+endif()
 
 if (BUILD_TESTS)
     enable_testing()

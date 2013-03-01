@@ -27,6 +27,7 @@
 #include "kolabnote.h"
 #include "kolabconfiguration.h"
 #include "kolabfreebusy.h"
+#include "kolabfile.h"
 #include "global_definitions.h"
 
 namespace Kolab {
@@ -121,6 +122,9 @@ std::string writeNote(const Kolab::Note &, const std::string& productId = std::s
 
 Kolab::Configuration readConfiguration(const std::string& s, bool isUrl);
 std::string writeConfiguration(const Kolab::Configuration &, const std::string& productId = std::string());
+
+Kolab::File readFile(const std::string& s, bool isUrl);
+std::string writeFile(const Kolab::File &, const std::string& productId = std::string());
 
 }
 

@@ -108,6 +108,9 @@ public:
     void setCustomProperties(const std::vector<CustomProperty> &);
     std::vector<CustomProperty> customProperties() const;
     
+    void setExceptions(const std::vector<Todo> &);
+    std::vector<Todo> exceptions() const;
+    
     void setAlarms(const std::vector<Alarm> &);
     std::vector<Alarm> alarms() const;
     

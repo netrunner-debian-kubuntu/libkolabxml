@@ -75,6 +75,26 @@
   </xs:complexType>
 
   <xs:element name="note" type="Note"/>
+  
+  <xs:complexType name="File">
+    <xs:complexContent mixed="false">
+      <xs:extension base="KolabBase">
+        <xs:sequence>
+          <xs:element name="uid" type="xs:string"/>
+          <xs:element name="prodid" type="xs:string"/>
+          <xs:element name="creation-date" type="xs:dateTime"/>
+          <xs:element name="last-modification-date" type="xs:dateTime"/>
+          <xs:element name="categories" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="classification" type="classifcationPropType" minOccurs="0" />
+          <xs:element name="file" type="attachmentPropType" />
+          <xs:element name="note" type="xs:string" minOccurs="0" />
+          <xs:element name="x-custom" type="CustomType"  minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="file" type="File"/>
 
 
   <xs:simpleType name="ConfigurationType">

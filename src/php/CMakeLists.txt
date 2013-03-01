@@ -20,10 +20,19 @@ if (APPLE)
     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flat_namespace -undefined suppress" )
 endif()
 
-find_package(PHP4 5.3 REQUIRED)
+# Debian (Wheezy) won't be able to find PHP using find_package. In packaging libkolabxml
+# for it, we define the include path and executable during the build.
+if (NOT PHP4_INCLUDE_PATH OR NOT PHP4_EXECUTABLE)
+    find_package(PHP4 5.3 REQUIRED)
+endif (NOT PHP4_INCLUDE_PATH OR NOT PHP4_EXECUTABLE)
 
-if (PHP4_FOUND)
+if (PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))
     include_directories(${PHP4_INCLUDE_PATH})
+
+    # In an additional twist on Debian (Wheezy) - the PHP headers are fubar. php.h is in main/,
+    # TSRM/TSRM.h includes <tsrm_config.h> instead of "tsrm_config.h", and we require
+    # Zend/zend.h (included, of course, as "zend.h" without -I/usr/include/php5/Zend)
+    include_directories("${PHP4_INCLUDE_PATH}/Zend" "${PHP4_INCLUDE_PATH}/TSRM" "${PHP4_INCLUDE_PATH}/main")
     add_library(phpbindings SHARED ${KOLAB_SWIG_PHP_SOURCE_FILE})
     target_link_libraries(phpbindings kolabxml)
     SET_TARGET_PROPERTIES(phpbindings PROPERTIES OUTPUT_NAME "kolabformat")
@@ -39,6 +48,6 @@ if (PHP4_FOUND)
             ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
             DESTINATION ${PHP_INSTALL_DIR}
         )
-else(PHP4_FOUND)
+else(PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))
     message(WARNING "not building php bindings because php was not found")
-endif (PHP4_FOUND)
+endif (PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))

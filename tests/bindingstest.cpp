@@ -116,6 +116,35 @@ void BindingsTest::noteCompletness()
     QCOMPARE(re.attachments(), note.attachments());
 }
 
+void BindingsTest::fileCompletness()
+{
+    Kolab::File file;
+    file.setUid("UID");
+    file.setCreated(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+    file.setLastModified(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+    file.setClassification(Kolab::ClassConfidential);
+    file.addCategory("Category");
+    file.setNote("summary");
+    Kolab::Attachment attachment;
+    attachment.setData("data", "mimetype");
+    attachment.setLabel("label");
+    file.setFile(attachment);
+    
+    const std::string &result = Kolab::writeFile(file);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+//     std::cout << result << std::endl;
+    
+    const Kolab::File &re = Kolab::readFile(result, false);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+    QCOMPARE(re.uid(), file.uid());
+    QCOMPARE(re.created(), file.created());
+    QCOMPARE(re.lastModified(), file.lastModified());
+    QCOMPARE(re.classification(), file.classification());
+    QCOMPARE(re.categories(), file.categories());
+    QCOMPARE(re.note(), file.note());
+    QCOMPARE(re.file(), file.file());
+}
+
 
 // void BindingsTest::eventCompletness_data()
 template <typename T>
@@ -308,6 +337,37 @@ void BindingsTest::eventDuration()
     QVERIFY(Kolab::error() == Kolab::NoError);
     QVERIFY(ev.duration().isValid());
     QCOMPARE(ev.duration(), e.duration());
+}
+
+void BindingsTest::eventExceptions()
+{
+    Kolab::Event ev;
+    ev.setUid("uid1");
+    ev.setStart(Kolab::cDateTime("Europe/Zurich", 2006,1,8,12,0,0));
+    std::vector<Kolab::Event> exceptions;
+    Kolab::Event ex1;
+    ex1.setStart(Kolab::cDateTime("Europe/Zurich", 2006,1,8,12,0,0));
+    ex1.setUid("uid1");
+    ex1.setRecurrenceID(Kolab::cDateTime("Europe/Zurich", 2006,1,8,12,0,0), true);
+    exceptions.push_back(ex1);
+    Kolab::Event ex2;
+    ex2.setStart(Kolab::cDateTime("Europe/Zurich", 2006,1,8,12,0,0));
+    ex2.setUid("uid1");
+    ex2.setRecurrenceID(Kolab::cDateTime("Europe/Zurich", 2007,1,8,12,0,0), false);
+    exceptions.push_back(ex2);
+    ev.setExceptions(exceptions);
+
+    const std::string result = Kolab::writeEvent(ev);
+    QVERIFY(Kolab::error() == Kolab::NoError);
+//     std::cout << result << endl;
+    const Kolab::Event e = Kolab::readEvent(result, false);
+    QVERIFY(Kolab::error() == Kolab::NoError);
+    QCOMPARE(e.exceptions().size(), std::size_t(2));
+    QCOMPARE(ev.exceptions().at(0).uid(), e.exceptions().at(0).uid());
+    QCOMPARE(ev.exceptions().at(0).recurrenceID(), e.exceptions().at(0).recurrenceID());
+    QCOMPARE(ev.exceptions().at(1).uid(), e.exceptions().at(1).uid());
+    QCOMPARE(ev.exceptions().at(1).recurrenceID(), e.exceptions().at(1).recurrenceID());
+
 }
 
 void BindingsTest::todoCompletness()

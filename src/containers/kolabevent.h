@@ -105,9 +105,9 @@ public:
     
     void setCustomProperties(const std::vector<CustomProperty> &);
     std::vector<CustomProperty> customProperties() const;
-/*    TODO what is this? Exceptions it is
+    
     void setExceptions(const std::vector<Event> &);
-    std::vector<Event> exceptions() const;*/
+    std::vector<Event> exceptions() const;
     
     void setAlarms(const std::vector<Alarm> &);
     std::vector<Alarm> alarms() const;

@@ -29,6 +29,7 @@ struct Todo::Private: public PrivateIncidence
     
     cDateTime due;
     int percentComplete;
+    std::vector< Todo > exceptions;
 };
 
 Todo::Todo()
@@ -312,6 +313,16 @@ void Todo::setCustomProperties(const std::vector< CustomProperty > &prop)
 std::vector< CustomProperty > Todo::customProperties() const
 {
     return d->customProperties;
+}
+
+void Todo::setExceptions(const std::vector< Todo > &exceptions)
+{
+    d->exceptions = exceptions;
+}
+
+std::vector< Todo > Todo::exceptions() const
+{
+    return d->exceptions;
 }
 
 void Todo::setAlarms(const std::vector< Alarm > &alarms)

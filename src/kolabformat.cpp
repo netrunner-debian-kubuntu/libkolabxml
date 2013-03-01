@@ -169,6 +169,20 @@ std::string writeNote(const Note &note, const std::string& productId)
     return Kolab::KolabObjects::serializeObject<Kolab::Note>(note, productId);
 }
 
+File readFile(const std::string& s, bool isUrl)
+{
+    boost::shared_ptr <Kolab::File> ptr = Kolab::KolabObjects::deserializeObject<Kolab::File>(s, isUrl);
+    if (!ptr.get()) {
+        return Kolab::File();
+    }
+    return *ptr;
+}
+
+std::string writeFile(const File &file, const std::string& productId)
+{
+    return Kolab::KolabObjects::serializeObject<Kolab::File>(file, productId);
+}
+
 Configuration readConfiguration(const std::string& s, bool isUrl)
 {
     boost::shared_ptr <Kolab::Configuration> ptr = Kolab::KolabObjects::deserializeObject<Kolab::Configuration>(s, isUrl);

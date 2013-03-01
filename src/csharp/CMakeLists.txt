@@ -31,6 +31,7 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Duration.cs
         ${CMAKE_CURRENT_BINARY_DIR}/ErrorSeverity.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Event.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/File.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Geo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Journal.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Key.cs
@@ -44,6 +45,8 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Role.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Status.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Event_t.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Todo_t.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Todo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Url.cs
