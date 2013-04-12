@@ -1,16 +1,16 @@
 Source: libkolabxml
 Section: libs
 Priority: optional
-Maintainer: Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>
-Uploaders: Paul Klos <kolab@klos2day.nl>
+Maintainer: Debian Kolab Maintainers <pkg-kolab-devel@lists.alioth.debian.org>
+Uploaders: Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>, Paul Klos <kolab@klos2day.nl>
 Build-Depends: cmake,
                debhelper (>= 9),
                libxerces-c-dev,
                xsdcxx,
                uuid-dev,
-               libboost1.49-dev,
-               libboost-system1.49-dev,
-               libboost-thread1.49-dev,
+               libboost-dev,
+               libboost-system-dev,
+               libboost-thread-dev,
                swig2.0,
                libcurl4-gnutls-dev,
                php5-dev,
