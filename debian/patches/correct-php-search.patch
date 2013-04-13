@@ -4,6 +4,7 @@ Description: Correct PHP5 search
  constructed using php-config.
 Author: Paul Klos <kolab@klos2day.nl>
 Last-Update: 2013-04-13
+Bug: https://issues.kolab.org/show_bug.cgi?id=1753
 
 --- a/src/php/CMakeLists.txt
 +++ b/src/php/CMakeLists.txt
