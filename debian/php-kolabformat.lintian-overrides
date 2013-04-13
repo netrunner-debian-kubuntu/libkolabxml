@@ -3,4 +3,4 @@
 #        unprotected: memmove
 # This functions does not occur in the source code,
 # so overriding this warning
-php-kolabformat binary: hardening-no-fortify-functions usr/lib/php5/20100525/kolabformat.so
+php-kolabformat binary: hardening-no-fortify-functions
