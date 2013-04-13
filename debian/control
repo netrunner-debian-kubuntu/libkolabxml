@@ -61,6 +61,9 @@ Architecture: any
 Depends: libkolabxml0 (= ${binary:Version}),
          ${misc:Depends}
 Description: Development files for libkolabxml
- Kolab Format 3.0 serialization, read and write library
  Libkolabxml is the reference implementation of the Kolab XML format.
  For more information see the libkolabxml package.
+ .
+ This package provides development files libkolabxml.
+
+ 
