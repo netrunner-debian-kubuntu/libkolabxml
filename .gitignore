@@ -19,3 +19,4 @@ libkolabxml-*.*/
 libkolabxml.spec
 build
 *kdev4*
+.pc
