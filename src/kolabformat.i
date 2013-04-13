@@ -32,6 +32,7 @@ namespace std {
     %template(vectorattendee) vector<Kolab::Attendee>;
     %template(vectorcontactref) vector<Kolab::ContactReference>;
     %template(vectorgeo) vector<Kolab::Geo>;
+    %template(vectorevent) vector<Kolab::Event>;
     %template(vectorrelated) vector<Kolab::Related>;
     %template(vectortelephone) vector<Kolab::Telephone>;
     %template(vectordatetime) vector<Kolab::cDateTime>;

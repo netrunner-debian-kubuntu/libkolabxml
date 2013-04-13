@@ -21,7 +21,7 @@
 
 #include <boost/version.hpp>
 
-#if BOOST_VERSION >= 104200
+#if BOOST_VERSION >= 104300
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_io.hpp>
 #include <boost/uuid/uuid_generators.hpp>
@@ -107,7 +107,7 @@ std::string getUID(const std::string &s)
     if (!s.empty()) {
         return s;
     }
-#if BOOST_VERSION >= 104200
+#if BOOST_VERSION >= 104300
 
     //Required because boost::uuids::uuid is implemented as POD type
     class uuid_class : public boost::uuids::uuid
