@@ -1,8 +1,14 @@
-libkolabxml (0.8.4-1) UNRELEASED; urgency=low
+libkolabxml (0.8.4-1) unstable; urgency=low
 
-  * Imported upstream version 0.8.4
+  * Remove empty line
+  * Imported Upstream version 0.8.4
+  * Update changelog
+  * Correct search for PHP version and include dirs
+  * Remove unused cmake arguments
+  * Remove unused verbosity
+  * Add bug to patch description
 
- -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Apr 2013 18:37:07 +0200
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Apr 2013 22:10:16 +0200
 
 libkolabxml (0.8.3-2) unstable; urgency=low
 
