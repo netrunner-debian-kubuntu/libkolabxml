@@ -22,9 +22,12 @@ Package: libkolabxml0
 Architecture: any
 Depends: ${misc:Depends},
 	${shlibs:Depends}
-Description: Kolab Format 3.0 serialization, read and write library
- libkolabxml is a slim, lightweight Kolab Format 3.0 serialization,
- read and write library.
+Description: Libkolabxml is the reference implementation of the Kolab XML format.
+ The Kolab 3.0 XML format is defined in
+ http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
+ This package provides serialization/deserialization from/to
+ in-memory representations for all Kolab Objects,
+ including input validation.
 
 Package: php-kolabformat
 Architecture: any
@@ -33,8 +36,11 @@ Depends: libkolabxml0 (= ${binary:Version}),
 	${shlibs:Depends},
 	${php:Depends},
     ucf
-Description: PHP bindings for Kolab Format 3.0
- This package provides PHP bindings for Kolab Format 3.0 XML parsing
+Description: PHP bindings for Kolab Format 3.0 XML parsing
+ Libkolabxml is the reference implementation of the Kolab XML format.
+ For more information see the libkolabxml package.
+ .
+ This package provides PHP bindings for libkolabxml
 
 Package: python-kolabformat
 Architecture: any
@@ -43,16 +49,18 @@ Depends: libkolabxml0 (= ${binary:Version}),
 	python,
 	${misc:Depends},
 	${shlibs:Depends}
-Description: Python bindings for Kolab Format 3.0
- This package provides Python bindings for Kolab Format 3.0 XML parsing
+Description: Python bindings for Kolab Format 3.0 XML parsing
+ Libkolabxml is the reference implementation of the Kolab XML format.
+ For more information see the libkolabxml package.
+ .
+ This package provides Python bindings for libkolabxml
 
 Package: libkolabxml-dev
 Section: libdevel
 Architecture: any
 Depends: libkolabxml0 (= ${binary:Version}),
          ${misc:Depends}
-Description: Kolab Format 3.0 serialization, read and write library
- libkolabxml is a slim, lightweight Kolab Format 3.0 serialization,
- read and write library.
- .
- This package contains the development files for the library.
+Description: Development files for libkolabxml.
+Kolab Format 3.0 serialization, read and write library
+ Libkolabxml is the reference implementation of the Kolab XML format.
+ For more information see the libkolabxml package.
