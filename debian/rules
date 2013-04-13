@@ -11,8 +11,8 @@ export DH_OPTIONS=-v
 	dh $@ --parallel
 
 override_dh_gencontrol:
-	dh_gencontrol
 	echo "php:Depends=phpapi-${PHPAPI}" >> debian/php-kolabformat.substvars
+	dh_gencontrol
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
