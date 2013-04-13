@@ -10,8 +10,8 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FI
         VERBATIM
     )
 
-SET_SOURCE_FILES_PROPERTIES(${KOLAB_SWIG_PHP_SOURCE_FILE} PROPERTIES GENERATED 1)
-ADD_CUSTOM_TARGET(generate_php_bindings ALL DEPENDS ${KOLAB_SWIG_PHP_SOURCE_FILE})
+set_source_files_properties(${KOLAB_SWIG_PHP_SOURCE_FILE} PROPERTIES GENERATED 1)
+add_custom_target(generate_php_bindings ALL DEPENDS ${KOLAB_SWIG_PHP_SOURCE_FILE})
 
 
 #Compile PHP Bindings
@@ -20,34 +20,54 @@ if (APPLE)
     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flat_namespace -undefined suppress" )
 endif()
 
-# Debian (Wheezy) won't be able to find PHP using find_package. In packaging libkolabxml
-# for it, we define the include path and executable during the build.
-if (NOT PHP4_INCLUDE_PATH OR NOT PHP4_EXECUTABLE)
-    find_package(PHP4 5.3 REQUIRED)
-endif (NOT PHP4_INCLUDE_PATH OR NOT PHP4_EXECUTABLE)
+# Try to find PHP5
+find_path(PHP_INCLUDE_DIR NAMES main/php.h PATH_SUFFIXES php php5)
+find_program(PHP_EXECUTABLE NAMES php)
 
-if (PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))
-    include_directories(${PHP4_INCLUDE_PATH})
+# Libkolabxml needs PHP >= 5.3
+set(PHP_MIN_VERSION 50300)
 
-    # In an additional twist on Debian (Wheezy) - the PHP headers are fubar. php.h is in main/,
-    # TSRM/TSRM.h includes <tsrm_config.h> instead of "tsrm_config.h", and we require
-    # Zend/zend.h (included, of course, as "zend.h" without -I/usr/include/php5/Zend)
-    include_directories("${PHP4_INCLUDE_PATH}/Zend" "${PHP4_INCLUDE_PATH}/TSRM" "${PHP4_INCLUDE_PATH}/main")
-    add_library(phpbindings SHARED ${KOLAB_SWIG_PHP_SOURCE_FILE})
-    target_link_libraries(phpbindings kolabxml)
-    SET_TARGET_PROPERTIES(phpbindings PROPERTIES OUTPUT_NAME "kolabformat")
-    SET_TARGET_PROPERTIES(phpbindings PROPERTIES PREFIX "")
+# Find where to install the extension files if it's not defined
+if(NOT DEFINED PHP_INSTALL_DIR)
+  find_program(PHP_CONFIG_EXECUTABLE NAMES php-config)
+  if(PHP_CONFIG_EXECUTABLE)
+    execute_process(COMMAND ${PHP_CONFIG_EXECUTABLE} --extension-dir
+                    OUTPUT_VARIABLE _php_extensions_dir
+    )
+    string(REGEX REPLACE "\n" "" _php_extensions_dir "${_php_extensions_dir}")
+    set(PHP_INSTALL_DIR ${_php_extensions_dir} CACHE STRING "Install directory for PHP bindings.")
+  else()
+    set(PHP_INSTALL_DIR ${LIB_INSTALL_DIR}/extensions)
+  endif()
+endif()
 
-    configure_file(test.php ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+if(PHP_INCLUDE_DIR AND PHP_EXECUTABLE)
+  file(READ ${PHP_INCLUDE_DIR}/main/php_version.h PHP_VERSION_CONTENT)
+  string(REGEX MATCH "#define PHP_VERSION_ID[ ]*[0-9]*\n" _PHP_VERSION_ID_MATCH ${PHP_VERSION_CONTENT})
+  if(_PHP_VERSION_ID_MATCH)
+    string(REGEX REPLACE "#define PHP_VERSION_ID[ ]*([0-9]*)\n" "\\1" PHP_VERSION_ID ${_PHP_VERSION_ID_MATCH})
+  endif()
 
-    set(PHP_INSTALL_DIR "${CMAKE_CURRENT_BINARY_DIR}/phpbindings" CACHE STRING "Install directory for php bindings.")
+  # Include the needed PHP5 subdirs
+  set(PHP_INCLUDE_DIRS ${PHP_INCLUDE_DIR} ${PHP_INCLUDE_DIR}/main ${PHP_INCLUDE_DIR}/TSRM ${PHP_INCLUDE_DIR}/Zend )
+endif()
 
-    install(TARGETS phpbindings LIBRARY DESTINATION ${PHP_INSTALL_DIR})
+if(NOT PHP_VERSION_ID VERSION_LESS ${PHP_MIN_VERSION})
+  include_directories(${PHP_INCLUDE_DIRS})
+  add_library(phpbindings SHARED ${KOLAB_SWIG_PHP_SOURCE_FILE})
+  target_link_libraries(phpbindings kolabxml)
+  set_target_properties(phpbindings PROPERTIES OUTPUT_NAME "kolabformat")
+  set_target_properties(phpbindings PROPERTIES PREFIX "")
 
-    install( FILES
-            ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
-            DESTINATION ${PHP_INSTALL_DIR}
-        )
-else(PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))
-    message(WARNING "not building php bindings because php was not found")
-endif (PHP4_FOUND OR (PHP4_INCLUDE_PATH AND PHP4_EXECUTABLE))
+  configure_file(test.php ${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
+
+  install(TARGETS phpbindings LIBRARY DESTINATION ${PHP_INSTALL_DIR})
+
+  install( FILES
+          ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
+          DESTINATION ${PHP_INSTALL_DIR}
+      )
+
+else()
+  message(WARNING "not building php bindings because php was not found")
+endif()

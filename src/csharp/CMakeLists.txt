@@ -45,7 +45,6 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Role.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Status.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.cs
-        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Event_t.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Todo_t.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Todo.cs
@@ -60,6 +59,7 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectorcs.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectordatetime.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectordaypos.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorevent.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorgeo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectori.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorkey.cs

@@ -43,7 +43,7 @@ endif()
 set (Libkolabxml_VERSION_MAJOR 0)
 set (Libkolabxml_VERSION_MINOR 8)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 3)
+set (Libkolabxml_VERSION_PATCH 4)
 set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
 # set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
