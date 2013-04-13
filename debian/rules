@@ -7,8 +7,10 @@ PYTHON_SITEARCH := $(shell python -c 'from distutils.sysconfig import get_python
 export DH_VERBOSE=1
 export DH_OPTIONS=-v
 
+export DEB_LDFLAGS_MAINT_APPEND="-Wl,--as-needed"
+
 %:
-	dh $@ --parallel
+	dh $@ --parallel --with python2
 
 override_dh_gencontrol:
 	echo "php:Depends=phpapi-${PHPAPI}" >> debian/php-kolabformat.substvars
