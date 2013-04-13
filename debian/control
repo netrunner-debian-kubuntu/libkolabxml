@@ -22,7 +22,7 @@ Package: libkolabxml0
 Architecture: any
 Depends: ${misc:Depends},
 	${shlibs:Depends}
-Description: Libkolabxml is the reference implementation of the Kolab XML format.
+Description: Libkolabxml is the reference implementation of the Kolab XML format
  The Kolab 3.0 XML format is defined in
  http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
  This package provides serialization/deserialization from/to
@@ -37,7 +37,7 @@ Depends: libkolabxml0 (= ${binary:Version}),
 	${php:Depends},
     ucf
 Description: PHP bindings for Kolab Format 3.0 XML parsing
- Libkolabxml is the reference implementation of the Kolab XML format.
+ Libkolabxml is the reference implementation of the Kolab XML format
  For more information see the libkolabxml package.
  .
  This package provides PHP bindings for libkolabxml
@@ -60,7 +60,7 @@ Section: libdevel
 Architecture: any
 Depends: libkolabxml0 (= ${binary:Version}),
          ${misc:Depends}
-Description: Development files for libkolabxml.
+Description: Development files for libkolabxml
  Kolab Format 3.0 serialization, read and write library
  Libkolabxml is the reference implementation of the Kolab XML format.
  For more information see the libkolabxml package.
