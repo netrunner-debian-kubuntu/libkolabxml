@@ -1,3 +1,9 @@
+libkolabxml (0.8.4-1) UNRELEASED; urgency=low
+
+  * Imported upstream version 0.8.4
+
+ -- Paul Klos <kolab@klos2day.nl>  Sat, 13 Apr 2013 18:37:07 +0200
+
 libkolabxml (0.8.3-2) unstable; urgency=low
 
   * Prepare for transition into Debian proper
