@@ -19,9 +19,7 @@ override_dh_gencontrol:
 override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DPHP_BINDINGS=ON \
-		-DPHP4_EXECUTABLE=/usr/bin/php5 \
-		-DPHP4_INCLUDE_PATH=/usr/include/php5/ \
-		-DPHP_INSTALL_DIR=/usr/lib/php5/$(PHPAPI) \
+        -DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DPYTHON_BINDINGS=ON \
 		-DPYTHON_INSTALL_DIR=$(PYTHON_SITEARCH)
 
