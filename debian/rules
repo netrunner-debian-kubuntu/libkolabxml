@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
 
 PHPAPI := $(shell php-config --phpapi)
-PYTHON_SITELIB := $(shell python -c 'from distutils.sysconfig import get_python_lib; print get_python_lib()')
 PYTHON_SITEARCH := $(shell python -c 'from distutils.sysconfig import get_python_lib; print get_python_lib(1)')
 
 # Uncomment this to turn on verbose mode.
@@ -11,13 +10,12 @@ export DH_OPTIONS=-v
 %:
 	dh $@ --parallel
 
-binary-arch:
-	echo "php:Depends=phpapi-${PHPAPI}" >> debian/php-kolabformat.substvars
-	dh binary-arch
+override_dh_gencontrol:
+	echo "php:Depends=phpapi-${PHPAPI}" >> debian/php-kolab.substvars
+	dh_gencontrol
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		-DSWIG=/usr/bin/swig2.0 \
 		-DPHP_BINDINGS=ON \
 		-DPHP4_EXECUTABLE=/usr/bin/php5 \
 		-DPHP4_INCLUDE_PATH=/usr/include/php5/ \
@@ -31,3 +29,7 @@ override_dh_install:
 	mkdir -p debian/tmp/usr/share/php
 	mv debian/tmp/usr/lib/php5/$(PHPAPI)/kolabformat.php debian/tmp/usr/share/php/kolabformat.php
 	dh_install --fail-missing
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f debian/php-kolab.substvars
