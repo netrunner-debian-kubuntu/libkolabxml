@@ -1,0 +1,16 @@
+Description: Correct spelling error
+Author: Paul Klos <kolab@klos2day.nl>
+Last-Update: 2013-04-13
+Bug: https://issues.kolab.org/show_bug.cgi?id=1751
+
+--- a/src/xcardconversions.h
++++ b/src/xcardconversions.h
+@@ -199,7 +199,7 @@
+         ERROR("failed to convert: "+std::string(c.what()));
+         return cDateTime();
+     } catch (...) {
+-        ERROR("failed to convert: unkown exception");
++        ERROR("failed to convert: unknown exception");
+         return cDateTime();
+     }
+     return cDateTime(year, month, day, hour, minute, second, isUtc);
