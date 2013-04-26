@@ -41,7 +41,7 @@ Description: PHP bindings for Kolab Format 3.0 XML parsing
  Libkolabxml is the reference implementation of the Kolab XML format
  For more information see the libkolabxml package.
  .
- This package provides PHP bindings for libkolabxml
+ This package provides PHP bindings for libkolabxml.
 
 Package: python-kolabformat
 Architecture: any
@@ -54,7 +54,7 @@ Description: Python bindings for Kolab Format 3.0 XML parsing
  Libkolabxml is the reference implementation of the Kolab XML format.
  For more information see the libkolabxml package.
  .
- This package provides Python bindings for libkolabxml
+ This package provides Python bindings for libkolabxml.
 
 Package: libkolabxml-dev
 Section: libdevel
