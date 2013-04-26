@@ -1,3 +1,11 @@
+libkolabxml (0.8.4-2~1.gbp2817ae) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @2817ae01a8829b8a3b0752b06254db3212282c81 **
+
+  * UNRELEASED
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 26 Apr 2013 17:48:02 +0200
+
 libkolabxml (0.8.4-1) unstable; urgency=low
 
   * Remove empty line
