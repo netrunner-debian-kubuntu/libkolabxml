@@ -26,3 +26,6 @@ override_dh_install:
 	mkdir -p debian/tmp/usr/share/php
 	mv debian/tmp/usr/lib/php5/$(PHPAPI)/kolabformat.php debian/tmp/usr/share/php/kolabformat.php
 	dh_install --fail-missing
+
+override_dh_makeshlibs:
+	dh_makeshlibs -V 'libkolabxml (>= 0.8.4)'
