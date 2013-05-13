@@ -23,12 +23,14 @@ Package: libkolabxml0
 Architecture: any
 Depends: ${misc:Depends},
 	${shlibs:Depends}
-Description: Libkolabxml is the reference implementation of the Kolab XML format
+Description: Kolab XML format (shared library)
+ Libkolabxml is the reference implementation of the Kolab XML format.
+ .
  The Kolab 3.0 XML format is defined in
- http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
- This package provides serialization/deserialization from/to
- in-memory representations for all Kolab Objects,
- including input validation.
+ <http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17>.
+ .
+ This package provides serialization/deserialization from/to  in-memory
+ representations for all Kolab Objects, including input validation.
 
 Package: php-kolabformat
 Architecture: any
