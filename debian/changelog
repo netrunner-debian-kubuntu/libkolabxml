@@ -1,3 +1,9 @@
+libkolabxml (0.8.4-3) unstable; urgency=low
+
+  * Upload to Debian
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 17 May 2013 23:03:10 +0200
+
 libkolabxml (0.8.4-2) unstable; urgency=low
 
   * Update changelog
