@@ -1,6 +1,7 @@
 libkolabxml (0.8.4-3) unstable; urgency=low
 
   * Upload to Debian
+  * Fix file not found error during dh_install
 
  -- Paul Klos <kolab@klos2day.nl>  Fri, 17 May 2013 23:03:10 +0200
 
