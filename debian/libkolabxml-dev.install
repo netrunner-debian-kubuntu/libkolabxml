@@ -1,5 +1,5 @@
 usr/lib/cmake/Libkolabxml/LibkolabxmlTargets.cmake
-usr/lib/cmake/Libkolabxml/LibkolabxmlTargets-noconfig.cmake
+usr/lib/cmake/Libkolabxml/LibkolabxmlTargets-*.cmake
 usr/lib/cmake/Libkolabxml/LibkolabxmlConfig.cmake
 usr/lib/cmake/Libkolabxml/LibkolabxmlConfigVersion.cmake
 usr/lib/libkolabxml.so
