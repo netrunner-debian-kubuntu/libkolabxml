@@ -1,2 +1,3 @@
 correct-php-search.patch
 xcardconversions-spelling-error.patch
+fix-race-condition.patch

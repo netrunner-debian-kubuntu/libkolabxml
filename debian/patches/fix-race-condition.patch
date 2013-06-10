@@ -1,0 +1,29 @@
+Description: Correct race condition
+ The Debian build system ran into a race
+ condition, where the generated header file
+ php_kolabformat.h was used before generation
+ was complete.
+Author: Paul Klos <kolab@klos2day.nl>
+Last-Update: 2013-06-10
+Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=710568
+
+--- a/src/php/CMakeLists.txt
++++ b/src/php/CMakeLists.txt
+@@ -2,6 +2,7 @@
+ include_directories(../)
+ 
+ set(KOLAB_SWIG_PHP_SOURCE_FILE php_kolabformat_wrapper.cpp)
++set(KOLAB_SWIG_PHP_HEADER_FILE php_kolabformat.h)
+ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FILE} ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
+         COMMAND ${SWIG} -v -c++ -php -o ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FILE}  ../kolabformat.i
+         COMMENT "Generating php bindings"
+@@ -11,7 +12,8 @@
+     )
+ 
+ set_source_files_properties(${KOLAB_SWIG_PHP_SOURCE_FILE} PROPERTIES GENERATED 1)
+-add_custom_target(generate_php_bindings ALL DEPENDS ${KOLAB_SWIG_PHP_SOURCE_FILE})
++set_source_files_properties(${KOLAB_SWIG_PHP_HEADER_FILE} PROPERTIES GENERATED 1)
++add_custom_target(generate_php_bindings ALL DEPENDS ${KOLAB_SWIG_PHP_SOURCE_FILE} ${KOLAB_SWIG_PHP_HEADER_FILE})
+ 
+ 
+ #Compile PHP Bindings
