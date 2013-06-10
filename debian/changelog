@@ -1,3 +1,13 @@
+libkolabxml (0.8.4-4~2.gbpd774f8) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @d774f84f49e3fd2fc2866f8243ff158d4bb03a80 **
+
+  * Fix race condition
+    php_kolabformat.h was accessed before generation was complete
+  * Update changelog
+
+ -- Paul Klos <kolab@klos2day.nl>  Mon, 10 Jun 2013 21:00:02 +0200
+
 libkolabxml (0.8.4-3) unstable; urgency=low
 
   * Upload to Debian
