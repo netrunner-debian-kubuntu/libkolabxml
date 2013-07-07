@@ -1,13 +1,12 @@
-libkolabxml (0.8.4-5~1.gbp190a0b) UNRELEASED; urgency=low
-
-  ** SNAPSHOT build @190a0b49a702dcce8bdb8dbcf0dfc81e05e87aac **
+libkolabxml (0.8.4-5) unstable; urgency=low
 
   * Upgrade to standards version 3.9.4
   * Fix dependency issues on libkolabxml-dev (solves #714102)
     - Disable transitive linking
     - Depend libkolabxml-dev on libboost-dev
+  * Update changelog
 
- -- Paul Klos <kolab@klos2day.nl>  Sun, 07 Jul 2013 12:51:48 +0200
+ -- Paul Klos <kolab@klos2day.nl>  Sun, 07 Jul 2013 13:38:02 +0200
 
 libkolabxml (0.8.4-4) unstable; urgency=low
 
