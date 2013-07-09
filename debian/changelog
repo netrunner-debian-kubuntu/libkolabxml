@@ -1,12 +1,14 @@
 libkolabxml (0.8.4-5) unstable; urgency=low
 
+  * Fix parallel build issue
+  * Remove unused override
   * Upgrade to standards version 3.9.4
   * Fix dependency issues on libkolabxml-dev (solves #714102)
     - Disable transitive linking
     - Depend libkolabxml-dev on libboost-dev
   * Update changelog
 
- -- Paul Klos <kolab@klos2day.nl>  Sun, 07 Jul 2013 13:38:02 +0200
+ -- Paul Klos <kolab@klos2day.nl>  Tue, 09 Jul 2013 22:07:14 +0200
 
 libkolabxml (0.8.4-4) unstable; urgency=low
 
