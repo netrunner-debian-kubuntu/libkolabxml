@@ -1,0 +1,19 @@
+Author: Diane Trout <diane@ghic.org>
+Description: When running multiple make processes the 
+ generate_php_bindings didn't have dependency information about 
+ what was generating php_kolabformat.h.
+
+ This explicitly addes php_kolabformat.h to the list of files generated 
+ by the swig command.
+
+--- a/src/php/CMakeLists.txt
++++ b/src/php/CMakeLists.txt
+@@ -3,7 +3,7 @@
+ 
+ set(KOLAB_SWIG_PHP_SOURCE_FILE php_kolabformat_wrapper.cpp)
+ set(KOLAB_SWIG_PHP_HEADER_FILE php_kolabformat.h)
+-add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FILE} ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
++add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FILE} ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_HEADER_FILE} ${CMAKE_CURRENT_BINARY_DIR}/kolabformat.php
+         COMMAND ${SWIG} -v -c++ -php -o ${CMAKE_CURRENT_BINARY_DIR}/${KOLAB_SWIG_PHP_SOURCE_FILE}  ../kolabformat.i
+         COMMENT "Generating php bindings"
+         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}

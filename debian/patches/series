@@ -2,3 +2,4 @@ fix-dev-dependencies.patch
 correct-php-search.patch
 xcardconversions-spelling-error.patch
 fix-race-condition.patch
+fix-parallel-build.patch
