@@ -111,6 +111,7 @@
                         <xs:element name="status" type="StatusPropType" minOccurs="0"/>
                         <xs:element name="location" type="LocationPropType" minOccurs="0"/>
                         <xs:element name="organizer" type="OrganizerPropType" minOccurs="0"/>
+                        <xs:element name="url" type="UrlPropType" minOccurs="0"/>
                         <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="attach" type="AttachPropType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>
@@ -152,6 +153,7 @@
                         <xs:element name="percent-complete" type="PercentCompletePropType" minOccurs="0"/>
                         <xs:element name="location" type="LocationPropType" minOccurs="0"/>
                         <xs:element name="organizer" type="OrganizerPropType" minOccurs="0"/>
+                        <xs:element name="url" type="UrlPropType" minOccurs="0"/>
                         <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="attach" type="AttachPropType" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element name="x-custom" type="CustomType" minOccurs="0" maxOccurs="unbounded"/>

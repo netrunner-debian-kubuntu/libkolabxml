@@ -86,14 +86,16 @@ Alternatively one could control the lifetime from the bindings through an initia
 
 For further performance improvements read this: http://xerces.apache.org/xerces2-j/faq-performance.html
 
+== Thread safety ==
+
+Thread safety is achieved through thread-local storage, which was tested to work under C++ and Python.
+
 == Error Handling ==
 
 All exceptions which could be thrown are caught within the serializing functions. There shouldn't be any uncaught exceptions because the bindings code doesn't handle that.
 If an error occurs a message is printed to the standard error output and a default constructed value is returned.
 
 Writing doesn't provide any validation (as it is hardly useful for the reason that it's anyways not possible to correct the mistake). For debugging purposes the document can be parsed again after writing. Validity is only ensured by typesafety, but range errors are easily possible.
-
-
 
 === The XSD based development checklist ===
 -Don't forget to add an element for each attribute in the style off: <xs:element name="pref" type="xcard:prefParamType" substitutionGroup="xcard:baseParameter"/>

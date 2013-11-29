@@ -144,9 +144,6 @@ std::string toString(const icalendar_2_0::TextPropertyType &s)
     return s.text();
 }
 
-
-
-
 std::string fromDayPos(const Kolab::DayPos &d)
 {   
     std::string s;
@@ -1006,6 +1003,10 @@ void setTodoEventProperties(I &inc, const T &prop)
         inc.setOrganizer(toContactReference(*prop.organizer()));
     }
     
+    if (prop.url()) {
+        inc.setUrl((*prop.url()).uri());
+    }
+    
 }
 
 
@@ -1283,6 +1284,10 @@ void getTodoEventProperties(T &prop, const I &inc)
     if (inc.organizer().isValid()) {
         prop.organizer(fromContactReference<typename properties::organizer_type>(inc.organizer()));
     }
+
+    if (!inc.url().empty()) {
+        prop.url(typename properties::url_type(inc.url()));
+    }
 }
 
 //=== Alarms ===
@@ -1460,10 +1465,6 @@ template < > struct IncidenceTrait <Kolab::Event>
 
         getIncidenceProperties<icalendar_2_0::KolabEvent::properties_type>(prop, event);
         getTodoEventProperties<icalendar_2_0::KolabEvent::properties_type>(prop, event);
-
-        if (!event.start().isValid()) {
-            ERROR("Start date is missing, but is mandatory for events");
-        }
 
         if (event.end().isValid()) {
             prop.dtend(fromDate<icalendar_2_0::KolabEvent::properties_type::dtend_type>(event.end()));
@@ -1855,8 +1856,6 @@ std::string serializeIncidence(const typename T::IncidenceType &incidence, const
     
     using namespace icalendar_2_0;
     typedef typename T::KolabType KolabType;
-    
-    clearErrors();
 
     try {
 
@@ -1918,8 +1917,7 @@ typename T::IncidencePtr deserializeIncidence(const std::string& s, bool isUrl)
     typedef typename T::IncidencePtr IncidencePtr;
     typedef typename T::IncidenceType IncidenceType;
     typedef typename T::KolabType KolabType;
-    
-    clearErrors();
+
     try {
         std::auto_ptr<icalendar_2_0::IcalendarType> icalendar;
         if (isUrl) {
@@ -1972,8 +1970,6 @@ std::string serializeFreebusy(const Kolab::Freebusy &incidence, const std::strin
 
     using namespace icalendar_2_0;
     typedef typename T::KolabType KolabType;
-
-    clearErrors();
 
     try {
 

@@ -101,6 +101,7 @@
     <xs:restriction base="xs:token">
       <xs:enumeration value="dictionary"/>
       <xs:enumeration value="categorycolor"/>
+      <xs:enumeration value="snippets"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -117,6 +118,26 @@
   
   <xs:element name="categorycolor" type="CategoryColor"/>
 
+  <xs:simpleType name="textformatType">
+    <xs:restriction base="xs:token">
+        <xs:enumeration value="PLAIN"/>
+        <xs:enumeration value="HTML"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="textformat" type="textformatType" />
+
+  <xs:complexType name="Snippet" mixed="true" >
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="text" type="xs:string"/>
+      <xs:element name="textformat" type="textformatType"/>
+      <xs:element name="shortcut" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="color" type="xs:string" />
+  </xs:complexType>
+
+  <xs:element name="snippet" type="Snippet"/>
   
   <xs:complexType name="Configuration">
     <xs:complexContent mixed="false">
@@ -132,6 +153,9 @@
           <xs:element name="e" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
           <!-- Categorycolor -->
           <xs:element name="categorycolor" type="CategoryColor" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Snippets -->
+          <xs:element name="name" type="xs:string" minOccurs="0"/>
+          <xs:element name="snippet" type="Snippet" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

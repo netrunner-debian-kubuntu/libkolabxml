@@ -305,6 +305,16 @@ std::vector< Attachment > Todo::attachments() const
     return d->attachments;
 }
 
+void Todo::setUrl(const std::string &url)
+{
+    d->url = url;
+}
+
+std::string Todo::url() const
+{
+    return d->url;
+}
+
 void Todo::setCustomProperties(const std::vector< CustomProperty > &prop)
 {
     d->customProperties = prop;

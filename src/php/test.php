@@ -1,14 +1,23 @@
 <?php
-//run using "php -d enable_dl=On -d extension=./kolabformat.so  test.php"
+//run using "php -d enable_dl=On -d extension=./kolabformat.so test.php [--verbose]"
 
 include("kolabformat.php");
 
+/////// Basic unit test facilities
+
+$errors = 0;
+$verbose = preg_match('/\s(--verbose|-v)\b/', join(' ', $_SERVER['argv']));
+
 function assertequal($got, $expect, $name) {
+	global $verbose, $errors;
+
 	if ($got == $expect) {
-		print "OK - $name\n";
+		if ($verbose)
+			print "OK - $name\n";
 		return true;
 	}
 	else {
+		$errors++;
 		print "FAIL - $name\n";
 		print "-- Expected " . var_export($expect, true) . ", got " . var_export($got, true) . " --\n";
 		return false;
@@ -18,6 +27,9 @@ function assertequal($got, $expect, $name) {
 function assertcontains($haystack, $needle, $name) {
 	// remove whitespace
 	$haystack = preg_replace('/\n\s*/ims', '', $haystack);
+	// The following two statements are only required with older libcurl versions which erroneusly encode - and .
+	$haystack = preg_replace('/%2D/', '-', $haystack);
+	$haystack = preg_replace('/%2E/', '.', $haystack);
 	$needle = preg_replace('/\n\s*/ims', '', $needle);
 
 	return assertequal(substr(strstr($haystack, $needle), 0, strlen($needle)), $needle, $name);
@@ -31,6 +43,7 @@ function assertfalse($arg, $name) {
 	return assertequal($arg, false, $name);
 }
 
+// utility to quickly convert PHP arrays into a vector
 function array2vector($arr) {
 	$vec = new vectors;
 	foreach ((array)$arr as $val)
@@ -81,7 +94,7 @@ assertcontains($xml, '<duration>-PT6H30M</duration>', "Alarm::setRelativeStart(D
 assertcontains($xml, '<trigger><date-time>2012-07-30T20:30:00Z</date-time>', "Alarm::setStart()");
 assertcontains($xml, '<trigger><parameters><related><text>START</text>', "Alarm relative to Start");
 assertcontains($xml, '<valarm><properties><action><text>EMAIL</text>', "Email alarm");
-assertcontains($xml, '<attendee><cal-address>mailto:%3Calarms%40kolab%2Eorg%3E</cal-address>', "Email alarm attendee");
+assertcontains($xml, '<attendee><cal-address>mailto:%3Calarms%40kolab.org%3E</cal-address>', "Email alarm attendee");
 
 $e1 = kolabformat::readEvent($xml, false);
 assertequal($xml, kolabformat::writeEvent($e1), "kolabformat::readEvent() => kolabformat::writeEvent()");
@@ -188,7 +201,7 @@ $dl->setMembers($m);
 $xml = kolabformat::writeDistlist($dl);
 #print $xml;
 assertcontains($xml, '<fn><text>DalistÄÖŸ</text></fn>', "kolabformat::writeDistlist(): FN (UTF-8)");
-assertcontains($xml, '<uri>mailto:Member%2DA%3Ca%40localhost%3E</uri>', "kolabformat::writeDistlist(): mailto uri");
+assertcontains($xml, '<uri>mailto:Member-A%3Ca%40localhost%3E</uri>', "kolabformat::writeDistlist(): mailto uri");
 assertcontains($xml, '<member><uri>urn:uuid:x-member-b-fff</uri>', "kolabformat::writeDistlist(): member urn::uuid");
 
 
@@ -217,7 +230,6 @@ $c3 = kolabformat::readConfiguration($xml, false);
 
 asserttrue($c2->uid() != $c3->uid(), "Generate different UIDs for configuration objects");
 
-?>
-
-
+// terminate with error status
+exit($errors);
 

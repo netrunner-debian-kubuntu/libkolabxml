@@ -30,6 +30,7 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/DistList.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Duration.cs
         ${CMAKE_CURRENT_BINARY_DIR}/ErrorSeverity.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Email.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Event.cs
         ${CMAKE_CURRENT_BINARY_DIR}/File.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Geo.cs
@@ -59,6 +60,7 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectorcs.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectordatetime.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectordaypos.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectoremail.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorevent.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorgeo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectori.cs

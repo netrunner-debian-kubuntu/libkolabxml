@@ -20,6 +20,10 @@
 %include "std_string.i"
 %include "std_vector.i"
 
+/* Avoid warnings about not generated operators */
+%ignore *::operator=;
+%ignore *::operator==;
+
 namespace std {
     %template(vectori) vector<int>;
     %template(vectors) vector<string>;
@@ -35,12 +39,11 @@ namespace std {
     %template(vectorevent) vector<Kolab::Event>;
     %template(vectorrelated) vector<Kolab::Related>;
     %template(vectortelephone) vector<Kolab::Telephone>;
+    %template(vectoremail) vector<Kolab::Email>;
     %template(vectordatetime) vector<Kolab::cDateTime>;
     %template(vectorurl) vector<Kolab::Url>;
     %template(vectorkey) vector<Kolab::Key>;
     %template(vectorcategorycolor) vector<Kolab::CategoryColor>;
-/*     %template(vectorevent) vector<Kolab::Event>;*/
-/*     %template(vectorevent2) vector< vector<Kolab::Event> >;*/
 };
 
 %rename(readKolabFile) Kolab::readFile;

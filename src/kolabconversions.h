@@ -127,6 +127,8 @@ KolabXSD::Configuration::type_type getConfiguratinoType(Kolab::Configuration::Co
             return KolabXSD::Configuration::type_type::dictionary;
         case Kolab::Configuration::TypeCategoryColor:
             return KolabXSD::Configuration::type_type::categorycolor;
+        case Kolab::Configuration::TypeSnippet:
+            return KolabXSD::Configuration::type_type::snippets;
         default:
             CRITICAL("Invalid configuration type");
     }
@@ -138,31 +140,30 @@ template <typename T>
 std::string serializeObject(const T &, const std::string prod = std::string());
 
 template <>
-std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &note, const std::string prod)
+std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &configuration, const std::string prod)
 {
-    clearErrors();
     try {
-        const std::string &uid = getUID(note.uid());
+        const std::string &uid = getUID(configuration.uid());
         setCreatedUid(uid);
 
         KolabXSD::Configuration::creation_date_type created(0,0,0,0,0,0);
-        if (note.created().isValid()) {
-            created = fromDateTime(note.created());
+        if (configuration.created().isValid()) {
+            created = fromDateTime(configuration.created());
         } else {
             created = fromDateTime(timestamp());
         }
         KolabXSD::Configuration::last_modification_date_type lastModificationDate(0,0,0,0,0,0);
-        if (note.lastModified().isValid()) {
-            lastModificationDate = fromDateTime(note.lastModified());
+        if (configuration.lastModified().isValid()) {
+            lastModificationDate = fromDateTime(configuration.lastModified());
         } else {
 //             WARNING("missing last_modification_date, fallback to current timestamp");
             lastModificationDate = fromDateTime(timestamp());
         }
-        KolabXSD::Configuration n(uid, getProductId(prod), created, lastModificationDate, getConfiguratinoType(note.type()));
+        KolabXSD::Configuration n(uid, getProductId(prod), created, lastModificationDate, getConfiguratinoType(configuration.type()));
 
-        switch (note.type()) {
+        switch (configuration.type()) {
             case Kolab::Configuration::TypeDictionary: {
-                const Kolab::Dictionary &dict = note.dictionary();
+                const Kolab::Dictionary &dict = configuration.dictionary();
                 n.language(dict.language());
                 BOOST_FOREACH(const std::string &e, dict.entries()) {
                     n.e().push_back(e);
@@ -170,7 +171,23 @@ std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &
             }
                 break;
             case Kolab::Configuration::TypeCategoryColor:
-                writeColors(n.categorycolor(), note.categoryColor());
+                writeColors(n.categorycolor(), configuration.categoryColor());
+                break;
+            case Kolab::Configuration::TypeSnippet: {
+                const Kolab::SnippetsCollection &snippets = configuration.snippets();
+                n.name(snippets.name());
+                BOOST_FOREACH(const Kolab::Snippet &s, snippets.snippets()) {
+                    KolabXSD::Snippet::textformat_type type = KolabXSD::Snippet::textformat_type::PLAIN;
+                    if (s.textType() == Snippet::HTML) {
+                        type = KolabXSD::Snippet::textformat_type::HTML;
+                    }
+                    KolabXSD::Configuration::snippet_type snippet(s.name(), s.text(), type);
+                    if (!s.shortCut().empty()) {
+                        snippet.shortcut(s.shortCut());
+                    }
+                    n.snippet().push_back(snippet);
+                }
+            }
                 break;
             default:
                 CRITICAL("Invalid configuration type");
@@ -195,7 +212,6 @@ std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &
 template <>
 std::string serializeObject <Kolab::Note> (const Kolab::Note &note, const std::string prod)
 {
-    clearErrors();
     try {
         const std::string &uid = getUID(note.uid());
         setCreatedUid(uid);
@@ -273,7 +289,6 @@ std::string serializeObject <Kolab::Note> (const Kolab::Note &note, const std::s
 template <>
 std::string serializeObject <Kolab::File> (const Kolab::File &file, const std::string prod)
 {
-    clearErrors();
     try {
         const std::string &uid = getUID(file.uid());
         setCreatedUid(uid);
@@ -349,7 +364,6 @@ boost::shared_ptr<T> deserializeObject(const std::string& s, bool isUrl);
 template <>
 boost::shared_ptr<Kolab::Note> deserializeObject <Kolab::Note> (const std::string& s, bool isUrl)
 {
-    clearErrors();
     try {
         std::auto_ptr<KolabXSD::Note> note;
         if (isUrl) {
@@ -442,7 +456,6 @@ boost::shared_ptr<Kolab::Note> deserializeObject <Kolab::Note> (const std::strin
 template <>
 boost::shared_ptr<Kolab::Configuration> deserializeObject <Kolab::Configuration> (const std::string& s, bool isUrl)
 {
-    clearErrors();
     try {
         std::auto_ptr<KolabXSD::Configuration> configuration;
         if (isUrl) {
@@ -481,6 +494,27 @@ boost::shared_ptr<Kolab::Configuration> deserializeObject <Kolab::Configuration>
             n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(dict));
         } else if (configuration->type() == KolabXSD::ConfigurationType::categorycolor) {
             n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(readColors(configuration->categorycolor())));
+        } else if (configuration->type() == KolabXSD::ConfigurationType::snippets) {
+            std::string name;
+            if (configuration->name()) {
+                name = *configuration->name();
+            }
+            SnippetsCollection collection(name);
+
+            std::vector<Snippet> snippets;
+            BOOST_FOREACH (const KolabXSD::Configuration::snippet_type &entry, configuration->snippet()) {
+                Snippet snippet(entry.name(), entry.text());
+                if (entry.textformat() == KolabXSD::textformatType::HTML) {
+                    snippet.setTextType(Snippet::HTML);
+                }
+                if (entry.shortcut()) {
+                    snippet.setShortCut(*entry.shortcut());
+                }
+                snippets.push_back(snippet);
+            }
+            collection.setSnippets(snippets);
+
+            n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(collection));
         } else {
             CRITICAL("No valid configuration type");
         }
@@ -506,7 +540,6 @@ boost::shared_ptr<Kolab::Configuration> deserializeObject <Kolab::Configuration>
 template <>
 boost::shared_ptr<Kolab::File> deserializeObject <Kolab::File> (const std::string& s, bool isUrl)
 {
-    clearErrors();
     try {
         std::auto_ptr<KolabXSD::File> file;
         if (isUrl) {

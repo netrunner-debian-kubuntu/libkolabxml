@@ -7,6 +7,7 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wp,-D_FORTIFY_SOURCE=2 -O2" ) #a
 # Library with serialization/deserialization code and kolab-containers
 add_library(kolabxml SHARED
     kolabformat.cpp
+    objectvalidation.cpp
     containers/kolabcontainers.cpp
     containers/kolabnote.cpp
     containers/kolabevent.cpp

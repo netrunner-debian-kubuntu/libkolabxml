@@ -290,6 +290,16 @@ std::vector< Attachment > Event::attachments() const
     return d->attachments;
 }
 
+void Event::setUrl(const std::string &url)
+{
+    d->url = url;
+}
+
+std::string Event::url() const
+{
+    return d->url;
+}
+
 void Event::setCustomProperties(const std::vector< CustomProperty > &prop)
 {
     d->customProperties = prop;

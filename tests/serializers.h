@@ -21,7 +21,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::cDateTime> &v)
     {
         QByteArray ba = "vector<Kolab::cDateTime>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ "\n";
         }
         ba += ")";
@@ -43,7 +43,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::Attendee> &v)
     {
         QByteArray ba = "vector<Kolab::Attendee>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ ", ";
         }
         ba += ")";
@@ -63,7 +63,7 @@ namespace QTest {
     char *toString(const std::vector<std::string> &v)
     {
         QByteArray ba = "vector<std::string>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ ", ";
         }
         ba += ")";
@@ -74,7 +74,7 @@ namespace QTest {
     char *toString(const std::vector<int> &v)
     {
         QByteArray ba = "vector<int>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QString::number(v.at(i)).toAscii()+ ", ";
         }
         ba += ")";
@@ -114,7 +114,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::Attachment> &v)
     {
         QByteArray ba = "vector<Kolab::Attachment>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ "\n";
         }
         ba += ")";
@@ -136,7 +136,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::ContactReference> &v)
     {
         QByteArray ba = "vector<Kolab::ContactReference>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
                 ba += QByteArray(toString(v.at(i)))+ "\n";
             }
             ba += ")";
@@ -158,7 +158,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::Alarm> &v)
     {
         QByteArray ba = "vector<Kolab::Alarm>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ "\n";
         }
         ba += ")";
@@ -181,7 +181,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::Related> &v)
     {
         QByteArray ba = "vector<Kolab::Related>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ "\n";
         }
         ba += ")";
@@ -203,7 +203,7 @@ namespace QTest {
     char *toString(const std::vector<Kolab::Affiliation> &v)
     {
         QByteArray ba = "vector<Kolab::Affiliation>(";
-        for (int i = 0; i < v.size(); i++) {
+        for (std::size_t i = 0; i < v.size(); i++) {
             ba += QByteArray(toString(v.at(i)))+ "\n";
         }
         ba += ")";

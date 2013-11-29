@@ -7,6 +7,7 @@
 
 #include "serializers.h"
 #include <boost/thread.hpp>
+#include <curl/curlver.h>
 
 Q_DECLARE_METATYPE(Kolab::Duration);
 Q_DECLARE_METATYPE(Kolab::DayPos);
@@ -175,9 +176,16 @@ void ConversionTest::mailtoUriEncodingTest_data()
     QTest::addColumn<QString>("email");
     QTest::addColumn<QString>("name");
     QTest::addColumn<QString>("resultEncoded");
-    QTest::newRow("1") << "email_1@email.com" << "John Doe" << "mailto:John%20Doe%3Cemail_1%40email.com%3E";
-    QTest::newRow("Reserved characters") << "!*'();:@&=+$,/?#[]@email.com" << "John Doe" << "mailto:John%20Doe%3C%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%40email.com%3E";
-    QTest::newRow("Unreserved characters") << "Aa0-_.~@email.com" << "John Doe" << "mailto:John%20Doe%3CAa0-_.~%40email.com%3E";
+    //Older versions used to encode "." and "_". Not sure which version is actually required though (fixed in 7.26.0 but broken in 7.19.7, we're testing for 7.26.0)
+    if (LIBCURL_VERSION_NUM >= 0x071a00) {
+        QTest::newRow("1") << "email_1@email.com" << "John Doe" << "mailto:John%20Doe%3Cemail_1%40email.com%3E";
+        QTest::newRow("Reserved characters") << "!*'();:@&=+$,/?#[]@email.com" << "John Doe" << "mailto:John%20Doe%3C%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%40email.com%3E";
+        QTest::newRow("Unreserved characters") << "Aa0-_.~@email.com" << "John Doe" << "mailto:John%20Doe%3CAa0-_.~%40email.com%3E";
+    } else {
+        QTest::newRow("1") << "email_1@email.com" << "John Doe" << "mailto:John%20Doe%3Cemail%5F1%40email%2Ecom%3E";
+        QTest::newRow("Reserved characters") << "!*'();:@&=+$,/?#[]@email.com" << "John Doe" << "mailto:John%20Doe%3C%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%23%5B%5D%40email%2Ecom%3E";
+        QTest::newRow("Unreserved characters") << "Aa0-_.~@email.com" << "John Doe" << "mailto:John%20Doe%3CAa0%2D%5F%2E%7E%40email%2Ecom%3E";
+    }
     
     Kolab::Utils::clearErrors();
 }

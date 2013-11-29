@@ -1,18 +1,17 @@
-get_filename_component(myDir ${CMAKE_CURRENT_LIST_FILE} PATH) # get the directory where I myself am
-get_filename_component(rootDir ${myDir}/@relInstallDir@ ABSOLUTE) # get the chosen install prefix
+get_filename_component(Libkolabxml_CMAKE_DIR ${CMAKE_CURRENT_LIST_FILE} PATH) #get the directory where this *Config.cmake file is installed 
 
-# set the version of myself
+# set the version
 set(Libkolabxml_VERSION_MAJOR @Libkolabxml_VERSION_MAJOR@)
 set(Libkolabxml_VERSION_MINOR @Libkolabxml_VERSION_MINOR@)
 set(Libkolabxml_VERSION_PATCH @Libkolabxml_VERSION_PATCH@)
-set(Libkolabxml_VERSION ${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH} )
+set(Libkolabxml_VERSION ${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH})
 
-# what is my include directory
-set(Libkolabxml_INSTALL_PREFIX "${rootDir}")
-set(Libkolabxml_INCLUDES "${rootDir}/@INCLUDE_INSTALL_DIR@")
+# Set the include directory
+set(Libkolabxml_INCLUDES "@CONF_INCLUDE_DIRS@")
 
 # import the exported targets
-include(${myDir}/LibkolabxmlTargets.cmake)
+include(${Libkolabxml_CMAKE_DIR}/LibkolabxmlTargets.cmake)
 
 # set the expected library variable
-set(Libkolabxml_LIBRARIES kolabxml )
+set(Libkolabxml_LIBRARIES kolabxml)
+

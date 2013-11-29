@@ -1,6 +1,6 @@
 # The following commands are used to bild libkolabxml on Mac OS X (Lion)
 # with most of the required libraries installed via macports:
-# > sudo port install cmake boost xercesc3
+# > sudo port install cmake boost xercesc3 swig swig-php
 #
 # The cxx/xsd library has to be downlaoded from http://www.codesynthesis.com/products/xsd/download.xhtml
 # and manually copied into /usr/bin and /usr/include/xsd/

@@ -64,7 +64,7 @@
 <!--  We mix types from different properties here for simplicity  -->
   <xs:simpleType name="TypeValueType">
     <xs:restriction base="xs:token">
-      <!--Address-->
+      <!--Address/Email-->
       <xs:enumeration value="work"/>
       <xs:enumeration value="home"/>
       <!--Telephone-->
