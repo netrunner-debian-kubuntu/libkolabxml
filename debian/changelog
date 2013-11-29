@@ -1,3 +1,11 @@
+libkolabxml (1.0.1-1~1.gbpfc2d6c) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @fc2d6c34f18d540128a8aa43a2e4d90b50c62aec **
+
+  * Imported Upstream version 1.0.1 (Closes: #730600)
+
+ -- Paul Klos <kolab@klos2day.nl>  Fri, 29 Nov 2013 23:49:25 +0100
+
 libkolabxml (0.8.4-5) unstable; urgency=low
 
   * Fix parallel build issue
