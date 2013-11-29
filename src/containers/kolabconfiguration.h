@@ -62,11 +62,59 @@ private:
     std::vector<CategoryColor> mSubcategories;
 };
 
+struct Snippet {
+    enum TextType {
+        Plain,
+        HTML
+    };
+
+    Snippet(): mTextType(Plain) {}
+    Snippet(const std::string &name, const std::string &text): mName(name), mText(text), mTextType(Plain) {}
+
+    bool operator==(const Snippet &other) const {
+        return mName == other.mName && mText == other.mText && mTextType == other.mTextType && mShortcut == other.mShortcut;
+    }
+
+    std::string name() const { return mName; }
+    std::string text() const { return mText; }
+
+    void setTextType(TextType type) { mTextType = type; }
+    TextType textType() const { return mTextType; }
+
+    void setShortCut(const std::string &shortcut) { mShortcut = shortcut; }
+    std::string shortCut() const { return mShortcut; }
+
+private:
+    std::string mName;
+    std::string mText;
+    TextType mTextType;
+    std::string mShortcut;
+};
+
+struct SnippetsCollection {
+    SnippetsCollection() {}
+    SnippetsCollection(const std::string &name): mName(name) {}
+
+    bool operator==(const SnippetsCollection &other) const {
+        return mName == other.mName && mSnippets == other.mSnippets;
+    }
+
+    std::string name() const { return mName; }
+
+    void setSnippets(const std::vector<Snippet> &snippets) { mSnippets = snippets; }
+    std::vector<Snippet> snippets() const { return mSnippets; }
+
+private:
+    std::string mName;
+    std::vector<Snippet> mSnippets;
+};
+
 class Configuration {
 public:
     Configuration();
     Configuration(const std::vector<CategoryColor> &);
     Configuration(const Dictionary &);
+    Configuration(const SnippetsCollection &);
     Configuration(const Configuration &);
     ~Configuration();
     void operator=(const Configuration &);
@@ -85,11 +133,13 @@ public:
     enum ConfigurationType {
         Invalid,
         TypeDictionary,
-        TypeCategoryColor
+        TypeCategoryColor,
+        TypeSnippet
     };
     ConfigurationType type() const;
     std::vector<CategoryColor> categoryColor() const;
     Dictionary dictionary() const;
+    SnippetsCollection snippets() const;
 private:
     struct Private;
     boost::scoped_ptr<Private> d;

@@ -58,6 +58,7 @@ namespace Kolab {
         std::vector<CustomProperty> customProperties;
         
         std::vector<Alarm> alarms;
+        std::string url;
     };
     
 }

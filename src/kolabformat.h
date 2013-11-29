@@ -30,6 +30,29 @@
 #include "kolabfile.h"
 #include "global_definitions.h"
 
+/**
+ * Kolab Format v3 Implementation
+ *
+ * Note that this code is threadsafe, as it uses thread-local storage.
+ * 
+ * Example:
+ *
+ * Kolab::Event event;
+ * event.setStart(Kolab::cDateTime("Europe/Zurich",2011,10,10,12,1,1));
+ * event.setEnd(Kolab::cDateTime("Europe/Zurich",2012,5,5,3,4,4));
+ * event.setLastModified(Kolab::cDateTime(2011,10,11,12,1,2,true));
+ * event.setCreated(Kolab::cDateTime(2011,10,11,12,1,3,true));
+ * std::string serialization = Kolab::writeEvent(ev, "Product ID");
+ * std::string serializedUID = Kolab::getSerializedUID(); //returns the UID of the just serialized event
+ * if (Kolab::error() != Kolab::NoError) {
+ *     std::cout << "Error on write " << Kolab::errorMessage();
+ * }
+ * Kolab::Event e = Kolab::readEvent(serialization, false);
+ * if (Kolab::error() != Kolab::NoError) {
+ *     std::cout << "Error on read " << Kolab::errorMessage();
+ * }
+ *
+ */
 namespace Kolab {
 
 /**
@@ -56,11 +79,13 @@ std::string errorMessage();
  * Updated during deserialization of object.
  */
 std::string productId();
+
 /**
  * Returns KolabFormat version of the last deserialized object.
  * Updated during deserialization of object.
  */
 std::string xKolabVersion();
+
 /**
  * Returns xCal version of the last deserialized xCal object.
  * Updated during deserialization of object.

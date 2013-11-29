@@ -199,7 +199,7 @@ cDateTime toDateTime(const std::string &input)
         ERROR("failed to convert: "+std::string(c.what()));
         return cDateTime();
     } catch (...) {
-        ERROR("failed to convert: unkown exception");
+        ERROR("failed to convert: unknown exception");
         return cDateTime();
     }
     return cDateTime(year, month, day, hour, minute, second, isUtc);
@@ -669,7 +669,33 @@ void writeCard<Kolab::Contact>(vcard_4_0::vcard &vcard, const Kolab::Contact &co
     }
     
     if (!contact.emailAddresses().empty()) {
-        vcard.email(fromList<vcard::email_type>(contact.emailAddresses(), contact.emailAddressPreferredIndex()));
+        vcard::email_sequence seq;
+        int index = 0;
+        const std::vector<Email> &l = contact.emailAddresses();
+        BOOST_FOREACH(const Kolab::Email &e, l) {
+            vcard::email_type email(e.address());
+            vcard_4_0::typeParamType emailTypeParam;
+            if (e.types() & Kolab::Email::Home) {
+                emailTypeParam.text().push_back(TypeValueType::home);
+            } 
+            if (e.types() & Kolab::Email::Work) {
+                emailTypeParam.text().push_back(TypeValueType::work);
+            } 
+            vcard::tel_type::parameters_type params;
+            if (!emailTypeParam.text().empty()) {
+                params.baseParameter().push_back(emailTypeParam);
+            }
+            if(contact.emailAddressPreferredIndex() == index) {
+                params.baseParameter().push_back(vcard_4_0::prefParamType(vcard_4_0::prefParamType::integer_default_value()));
+            }
+            index++;
+
+            if (!params.baseParameter().empty()) {
+                email.parameters(params);
+            }
+            seq.push_back(email);
+        }
+        vcard.email(seq);
     }
     
     if (!contact.gpsPos().empty()) {
@@ -748,8 +774,6 @@ void writeCard<Kolab::DistList>(vcard_4_0::vcard &vcard, const Kolab::DistList &
             }
         }
         vcard.member(members);
-    } else {
-        WARNING("empty distlist");
     }
 }
 
@@ -1005,18 +1029,31 @@ boost::shared_ptr<Kolab::Contact> readCard <Kolab::Contact> (const vcard_4_0::Vc
     if (!vcard.email().empty()) {
         int preferredIndex = -1;
         
-        std::vector<std::string> list;
+        std::vector<Kolab::Email> list;
         int i = 0;
         BOOST_FOREACH(const vcard_4_0::TextPropertyType &s, vcard.email()) {
+            Kolab::Email email;
             if (s.parameters()) {
                 BOOST_FOREACH(const vcard_4_0::ArrayOfParameters::baseParameter_type &param, (*s.parameters()).baseParameter()) {
                     if (dynamic_cast<const vcard_4_0::prefParamType*> (&param)) {
                         preferredIndex = i;
-                    } 
+                    } else if (const vcard_4_0::typeParamType *rel = dynamic_cast<const vcard_4_0::typeParamType*> (&param)) {
+                        int types = 0;
+                        BOOST_FOREACH(const std::string &s, rel->text()) {
+                            if (s == TypeValueType(TypeValueType::work)) {
+                                types |= Kolab::Email::Work;
+                            }
+                            if (s == TypeValueType(TypeValueType::home)) {
+                                types |= Kolab::Email::Home;
+                            }
+                        }
+                        email.setTypes(types);
+                    }
                 }
             }
             i++;
-            list.push_back(s.text());
+            email.setAddress(s.text());
+            list.push_back(email);
         }
         
         contact->setEmailAddresses(list, preferredIndex);
@@ -1094,8 +1131,6 @@ boost::shared_ptr<Kolab::DistList> readCard <Kolab::DistList> (const vcard_4_0::
             members.push_back(Shared::toContactReference(m.uri()));
         }
         distlist->setMembers(members);
-    } else {
-        WARNING("empty distlist");
     }
     return distlist;
 }

@@ -75,6 +75,35 @@ void BindingsTest::dictionaryConfigurationCompletness()
     QCOMPARE(re.dictionary(), dict);
 }
 
+void BindingsTest::snippetConfigurationCompletness()
+{
+    std::vector<Kolab::Snippet> list;
+    Kolab::Snippet snippet1("name1", "text1");
+    snippet1.setShortCut("shrtct1");
+    list.push_back(snippet1);
+    Kolab::Snippet snippet2("name1", "text1");
+    snippet2.setTextType(Kolab::Snippet::HTML);
+    list.push_back(snippet2);
+
+    Kolab::SnippetsCollection snippets("collectionname");
+    snippets.setSnippets(list);
+
+    Kolab::Configuration configuration(snippets);
+    configuration.setUid("uid");
+    configuration.setCreated(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+    configuration.setLastModified(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+
+    const std::string &result = Kolab::writeConfiguration(configuration);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+//     std::cout << result << std::endl;
+    const Kolab::Configuration &re = Kolab::readConfiguration(result, false);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+    QCOMPARE(re.uid(), configuration.uid());
+    QCOMPARE(re.created(), configuration.created());
+    QCOMPARE(re.lastModified(), configuration.lastModified());
+    QCOMPARE(re.type(), Kolab::Configuration::TypeSnippet);
+    QCOMPARE(re.snippets(), snippets);
+}
 
 void BindingsTest::noteCompletness()
 {
@@ -187,6 +216,7 @@ void setIncidence(T &ev)
     ev.setStatus(Kolab::StatusConfirmed);
     ev.setLocation("location");
     ev.setOrganizer(Kolab::ContactReference("mail", "name", "uid"));
+    ev.setUrl("http://example.com");
     
     Kolab::Attendee attendee(Kolab::ContactReference("mail", "name", "uid"));
     attendee.setPartStat(Kolab::PartDelegated);
@@ -298,6 +328,7 @@ void checkIncidence(const T &ev, const T &re)
     QCOMPARE(ev.status(), re.status());
     QCOMPARE(ev.location(), re.location());
     QCOMPARE(ev.organizer(), re.organizer());
+    QCOMPARE(ev.url(), re.url());
     QCOMPARE(ev.attendees(), re.attendees());
     QCOMPARE(ev.attachments(), re.attachments());
     QCOMPARE(ev.customProperties(), re.customProperties());
@@ -564,7 +595,11 @@ void BindingsTest::contactCompletness()
     c.setGender(Kolab::Contact::Male);
     c.setLanguages(stringlist);
     c.setIMaddresses(stringlist,1);
-    c.setEmailAddresses(stringlist,1);
+    std::vector <Kolab::Email> emails;
+    emails.push_back(Kolab::Email("email1@example.org", Kolab::Email::NoType));
+    emails.push_back(Kolab::Email("email2@example.org", Kolab::Email::Work));
+    emails.push_back(Kolab::Email("email3@example.org", Kolab::Email::Work|Kolab::Email::Home));
+    c.setEmailAddresses(emails,0);
     c.setTitles(stringlist);
     
     std::vector<Kolab::Affiliation> list;
@@ -670,6 +705,7 @@ void BindingsTest::contactCompletness()
     QCOMPARE(e.imAddressPreferredIndex(), c.imAddressPreferredIndex());
     QCOMPARE(e.emailAddresses(), c.emailAddresses());
     QCOMPARE(e.emailAddressPreferredIndex(), c.emailAddressPreferredIndex());
+    QCOMPARE(e.emailAddressPreferredIndex(), 0);
     QCOMPARE(e.gpsPos(), c.gpsPos());
     QCOMPARE(e.keys(), c.keys());
     QCOMPARE(e.crypto(), c.crypto());
@@ -763,6 +799,7 @@ void BindingsTest::errorRecoveryTest()
 void BindingsTest::BenchmarkRoundtripKolab()
 {
     const Kolab::Event &event = Kolab::readEvent(TEST_DATA_PATH "/testfiles/icalEvent.xml", true);
+    QVERIFY(!Kolab::errorOccurred());
     std::string result = Kolab::writeEvent(event);
     QBENCHMARK {
         Kolab::readEvent(result, false);
@@ -772,6 +809,7 @@ void BindingsTest::BenchmarkRoundtripKolab()
 void BindingsTest::BenchmarkRoundtrip()
 {
     const Kolab::Event &event = Kolab::readEvent(TEST_DATA_PATH "/testfiles/icalEvent.xml", true);
+    QVERIFY(!Kolab::errorOccurred());
     std::string result;
     QBENCHMARK {
         result = Kolab::writeEvent(event);

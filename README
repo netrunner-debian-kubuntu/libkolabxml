@@ -3,6 +3,14 @@
 Libkolabxml is the reference implementation of the Kolab XML Format as defined in http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
 It provides serialization/deserialization from/to in-memory representations for all Kolab Objects, including input validation.
 
+= Bindings =
+
+Based on SWIG (www.swig.org) various language-bindings are provided.
+
+= Usage =
+
+For more information about the usage please see src/kolabformat.h
+
 = Building =
 
 Build with:

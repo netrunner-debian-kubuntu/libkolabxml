@@ -23,6 +23,7 @@
 #include "xcardconversions.h"
 #include "utils.h"
 #include "kolabconversions.h"
+#include "objectvalidation.h"
 
 namespace Kolab {
     
@@ -73,6 +74,7 @@ void overrideTimestamp(const cDateTime& dt)
 
 Kolab::Event readEvent(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     Kolab::XCAL::IncidenceTrait <Kolab::Event >::IncidencePtr ptr = XCAL::deserializeIncidence< XCAL::IncidenceTrait<Kolab::Event> >(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Event();
@@ -82,11 +84,14 @@ Kolab::Event readEvent(const std::string& s, bool isUrl)
 
 std::string writeEvent(const Kolab::Event &event, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(event);
     return XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Event> >(event, productId);
 }
 
 Kolab::Todo readTodo(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     XCAL::IncidenceTrait<Kolab::Todo>::IncidencePtr ptr = XCAL::deserializeIncidence< XCAL::IncidenceTrait<Kolab::Todo> >(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Todo();
@@ -96,11 +101,14 @@ Kolab::Todo readTodo(const std::string& s, bool isUrl)
 
 std::string writeTodo(const Kolab::Todo &event, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(event);
     return XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Todo> >(event, productId);
 }
 
 Journal readJournal(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     XCAL::IncidenceTrait<Kolab::Journal>::IncidencePtr ptr = XCAL::deserializeIncidence<XCAL::IncidenceTrait<Kolab::Journal> >(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Journal();
@@ -110,11 +118,14 @@ Journal readJournal(const std::string& s, bool isUrl)
 
 std::string writeJournal(const Kolab::Journal &j, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(j);
     return XCAL::serializeIncidence<XCAL::IncidenceTrait<Kolab::Journal> >(j, productId);
 }
 
 Kolab::Freebusy readFreebusy(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     XCAL::IncidenceTrait<Kolab::Freebusy>::IncidencePtr ptr = XCAL::deserializeIncidence<XCAL::IncidenceTrait<Kolab::Freebusy> >(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Freebusy();
@@ -124,11 +135,14 @@ Kolab::Freebusy readFreebusy(const std::string& s, bool isUrl)
 
 std::string writeFreebusy(const Freebusy &f, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(f);
     return XCAL::serializeFreebusy<XCAL::IncidenceTrait<Kolab::Freebusy> >(f, productId);
 }
 
 Kolab::Contact readContact(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     boost::shared_ptr <Kolab::Contact > ptr = XCARD::deserializeCard<Kolab::Contact>(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Contact();
@@ -138,11 +152,14 @@ Kolab::Contact readContact(const std::string& s, bool isUrl)
 
 std::string writeContact(const Contact &contact, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(contact);
     return XCARD::serializeCard(contact, productId);
 }
 
 DistList readDistlist(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     boost::shared_ptr <Kolab::DistList> ptr = XCARD::deserializeCard<Kolab::DistList>(s, isUrl);
     if (!ptr.get()) {
         return Kolab::DistList();
@@ -152,11 +169,14 @@ DistList readDistlist(const std::string& s, bool isUrl)
 
 std::string writeDistlist(const DistList &list, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(list);
     return XCARD::serializeCard(list, productId);
 }
 
 Note readNote(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     boost::shared_ptr <Kolab::Note> ptr = Kolab::KolabObjects::deserializeObject<Kolab::Note>(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Note();
@@ -166,11 +186,14 @@ Note readNote(const std::string& s, bool isUrl)
 
 std::string writeNote(const Note &note, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(note);
     return Kolab::KolabObjects::serializeObject<Kolab::Note>(note, productId);
 }
 
 File readFile(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     boost::shared_ptr <Kolab::File> ptr = Kolab::KolabObjects::deserializeObject<Kolab::File>(s, isUrl);
     if (!ptr.get()) {
         return Kolab::File();
@@ -180,11 +203,14 @@ File readFile(const std::string& s, bool isUrl)
 
 std::string writeFile(const File &file, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(file);
     return Kolab::KolabObjects::serializeObject<Kolab::File>(file, productId);
 }
 
 Configuration readConfiguration(const std::string& s, bool isUrl)
 {
+    Utils::clearErrors();
     boost::shared_ptr <Kolab::Configuration> ptr = Kolab::KolabObjects::deserializeObject<Kolab::Configuration>(s, isUrl);
     if (!ptr.get()) {
         return Kolab::Configuration();
@@ -194,6 +220,8 @@ Configuration readConfiguration(const std::string& s, bool isUrl)
 
 std::string writeConfiguration(const Configuration &config, const std::string& productId)
 {
+    Utils::clearErrors();
+    validate(config);
     return Kolab::KolabObjects::serializeObject< Kolab::Configuration >(config, productId);
 }
 

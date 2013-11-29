@@ -196,6 +196,25 @@ private:
     int mType;
 };
 
+struct Email {
+    enum Type {
+        NoType = 0,
+        Work = 0x01,
+        Home = 0x02
+    };
+    Email(): mType(NoType){};
+    Email(const std::string &a, int t = NoType): mAddress(a), mType(t) {};
+    bool operator==(const Email &other) const { return mAddress == other.mAddress &&
+                                                    mType == other.mType; };
+    void setTypes(int t) { mType = t; };
+    int types() const { return mType; };
+    void setAddress(const std::string &n) { mAddress = n; };
+    std::string address() const { return mAddress; };
+private:
+    std::string mAddress;
+    int mType;
+};
+
 struct Crypto {
     enum CryptoTypes {
         PGPinline = 0x01,
@@ -386,8 +405,8 @@ public:
     std::vector<std::string> imAddresses() const;
     int imAddressPreferredIndex() const;
     
-    void setEmailAddresses(const std::vector<std::string> &, int preferredIndex = -1);
-    std::vector<std::string> emailAddresses() const;
+    void setEmailAddresses(const std::vector<Email> &, int preferredIndex = -1);
+    std::vector<Email> emailAddresses() const;
     int emailAddressPreferredIndex() const;
     
     void setGPSpos(const std::vector<Geo> &);

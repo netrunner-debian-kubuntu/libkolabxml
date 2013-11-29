@@ -40,15 +40,15 @@ endif()
 # 0.1.1 (patch release for 0.1.0)
 # 0.2 (0.2 development version)
 
-set (Libkolabxml_VERSION_MAJOR 0)
-set (Libkolabxml_VERSION_MINOR 8)
+set (Libkolabxml_VERSION_MAJOR 1)
+set (Libkolabxml_VERSION_MINOR 0)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 4)
+set (Libkolabxml_VERSION_PATCH 1)
 set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
-# set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
+#set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
 set (Libkolabxml_VERSION_STRING ${CMAKE_PROJECT_NAME}-${Libkolabxml_VERSION})
-set (KOLAB_FORMAT_VERSION "3.0dev1")
+set (KOLAB_FORMAT_VERSION "3.1.0")
 
 message("Building DIST targets (make dist, make snapshot)")
 #make dist requires a tag with ${ARCHIVE_NAME} (e.g. libkolabxml-0.2.0)
@@ -79,6 +79,14 @@ set(LIB_INSTALL_DIR lib CACHE STRING "The directories where to install libraries
 set(INCLUDE_INSTALL_DIR include CACHE STRING "The directory where to install headers to")
 set(INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_DIR}/kolabxml)
 set(CMAKECONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/Libkolabxml )
+
+# Make relative paths absolute (needed later on)
+foreach(p LIB INCLUDE CMAKECONFIG)
+    set(var ${p}_INSTALL_DIR)
+    if(NOT IS_ABSOLUTE "${${var}}")
+        set(${var} "${CMAKE_INSTALL_PREFIX}/${${var}}")
+    endif()
+endforeach()
 
 configure_file(libkolabxml-version.h.cmake "${CMAKE_BINARY_DIR}/libkolabxml-version.h" @ONLY)
 
@@ -189,9 +197,12 @@ if (BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
-install(EXPORT LibkolabxmlExport DESTINATION ${CMAKECONFIG_INSTALL_DIR} FILE LibkolabxmlTargets.cmake )
+#Get the include directory relative to CMAKECONFIG_INSTALL_DIR
+file(RELATIVE_PATH REL_INCLUDE_DIR "${CMAKECONFIG_INSTALL_DIR}" "${INCLUDE_INSTALL_DIR}")
+#Assemble the full relative path. This will be used in the LibkolabxmlConfig.cmake, which will be installed in CMAKECONFIG_INSTALL_DIR
+set(CONF_INCLUDE_DIRS "\${Libkolabxml_CMAKE_DIR}/${REL_INCLUDE_DIR}")
 
-file(RELATIVE_PATH relInstallDir ${CMAKE_INSTALL_PREFIX}/${CMAKECONFIG_INSTALL_DIR} ${CMAKE_INSTALL_PREFIX} )
+install(EXPORT LibkolabxmlExport DESTINATION ${CMAKECONFIG_INSTALL_DIR} FILE LibkolabxmlTargets.cmake )
 
 configure_file(${Libkolabxml_MODULE_DIR}/LibkolabxmlConfig.cmake.in ${Libkolabxml_BINARY_DIR}/LibkolabxmlConfig.cmake @ONLY )
 configure_file(${Libkolabxml_MODULE_DIR}/LibkolabxmlConfigVersion.cmake.in ${Libkolabxml_BINARY_DIR}/LibkolabxmlConfigVersion.cmake @ONLY )

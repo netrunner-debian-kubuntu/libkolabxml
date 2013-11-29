@@ -19,6 +19,7 @@ add_custom_target(generate_php_bindings ALL DEPENDS ${KOLAB_SWIG_PHP_SOURCE_FILE
 if (APPLE)
     set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -flat_namespace -undefined suppress" )
 endif()
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-variable -Wno-unused-label -Wno-maybe-uninitialized -Wno-unused-function" )
 
 # Try to find PHP5
 find_path(PHP_INCLUDE_DIR NAMES main/php.h PATH_SUFFIXES php php5)

@@ -150,7 +150,7 @@ struct Contact::Private
     int telephonesPreferredIndex;
     std::vector<std::string> imAddresses;
     int imAddressPreferredIndex;
-    std::vector<std::string> emailAddresses;
+    std::vector<Email> emailAddresses;
     int emailAddressPreferredIndex;
     std::vector<Geo> gpsPos;
     std::vector<Key> keys;
@@ -416,13 +416,13 @@ int Contact::imAddressPreferredIndex() const
     return d->imAddressPreferredIndex;
 }
 
-void Contact::setEmailAddresses(const std::vector< std::string >& email, int preferredIndex)
+void Contact::setEmailAddresses(const std::vector< Email >& email, int preferredIndex)
 {
     d->emailAddresses = email;
     d->emailAddressPreferredIndex = preferredIndex;
 }
 
-std::vector< std::string > Contact::emailAddresses() const
+std::vector< Email > Contact::emailAddresses() const
 {
     return d->emailAddresses;
 }

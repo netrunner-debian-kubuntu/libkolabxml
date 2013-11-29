@@ -24,6 +24,7 @@ class BindingsTest : public QObject
     //Kolabformat
     void categorycolorConfigurationCompletness();
     void dictionaryConfigurationCompletness();
+    void snippetConfigurationCompletness();
     void noteCompletness();
     void fileCompletness();
     void eventCompletness();

@@ -105,6 +105,9 @@ public:
     void setAttachments(const std::vector<Attachment> &);
     std::vector<Attachment> attachments() const;
     
+    void setUrl(const std::string &);
+    std::string url() const;
+    
     void setCustomProperties(const std::vector<CustomProperty> &);
     std::vector<CustomProperty> customProperties() const;
     

@@ -24,6 +24,7 @@ struct Configuration::Private {
 
     std::vector<CategoryColor> categoryColor;
     Dictionary dictionary;
+    SnippetsCollection snippets;
     ConfigurationType type;
     std::string uid;
     cDateTime created;
@@ -47,6 +48,13 @@ Configuration::Configuration(const Dictionary &dict)
 {
     d->dictionary = dict;
     d->type = TypeDictionary;
+}
+
+Configuration::Configuration(const SnippetsCollection &snippets)
+:   d(new Configuration::Private)
+{
+    d->snippets = snippets;
+    d->type = TypeSnippet;
 }
 
 Configuration::Configuration(const Configuration &other)
@@ -116,6 +124,9 @@ Dictionary Configuration::dictionary() const
     return d->dictionary;
 }
 
-
+SnippetsCollection Configuration::snippets() const
+{
+    return d->snippets;
+}
 
 } //Namespace

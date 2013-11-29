@@ -4,7 +4,7 @@
 find_package(PkgConfig)
 include(FindPackageHandleStandardArgs)
 
-if (${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION} VERSION_LESS 1.42)
+if (${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION} VERSION_LESS 1.43)
     find_library(UUID NAMES ossp-uuid)
     find_package_handle_standard_args(UUID DEFAULT_MSG
                                   UUID)
