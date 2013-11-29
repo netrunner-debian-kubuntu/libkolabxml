@@ -19,7 +19,7 @@ X-Python-Version: >= 2.7
 Standards-Version: 3.9.4
 Homepage: http://git.kolab.org/libkolabxml
 
-Package: libkolabxml0
+Package: libkolabxml1
 Architecture: any
 Depends: ${misc:Depends},
 	${shlibs:Depends}
@@ -34,7 +34,7 @@ Description: Kolab XML format (shared library)
 
 Package: php-kolabformat
 Architecture: any
-Depends: libkolabxml0 (= ${binary:Version}),
+Depends: libkolabxml1 (= ${binary:Version}),
 	${misc:Depends},
 	${shlibs:Depends},
 	${php:Depends},
@@ -48,7 +48,7 @@ Description: PHP bindings for Kolab Format 3.0 XML parsing
 Package: python-kolabformat
 Architecture: any
 Section: python
-Depends: libkolabxml0 (= ${binary:Version}),
+Depends: libkolabxml1 (= ${binary:Version}),
 	python,
 	${misc:Depends},
 	${shlibs:Depends}
@@ -61,7 +61,7 @@ Description: Python bindings for Kolab Format 3.0 XML parsing
 Package: libkolabxml-dev
 Section: libdevel
 Architecture: any
-Depends: libkolabxml0 (= ${binary:Version}),
+Depends: libkolabxml1 (= ${binary:Version}),
          ${misc:Depends}, libboost-dev
 Description: Development files for libkolabxml
  Libkolabxml is the reference implementation of the Kolab XML format.
