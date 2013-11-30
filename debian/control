@@ -16,6 +16,7 @@ Build-Depends: cmake,
                php5-dev,
                php5-cli,
                python-dev (>= 2.7),
+               libqt4-dev
 X-Python-Version: >= 2.7
 Standards-Version: 3.9.4
 Homepage: http://git.kolab.org/libkolabxml
