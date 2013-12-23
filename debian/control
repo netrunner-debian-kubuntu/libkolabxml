@@ -2,7 +2,7 @@ Source: libkolabxml
 Section: libs
 Priority: optional
 Maintainer: Debian Kolab Maintainers <pkg-kolab-devel@lists.alioth.debian.org>
-Uploaders: Jeroen van Meeuwen (Kolab Systems) <vanmeeuwen@kolabsys.com>, Paul Klos <kolab@klos2day.nl>
+Uploaders: Paul Klos <kolab@klos2day.nl>
 Build-Depends: cmake,
                debhelper (>= 9),
                libxerces-c-dev,
@@ -20,6 +20,8 @@ Build-Depends: cmake,
 X-Python-Version: >= 2.7
 Standards-Version: 3.9.4
 Homepage: http://git.kolab.org/libkolabxml
+Vcs-Git: git://git.debian.org/git/pkg-kolab/libkolabxml.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kolab/libkolabxml.git
 
 Package: libkolabxml1
 Architecture: any
