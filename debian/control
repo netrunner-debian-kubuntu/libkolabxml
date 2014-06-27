@@ -67,7 +67,8 @@ Package: libkolabxml-dev
 Section: libdevel
 Architecture: any
 Depends: libkolabxml1 (= ${binary:Version}),
-         ${misc:Depends}, libboost-dev, libboost-thread-dev, libxerces-c-dev
+         ${misc:Depends}, libboost-dev, libboost-thread-dev, libxerces-c-dev,
+         libcurl4-gnutls-dev
 Description: Development files for libkolabxml
  Libkolabxml is the reference implementation of the Kolab XML format.
  For more information see the libkolabxml package.
