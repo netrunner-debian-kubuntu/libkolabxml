@@ -5,6 +5,7 @@ libkolabxml (1.0.1-1) UNRELEASED; urgency=medium
 
   [ Diane Trout ]
   * Add libkolabxml1.symbols.
+  * Remove no-symbols-control-file from lintian overrides.
   * Add libcurl4-gnutls-dev to libkolabxml-dev dependencies.
     Without that building kdepim-runtime didn't know it needed curl.
   * Add myself to uploaders.
