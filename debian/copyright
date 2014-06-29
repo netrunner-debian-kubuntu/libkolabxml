@@ -3,6 +3,12 @@ Upstream-Name: libkolabxml
 Upstream-Contact: Christian Mollekopf <mollekopf@kolabsys.com>
 Source: http://git.kolab.org/libkolabxml
 
+
+Files: *
+Copyright: 2011-2013  Christian Mollekopf <mollekopf@kolabsys.com>
+           2011-2013  Copyright (C) 2011-2012 Kolab Systems AG
+License: LGPL-3+
+
 Files: debian/*
 Copyright: 2012,      Christian Mollekopf <mollekopf@kolabsys.com>
            2012-2013, Paul Klos <kolab@klos2day.nl>
@@ -23,11 +29,6 @@ License: GPL-3+
  .
  On Debian systems a full copy of the GPL 3 can be found at
  /usr/share/common-licenses/GPL-3
-
-Files: *
-Copyright: 2011-2013  Christian Mollekopf <mollekopf@kolabsys.com>
-           2011-2013  Copyright (C) 2011-2012 Kolab Systems AG
-License: LGPL-3+
 
 Files: src/containers/kolabfreebusy.cpp
        tests/parsingtest.*
