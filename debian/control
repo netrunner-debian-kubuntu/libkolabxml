@@ -19,7 +19,7 @@ Build-Depends: cmake,
                python-dev (>= 2.7),
                libqt4-dev
 X-Python-Version: >= 2.7
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Homepage: http://git.kolab.org/libkolabxml
 Vcs-Git: git://git.debian.org/git/pkg-kolab/libkolabxml.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kolab/libkolabxml.git
