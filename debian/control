@@ -40,10 +40,10 @@ Description: Kolab XML format (shared library)
 Package: php-kolabformat
 Architecture: any
 Depends: libkolabxml1 (= ${binary:Version}),
-	${misc:Depends},
-	${shlibs:Depends},
-	${php:Depends},
-        ucf
+         ${misc:Depends},
+         ${shlibs:Depends},
+         ${php:Depends},
+         ucf
 Description: PHP bindings for Kolab Format 3.0 XML parsing
  Libkolabxml is the reference implementation of the Kolab XML format
  For more information see the libkolabxml package.
@@ -54,9 +54,9 @@ Package: python-kolabformat
 Architecture: any
 Section: python
 Depends: libkolabxml1 (= ${binary:Version}),
-	python,
-	${misc:Depends},
-	${shlibs:Depends}
+         python,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Description: Python bindings for Kolab Format 3.0 XML parsing
  Libkolabxml is the reference implementation of the Kolab XML format.
  For more information see the libkolabxml package.
