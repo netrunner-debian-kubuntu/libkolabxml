@@ -99,7 +99,12 @@ License: custom
  .
  3. This notice may not be removed or altered from any source distribution.
 
-License: FLOSS-Exception
+License: public-domain
+ The files included say that they are "not copyrighted - public domain".
+ .
+ However the upstream pacakge that generates them lists the following
+ license. (http://codesynthesis.com/projects/xsd/)
+ .
  1. Intent
  .
  We want specified Free/Libre and Open Source Software ("FLOSS") to be
