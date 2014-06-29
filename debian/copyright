@@ -29,6 +29,12 @@ Copyright: 2011-2013  Christian Mollekopf <mollekopf@kolabsys.com>
            2011-2013  Copyright (C) 2011-2012 Kolab Systems AG
 License: LGPL-3+
 
+Files: src/containers/kolabfreebusy.cpp
+       tests/parsingtest.*
+       tests/validationtest.*
+Copyright: 2012-2013 Christian Mollekopf <mollekopf@kolabsys.com>
+License: LGPL-2.1+
+
 License: LGPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU Lesser General Public License as published by
@@ -183,3 +189,20 @@ License: FLOSS-Exception
  You may choose to redistribute a copy of the Program exclusively under
  the terms of the GPL by removing the FLOSS Exception notice from that
  copy of the Program.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems a full copy of the LGPL 2.1 can be found at
+ /usr/share/common-licenses/LGPL-2.1
