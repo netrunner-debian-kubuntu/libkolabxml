@@ -9,6 +9,7 @@ libkolabxml (1.0.1-1~1.gbpfc2d6c) UNRELEASED; urgency=low
   * Add libkolabxml1.symbols.
   * Add libcurl4-gnutls-dev to libkolabxml-dev dependencies.
     Without that building kdepim-runtime didn't know it needed curl.
+  * Add myself to uploaders.
 
  -- Paul Klos <kolab@klos2day.nl>  Fri, 29 Nov 2013 23:49:25 +0100
 
