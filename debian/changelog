@@ -11,6 +11,8 @@ libkolabxml (1.0.1-1) UNRELEASED; urgency=medium
   * Add myself to uploaders.
   * Update Standards-Version to 3.9.5. No changes needed.
   * Update Vcs-Git to canonical URL.
+  * Force specific python versions for SWIG, avoids linking against
+    python 3 if its available.
 
  -- Diane Trout <diane@ghic.org>  Sat, 28 Jun 2014 20:31:35 -0700
 

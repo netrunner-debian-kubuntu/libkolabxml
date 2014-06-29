@@ -1,6 +1,7 @@
 #!/usr/bin/make -f
 
 PHPAPI := $(shell php-config --phpapi)
+PYTHON := $(shell pyversions -d)
 PYTHON_SITEARCH := $(shell python -c 'from distutils.sysconfig import get_python_lib; print get_python_lib(1)')
 
 # Uncomment this to turn on verbose mode.
@@ -19,7 +20,9 @@ override_dh_auto_configure:
 	dh_auto_configure -- \
 		-DPHP_BINDINGS=ON \
 		-DPYTHON_BINDINGS=ON \
-		-DPYTHON_INSTALL_DIR=$(PYTHON_SITEARCH)
+		-DPYTHON_INSTALL_DIR=$(PYTHON_SITEARCH) \
+		-DPYTHON_INCLUDE_DIR=/usr/include/$(PYTHON) \
+		-DPYTHON_LIBRARY=/usr/lib/$(DEB_BUILD_MULTIARCH)/lib$(PYTHON).so
 
 override_dh_install:
 	mkdir -p debian/tmp/usr/share/php
