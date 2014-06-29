@@ -68,8 +68,8 @@ License: Apache-2.0
  /usr/share/common-licenses/Apache-2.0
 
 Files: compiled/xsdbin.cxx compiled/grammar-input-stream.*
-Copyright: 2011-2012  Copyright (C) 2011-2012 Kolab Systems AG
-License: LGPL-3+ and FLOSS-Exception
+Copyright: Boris Kolpackov <boris@codesynthesis.com>
+License: public-domain
 
 Files: src/base64.*
 Copyright: 2004-2008 René Nyffenegger
