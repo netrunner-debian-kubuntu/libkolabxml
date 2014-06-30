@@ -103,7 +103,7 @@ License: custom
 License: public-domain
  The files included say that they are "not copyrighted - public domain".
  .
- However the upstream pacakge that generates them lists the following
+ However the upstream package that generates them lists the following
  license. (http://codesynthesis.com/projects/xsd/)
  .
  1. Intent
