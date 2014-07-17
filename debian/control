@@ -27,7 +27,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kolab/libkolabxml.git
 Package: libkolabxml1
 Architecture: any
 Depends: ${misc:Depends},
-	${shlibs:Depends}
+         ${shlibs:Depends}
 Description: Kolab XML format (shared library)
  Libkolabxml is the reference implementation of the Kolab XML format.
  .
@@ -74,4 +74,3 @@ Description: Development files for libkolabxml
  For more information see the libkolabxml package.
  .
  This package provides development files libkolabxml.
-
