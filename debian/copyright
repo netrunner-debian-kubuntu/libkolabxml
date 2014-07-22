@@ -3,7 +3,6 @@ Upstream-Name: libkolabxml
 Upstream-Contact: Christian Mollekopf <mollekopf@kolabsys.com>
 Source: http://git.kolab.org/libkolabxml
 
-
 Files: *
 Copyright: 2011-2013  Christian Mollekopf <mollekopf@kolabsys.com>
            2011-2013  Copyright (C) 2011-2012 Kolab Systems AG
@@ -54,10 +53,10 @@ License: LGPL-3+
  /usr/share/common-licenses/LGPL-3
 
 Files: schemas/*
-Copyright: 2011-2012 by The Calendaring and Scheduling Consortium, Inc. 
+Copyright: 2011-2012 by The Calendaring and Scheduling Consortium, Inc.
 License: Apache-2.0
  Files from http://www.calconnect.org/artifacts/ical-art.shtml
- All material contained in files linked from this page is licensed 
+ All material contained in files linked from this page is licensed
  via the Apache License Version 2.0.
  .
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -89,7 +88,7 @@ License: custom
  Permission is granted to anyone to use this software for any purpose,
  including commercial applications, and to alter it and redistribute it
  freely, subject to the following restrictions:
- .  
+ .
  1. The origin of this source code must not be misrepresented; you must not
     claim that you wrote the original source code. If you use this source code
     in a product, an acknowledgment in the product documentation would be
