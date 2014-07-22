@@ -1,9 +1,9 @@
-libkolabxml (1.0.1-2) UNRELEASED; urgency=medium
+libkolabxml (1.0.1-2) unstable; urgency=medium
 
   * Team upload.
-  * Update symbols files.
+  * Update symbols files. (Closes: #755562)
 
- -- Maximiliano Curia <maxy@debian.org>  Tue, 22 Jul 2014 11:37:18 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 22 Jul 2014 11:51:49 +0200
 
 libkolabxml (1.0.1-1) unstable; urgency=medium
 
