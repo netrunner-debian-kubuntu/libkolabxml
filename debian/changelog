@@ -1,4 +1,6 @@
-libkolabxml (1.0.1-1) UNRELEASED; urgency=medium
+libkolabxml (1.0.1-1) unstable; urgency=medium
+
+  * Team upload.
 
   [ Paul Klos ]
   * Imported Upstream version 1.0.1 (Closes: #730600)
