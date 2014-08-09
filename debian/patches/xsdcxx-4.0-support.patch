@@ -1,0 +1,11 @@
+--- a/src/shared_conversions.h
++++ b/src/shared_conversions.h
+@@ -29,7 +29,7 @@
+ typedef boost::shared_ptr<cDateTime> cDateTimePtr;
+ 
+ typedef ::xsd::cxx::tree::type type;
+-typedef ::xsd::cxx::tree::simple_type< type > simple_type;
++typedef ::xsd::cxx::tree::simple_type< char, type > simple_type;
+ typedef ::xsd::cxx::tree::date< char, simple_type > date;
+ typedef ::xsd::cxx::tree::date_time< char, simple_type > date_time;
+ 
