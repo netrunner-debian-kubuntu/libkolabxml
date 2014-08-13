@@ -1,3 +1,9 @@
+libkolabxml (1.0.1-3) UNRELEASED; urgency=medium
+
+  * Add xsdcxx-4.0-support.patch (Closes: #756866)
+
+ -- Diane Trout <diane@ghic.org>  Sat, 09 Aug 2014 16:13:52 -0700
+
 libkolabxml (1.0.1-2) unstable; urgency=medium
 
   * Team upload.
