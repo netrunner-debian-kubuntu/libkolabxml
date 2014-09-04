@@ -47,8 +47,6 @@
 namespace Kolab {
     namespace XCAL {
         
-std::string global_xCalVersion;
-
 const char* const XCAL_VERSION = "2.0";
 const char* const XCAL_NAMESPACE = "urn:ietf:params:xml:ns:icalendar-2.0";
 
@@ -59,7 +57,8 @@ const char* const THISANDFUTURE = "THISANDFUTURE";
 const char* const BASE64 = "BASE64";
 
 const char* const NEEDSACTION = "NEEDS-ACTION";
-const char* const COMPLETED = "OPAQUE";
+const char* const COMPLETED = "COMPLETED";
+const char* const COMPLETED_COMPAT = "OPAQUE";
 const char* const INPROCESS = "IN-PROCESS";
 const char* const CANCELLED = "CANCELLED";
 const char* const TENTATIVE = "TENTATIVE";
@@ -76,6 +75,8 @@ const char* const PARTDECLINED = "DECLINED";
 const char* const PARTDELEGATED = "DELEGATED";
 const char* const PARTNEEDSACTION = "NEEDS-ACTION";
 const char* const PARTTENTATIVE = "TENTATIVE";
+const char* const PARTINPROCESS = "IN-PROCESS";
+const char* const PARTCOMPLETED = "COMPLETED";
 
 const char* const CHAIR = "CHAIR";
 const char* const NONPARTICIPANT = "NON-PARTICIPANT";
@@ -419,16 +420,13 @@ Kolab::Attachment toAttachment(T aProp)
             }
         }
     }
-    if (mimetype.empty()) {
-        ERROR("no mimetype");
-    }
 
     if (aProp.uri()) {
         a.setUri(*aProp.uri(), mimetype);
     } else if (aProp.binary()) {
         a.setData(base64_decode(*aProp.binary()), mimetype);
     } else {
-        ERROR("not uri and no data available");
+        ERROR("no uri and no data available");
     }
     return a;
 }
@@ -567,7 +565,6 @@ std::auto_ptr<I> fromDateTimeList(const std::vector<cDateTime> &dtlist)
             ptr->date_time().push_back(Shared::fromDateTime(dt));
         }
         //TODO handle utc
-        //TODO check for equality of timezones?
     }
     
     if (!dtlist.empty() && !dtlist.at(0).timezone().empty()) {
@@ -605,6 +602,10 @@ std::string mapPartStat(PartStatus status)
             return PARTNEEDSACTION;
         case PartTentative:
             return PARTTENTATIVE;
+        case PartInProcess:
+            return PARTINPROCESS;
+        case PartCompleted:
+            return PARTCOMPLETED;
     }
     ERROR("PartStat not handled: " + status);
     return std::string();
@@ -622,6 +623,10 @@ PartStatus mapPartStat(const std::string &status)
         return PartNeedsAction;
     } else if (status == PARTTENTATIVE) {
         return PartTentative;
+    } else if (status == PARTINPROCESS) {
+        return PartInProcess;
+    } else if (status == PARTCOMPLETED) {
+        return PartCompleted;
     }
     ERROR("PartStat not handled: " + status);
     return PartNeedsAction;
@@ -847,11 +852,15 @@ void setIncidenceProperties(I &inc, const T &prop)
         inc.setDescription(toString(*prop.description()));
     }
 
+    if (prop.comment()) {
+        inc.setComment(toString(*prop.comment()));
+    }
+
     if (prop.status()) {
         const std::string &status =  toString(*prop.status());
         if (status == NEEDSACTION) {
             inc.setStatus(StatusNeedsAction);
-        } else if (status == COMPLETED) {
+        } else if (status == COMPLETED || status == COMPLETED_COMPAT) {
             inc.setStatus(StatusCompleted);
         } else if (status == INPROCESS) {
             inc.setStatus(StatusInProcess);
@@ -1121,6 +1130,10 @@ void getIncidenceProperties(T &prop, const I &inc)
     
     if (!inc.description().empty()) {
         prop.description(typename properties::description_type(inc.description()));
+    }
+
+    if (!inc.comment().empty()) {
+        prop.comment(typename properties::comment_type(inc.comment()));
     }
 
     if (inc.status() != StatusUndefined) {
@@ -1495,11 +1508,6 @@ template < > struct IncidenceTrait <Kolab::Event>
 
         if (prop.dtend()) {
             event.setEnd(*toDate(*prop.dtend()));
-            if (event.end().isUTC() != event.end().isUTC() && 
-                event.end().timezone() != event.end().timezone() &&
-                event.end().isDateOnly() != event.end().isDateOnly()) {
-                ERROR("dtEnd has wrong timespec");
-            }
         } else if (prop.duration()) {
             event.setDuration(toDuration((*prop.duration()).duration()));
         }
@@ -1948,7 +1956,7 @@ typename T::IncidencePtr deserializeIncidence(const std::string& s, bool isUrl)
         }
         
         setProductId( vcalendar.properties().prodid().text() );
-        global_xCalVersion = vcalendar.properties().version().text();
+        setXCalVersion(vcalendar.properties().version().text());
         setKolabVersion( vcalendar.properties().x_kolab_version().text() );
 
         if (incidences.empty()) {

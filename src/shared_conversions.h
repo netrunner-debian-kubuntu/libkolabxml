@@ -29,7 +29,11 @@ namespace Kolab {
 typedef boost::shared_ptr<cDateTime> cDateTimePtr;
 
 typedef ::xsd::cxx::tree::type type;
+#if (XSD_INT_VERSION >= 4000000L)
+typedef ::xsd::cxx::tree::simple_type< char, type > simple_type;
+#else
 typedef ::xsd::cxx::tree::simple_type< type > simple_type;
+#endif
 typedef ::xsd::cxx::tree::date< char, simple_type > date;
 typedef ::xsd::cxx::tree::date_time< char, simple_type > date_time;
 

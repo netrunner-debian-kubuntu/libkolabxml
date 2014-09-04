@@ -76,13 +76,13 @@ void ValidationTest::testDifferentTimezones()
     event.setStart(cDateTime("Europe/Zurich",2013,1,1,1,1,1));
     event.setEnd(cDateTime("Europe/London",2013,1,1,1,1,1));
     writeEvent(event);
-    QCOMPARE(Kolab::error(), Kolab::Error);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
 
     Todo todo;
     todo.setStart(cDateTime("Europe/Zurich",2013,1,1,1,1,1));
     todo.setDue(cDateTime("Europe/London",2013,1,1,1,1,1));
     writeTodo(todo);
-    QCOMPARE(Kolab::error(), Kolab::Error);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
 }
 
 void ValidationTest::testUTCwithTimezone()

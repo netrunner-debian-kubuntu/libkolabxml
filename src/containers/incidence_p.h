@@ -44,6 +44,7 @@ namespace Kolab {
         bool thisAndFuture;
         std::string summary;
         std::string description;
+        std::string comment;
         std::string location;
         int priority;
         Status status;

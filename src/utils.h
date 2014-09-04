@@ -33,10 +33,10 @@ std::string getUID(const std::string & = std::string());
 
 void logMessage(const std::string &,const std::string &, int, ErrorSeverity s);
      
-#define LOG(message) logMessage(message,__FILE__, __LINE__, NoError);
-#define WARNING(message) logMessage(message,__FILE__, __LINE__, Warning);
-#define ERROR(message) logMessage(message,__FILE__, __LINE__, Error);
-#define CRITICAL(message) logMessage(message,__FILE__, __LINE__, Critical);
+#define LOG(message) Utils::logMessage(message,__FILE__, __LINE__, NoError);
+#define WARNING(message) Utils::logMessage(message,__FILE__, __LINE__, Warning);
+#define ERROR(message) Utils::logMessage(message,__FILE__, __LINE__, Error);
+#define CRITICAL(message) Utils::logMessage(message,__FILE__, __LINE__, Critical);
 
 void logMessage(const std::string &, ErrorSeverity s = Warning);
 
@@ -70,6 +70,12 @@ std::string productId();
  */
 void setKolabVersion(const std::string &);
 std::string kolabVersion();
+
+/**
+ * The xCal Version of the last deserialized object
+ */
+void setXCalVersion(const std::string &);
+std::string xCalVersion();
 
 /**
  * A timestamp which overrides the one normally used.

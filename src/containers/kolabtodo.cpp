@@ -195,6 +195,16 @@ std::string Todo::description() const
     return d->description;
 }
 
+void Todo::setComment(const std::string &comment)
+{
+    d->comment = comment;
+}
+
+std::string Todo::comment() const
+{
+    return d->comment;
+}
+
 void Todo::setPriority(int priority)
 {
     d->priority = priority;

@@ -536,11 +536,13 @@ struct Attachment::Private
     std::string data;
     std::string mimetype;
     std::string label;
+    bool isValid;
 };
 
 Attachment::Attachment()
 :   d(new Attachment::Private)
 {
+    d->isValid = false;
 }
 
 Attachment::Attachment(const Kolab::Attachment &other)
@@ -568,6 +570,7 @@ bool Attachment::operator==(const Kolab::Attachment &other) const
 
 void Attachment::setUri(const std::string &uri, const std::string& mimetype)
 {
+    d->isValid = true;
     d->uri = uri;
     d->mimetype = mimetype;
 }
@@ -594,6 +597,7 @@ std::string Attachment::label() const
 
 void Attachment::setData(const std::string &data, const std::string& mimetype)
 {
+    d->isValid = true;
     d->data = data;
     d->mimetype = mimetype;
 }
@@ -605,7 +609,7 @@ std::string Attachment::data() const
 
 bool Attachment::isValid() const
 {
-    return !d->mimetype.empty(); //TODO use isValid variable
+    return d->isValid;
 }
 
 

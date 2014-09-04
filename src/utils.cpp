@@ -47,6 +47,7 @@ struct Global {
     std::string createdUID;
     std::string productId;
     std::string xKolabVersion;
+    std::string xCalVersion;
     
     ErrorSeverity errorBit;
     std::string errorMessage;
@@ -78,6 +79,16 @@ void setKolabVersion(const std::string &s)
 std::string kolabVersion()
 {
     return ThreadLocal::inst().xKolabVersion;
+}
+
+void setXCalVersion(const std::string &s)
+{
+    ThreadLocal::inst().xCalVersion = s;
+}
+
+std::string xCalVersion()
+{
+    return ThreadLocal::inst().xCalVersion;
 }
 
 void setProductId(const std::string &s)

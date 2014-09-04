@@ -336,7 +336,9 @@ enum PartStatus {
     PartAccepted,
     PartDeclined,
     PartTentative,
-    PartDelegated
+    PartDelegated,
+    PartInProcess,
+    PartCompleted
 };
 
 enum Role {

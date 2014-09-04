@@ -43,7 +43,7 @@ endif()
 set (Libkolabxml_VERSION_MAJOR 1)
 set (Libkolabxml_VERSION_MINOR 0)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 1)
+set (Libkolabxml_VERSION_PATCH 2)
 set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
 #set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
@@ -75,7 +75,7 @@ endif()
 #C++ is required from here on
 enable_language(CXX)
 
-set(LIB_INSTALL_DIR lib CACHE STRING "The directories where to install libraries to")
+set(LIB_INSTALL_DIR lib${LIB_SUFFIX} CACHE STRING "The directories where to install libraries to")
 set(INCLUDE_INSTALL_DIR include CACHE STRING "The directory where to install headers to")
 set(INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_DIR}/kolabxml)
 set(CMAKECONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/Libkolabxml )
