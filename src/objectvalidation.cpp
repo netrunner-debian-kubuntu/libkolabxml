@@ -51,7 +51,7 @@ bool isValid(const cDateTime &datetime)
             return false;
         }
         if (tzSet.find(tz) == tzSet.end()) {
-            Utils::logMessage("not a valid olson timezone.", "", 0, Error);
+            Utils::logMessage("Not a valid olson timezone: " + tz, "", 0, Error);
             return false;
         }
     }
@@ -91,8 +91,8 @@ void validate(const Event &event)
     ASSERTEXISTING(event.start());
     ASSERTVALID(event.start());
     ASSERTVALID(event.end());
-    if (event.end().isValid()) {
-        ASSERTEQUAL(event.start().timezone(), event.end().timezone());
+    if (event.start().isValid() && event.end().isValid()) {
+        ASSERTEQUAL(event.start().isDateOnly(), event.end().isDateOnly());
     }
 }
 
@@ -101,7 +101,7 @@ void validate(const Todo& todo)
     ASSERTVALID(todo.start());
     ASSERTVALID(todo.due());
     if (todo.start().isValid() && todo.due().isValid()) {
-        ASSERTEQUAL(todo.start().timezone(), todo.due().timezone());
+        ASSERTEQUAL(todo.start().isDateOnly(), todo.due().isDateOnly());
     }
 }
 

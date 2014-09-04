@@ -7,7 +7,7 @@
 
     
     <xs:complexType name="KolabBase">
-        <xs:attribute name="version" type="xs:string" fixed="3.0dev1" />
+        <xs:attribute name="version" type="xs:string" fixed="3.0" />
     </xs:complexType>
 
 

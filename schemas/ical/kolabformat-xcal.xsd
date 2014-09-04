@@ -41,7 +41,7 @@
         <xs:complexContent mixed="false">
             <xs:extension base="BasePropertyType">
                 <xs:sequence>
-                    <xs:element name="text" type="xs:string" default="3.0dev1"/>
+                    <xs:element name="text" type="xs:string" default="3.0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -107,6 +107,7 @@
                         <xs:element name="recurrence-id" type="RecurrenceIdPropType" minOccurs="0"/>
                         <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
                         <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="comment" type="CommentPropType" minOccurs="0"/>
                         <xs:element name="priority" type="PriorityPropType" minOccurs="0"/>
                         <xs:element name="status" type="StatusPropType" minOccurs="0"/>
                         <xs:element name="location" type="LocationPropType" minOccurs="0"/>
@@ -148,6 +149,7 @@
                         <xs:element name="recurrence-id" type="RecurrenceIdPropType" minOccurs="0"/>
                         <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
                         <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="comment" type="CommentPropType" minOccurs="0"/>
                         <xs:element name="priority" type="PriorityPropType" minOccurs="0"/>
                         <xs:element name="status" type="StatusPropType" minOccurs="0"/>
                         <xs:element name="percent-complete" type="PercentCompletePropType" minOccurs="0"/>
@@ -185,6 +187,7 @@
                         <xs:element name="dtstart" type="DtstartPropType" minOccurs="0"/>
                         <xs:element name="summary" type="SummaryPropType" minOccurs="0"/>
                         <xs:element name="description" type="DescriptionPropType" minOccurs="0"/>
+                        <xs:element name="comment" type="CommentPropType" minOccurs="0"/>
                         <xs:element name="status" type="StatusPropType" minOccurs="0"/>
                         <xs:element name="contact" type="ContactPropType" minOccurs="0"/>
                         <xs:element name="attendee" type="AttendeePropType" minOccurs="0" maxOccurs="unbounded"/>

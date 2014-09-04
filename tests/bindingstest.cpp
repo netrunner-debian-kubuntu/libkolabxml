@@ -212,6 +212,7 @@ void setIncidence(T &ev)
     ev.setRecurrenceID(Kolab::cDateTime("Europe/Zurich", 2006,1,6,12,0,0), true);
     ev.setSummary("summary");
     ev.setDescription("description");
+    ev.setComment("comment");
     ev.setPriority(3);
     ev.setStatus(Kolab::StatusConfirmed);
     ev.setLocation("location");
@@ -324,6 +325,7 @@ void checkIncidence(const T &ev, const T &re)
     QCOMPARE(ev.thisAndFuture(), re.thisAndFuture());
     QCOMPARE(ev.summary(), re.summary());
     QCOMPARE(ev.description(), re.description());
+    QCOMPARE(ev.comment(), re.comment());
     QCOMPARE(ev.priority(), re.priority());
     QCOMPARE(ev.status(), re.status());
     QCOMPARE(ev.location(), re.location());

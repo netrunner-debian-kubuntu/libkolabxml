@@ -44,7 +44,11 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Related.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Relative.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Role.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Snippet.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Status.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Snippet.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Todo_t.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.cs
@@ -67,6 +71,7 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectorkey.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorrelated.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectors.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorsnippet.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectortelephone.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorurl.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Weekday.cs

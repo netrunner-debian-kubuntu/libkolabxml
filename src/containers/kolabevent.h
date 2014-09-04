@@ -85,6 +85,9 @@ public:
     void setDescription(const std::string &);
     std::string description() const;
     
+    void setComment(const std::string &);
+    std::string comment() const;
+    
     void setPriority(int);
     int priority() const;
     

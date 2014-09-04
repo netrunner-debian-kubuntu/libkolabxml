@@ -146,6 +146,15 @@ std::string Journal::description() const
     return d->description;
 }
 
+void Journal::setComment(const std::string &comment)
+{
+    d->comment = comment;
+}
+
+std::string Journal::comment() const
+{
+    return d->comment;
+}
 
 void Journal::setStatus(Status status)
 {

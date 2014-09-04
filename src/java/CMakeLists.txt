@@ -37,6 +37,8 @@ set(KOLAB_SWIG_JAVA_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Relative.java
         ${CMAKE_CURRENT_BINARY_DIR}/Role.java
         ${CMAKE_CURRENT_BINARY_DIR}/Status.java
+        ${CMAKE_CURRENT_BINARY_DIR}/Snippet.java
+        ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.java
         ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.java
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.java
         ${CMAKE_CURRENT_BINARY_DIR}/Todo.java
@@ -56,6 +58,7 @@ set(KOLAB_SWIG_JAVA_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectorkey.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorrelated.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectors.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorsnippet.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectortelephone.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorurl.java
         ${CMAKE_CURRENT_BINARY_DIR}/Weekday.java

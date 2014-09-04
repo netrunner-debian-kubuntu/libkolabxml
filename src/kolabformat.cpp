@@ -49,7 +49,7 @@ std::string productId()
 
 std::string xCalVersion()
 {
-    return XCAL::global_xCalVersion;
+    return Utils::xCalVersion();
 }
 
 std::string xKolabVersion()
@@ -79,6 +79,7 @@ Kolab::Event readEvent(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Event();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -86,7 +87,13 @@ std::string writeEvent(const Kolab::Event &event, const std::string& productId)
 {
     Utils::clearErrors();
     validate(event);
-    return XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Event> >(event, productId);
+    const std::string result = XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Event> >(event, productId);
+    //Validate
+    XCAL::deserializeIncidence< XCAL::IncidenceTrait<Kolab::Event> >(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Kolab::Todo readTodo(const std::string& s, bool isUrl)
@@ -96,6 +103,7 @@ Kolab::Todo readTodo(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Todo();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -103,7 +111,13 @@ std::string writeTodo(const Kolab::Todo &event, const std::string& productId)
 {
     Utils::clearErrors();
     validate(event);
-    return XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Todo> >(event, productId);
+    const std::string result = XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Todo> >(event, productId);
+    //Validate
+    XCAL::deserializeIncidence< XCAL::IncidenceTrait<Kolab::Todo> >(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Journal readJournal(const std::string& s, bool isUrl)
@@ -113,6 +127,7 @@ Journal readJournal(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Journal();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -120,7 +135,13 @@ std::string writeJournal(const Kolab::Journal &j, const std::string& productId)
 {
     Utils::clearErrors();
     validate(j);
-    return XCAL::serializeIncidence<XCAL::IncidenceTrait<Kolab::Journal> >(j, productId);
+    const std::string result = XCAL::serializeIncidence< XCAL::IncidenceTrait<Kolab::Journal> >(j, productId);
+    //Validate
+    XCAL::deserializeIncidence< XCAL::IncidenceTrait<Kolab::Journal> >(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Kolab::Freebusy readFreebusy(const std::string& s, bool isUrl)
@@ -130,6 +151,7 @@ Kolab::Freebusy readFreebusy(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Freebusy();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -137,7 +159,12 @@ std::string writeFreebusy(const Freebusy &f, const std::string& productId)
 {
     Utils::clearErrors();
     validate(f);
-    return XCAL::serializeFreebusy<XCAL::IncidenceTrait<Kolab::Freebusy> >(f, productId);
+    const std::string result = XCAL::serializeFreebusy<XCAL::IncidenceTrait<Kolab::Freebusy> >(f, productId);
+    XCAL::deserializeIncidence<XCAL::IncidenceTrait<Kolab::Freebusy> >(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Kolab::Contact readContact(const std::string& s, bool isUrl)
@@ -147,6 +174,7 @@ Kolab::Contact readContact(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Contact();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -154,7 +182,13 @@ std::string writeContact(const Contact &contact, const std::string& productId)
 {
     Utils::clearErrors();
     validate(contact);
-    return XCARD::serializeCard(contact, productId);
+    const std::string result = XCARD::serializeCard(contact, productId);
+    //Validate
+    XCARD::deserializeCard<Kolab::Contact>(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 DistList readDistlist(const std::string& s, bool isUrl)
@@ -164,6 +198,7 @@ DistList readDistlist(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::DistList();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -171,7 +206,13 @@ std::string writeDistlist(const DistList &list, const std::string& productId)
 {
     Utils::clearErrors();
     validate(list);
-    return XCARD::serializeCard(list, productId);
+    const std::string result = XCARD::serializeCard(list, productId);
+    //Validate
+    XCARD::deserializeCard<Kolab::DistList>(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Note readNote(const std::string& s, bool isUrl)
@@ -181,6 +222,7 @@ Note readNote(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Note();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -188,7 +230,13 @@ std::string writeNote(const Note &note, const std::string& productId)
 {
     Utils::clearErrors();
     validate(note);
-    return Kolab::KolabObjects::serializeObject<Kolab::Note>(note, productId);
+    const std::string result = Kolab::KolabObjects::serializeObject<Kolab::Note>(note, productId);
+    //Validate
+    Kolab::KolabObjects::deserializeObject<Kolab::Note>(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 File readFile(const std::string& s, bool isUrl)
@@ -198,6 +246,7 @@ File readFile(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::File();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -205,7 +254,13 @@ std::string writeFile(const File &file, const std::string& productId)
 {
     Utils::clearErrors();
     validate(file);
-    return Kolab::KolabObjects::serializeObject<Kolab::File>(file, productId);
+    const std::string result = Kolab::KolabObjects::serializeObject<Kolab::File>(file, productId);
+    //Validate
+    Kolab::KolabObjects::deserializeObject<Kolab::File>(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 Configuration readConfiguration(const std::string& s, bool isUrl)
@@ -215,6 +270,7 @@ Configuration readConfiguration(const std::string& s, bool isUrl)
     if (!ptr.get()) {
         return Kolab::Configuration();
     }
+    validate(*ptr);
     return *ptr;
 }
 
@@ -222,7 +278,13 @@ std::string writeConfiguration(const Configuration &config, const std::string& p
 {
     Utils::clearErrors();
     validate(config);
-    return Kolab::KolabObjects::serializeObject< Kolab::Configuration >(config, productId);
+    const std::string result = Kolab::KolabObjects::serializeObject<Kolab::Configuration>(config, productId);
+    //Validate
+    Kolab::KolabObjects::deserializeObject<Kolab::Configuration>(result, false);
+    if (errorOccurred()) {
+        LOG("Error occurred while writing.")
+    }
+    return result;
 }
 
 

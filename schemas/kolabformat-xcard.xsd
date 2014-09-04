@@ -10,7 +10,7 @@
         <xs:complexContent mixed="false">
             <xs:extension base="BasePropertyType">
                 <xs:sequence>
-                    <xs:element name="text" type="xs:string" default="3.0dev1"/>
+                    <xs:element name="text" type="xs:string" default="3.0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>

@@ -44,6 +44,7 @@ namespace std {
     %template(vectorurl) vector<Kolab::Url>;
     %template(vectorkey) vector<Kolab::Key>;
     %template(vectorcategorycolor) vector<Kolab::CategoryColor>;
+    %template(vectorsnippet) vector<Kolab::Snippet>;
 };
 
 %rename(readKolabFile) Kolab::readFile;

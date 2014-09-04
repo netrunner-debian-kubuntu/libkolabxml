@@ -180,6 +180,16 @@ std::string Event::description() const
     return d->description;
 }
 
+void Event::setComment(const std::string &comment)
+{
+    d->comment = comment;
+}
+
+std::string Event::comment() const
+{
+    return d->comment;
+}
+
 void Event::setPriority(int priority)
 {
     d->priority = priority;
