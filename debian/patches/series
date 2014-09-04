@@ -1,3 +1,2 @@
-xsdcxx-4.0-support.patch
 fix-race-condition.patch
 fix-parallel-build.patch
