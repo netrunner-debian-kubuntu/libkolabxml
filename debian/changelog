@@ -2,6 +2,7 @@ libkolabxml (1.0.2-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Remove patch applied upstream: xsdcxx-4.0-support.patch
+  * Update symbols file.
 
  -- Maximiliano Curia <maxy@debian.org>  Thu, 04 Sep 2014 12:37:50 +0200
 
