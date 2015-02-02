@@ -25,6 +25,8 @@ struct Configuration::Private {
     std::vector<CategoryColor> categoryColor;
     Dictionary dictionary;
     SnippetsCollection snippets;
+    Relation relation;
+    FileDriver fileDriver;
     ConfigurationType type;
     std::string uid;
     cDateTime created;
@@ -55,6 +57,20 @@ Configuration::Configuration(const SnippetsCollection &snippets)
 {
     d->snippets = snippets;
     d->type = TypeSnippet;
+}
+
+Configuration::Configuration(const Relation &relation)
+:   d(new Configuration::Private)
+{
+    d->relation = relation;
+    d->type = TypeRelation;
+}
+
+Configuration::Configuration(const FileDriver &fileDriver)
+:   d(new Configuration::Private)
+{
+    d->fileDriver = fileDriver;
+    d->type = TypeFileDriver;
 }
 
 Configuration::Configuration(const Configuration &other)
@@ -127,6 +143,16 @@ Dictionary Configuration::dictionary() const
 SnippetsCollection Configuration::snippets() const
 {
     return d->snippets;
+}
+
+Relation Configuration::relation() const
+{
+    return d->relation;
+}
+
+FileDriver Configuration::fileDriver() const
+{
+    return d->fileDriver;
 }
 
 } //Namespace

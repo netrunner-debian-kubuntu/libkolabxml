@@ -45,6 +45,13 @@ const char* const BASE64 = "BASE64";
 using namespace Kolab::Utils;
 using namespace Kolab::Shared;
 
+template <typename T>
+std::vector<std::string> toStringList(const xsd::cxx::tree::sequence<T> &s)
+{
+    std::vector<std::string> d;
+    std::copy(s.begin(), s.end(), std::back_inserter(d));
+    return d;
+}
 
 Kolab::Attachment toAttachment(KolabXSD::attachmentPropType aProp)
 {
@@ -120,7 +127,7 @@ std::vector<CategoryColor> readColors(const KolabXSD::Configuration::categorycol
     return colors;
 }
 
-KolabXSD::Configuration::type_type getConfiguratinoType(Kolab::Configuration::ConfigurationType t)
+KolabXSD::Configuration::type_type getConfigurationType(Kolab::Configuration::ConfigurationType t)
 {
     switch (t) {
         case Kolab::Configuration::TypeDictionary:
@@ -129,6 +136,10 @@ KolabXSD::Configuration::type_type getConfiguratinoType(Kolab::Configuration::Co
             return KolabXSD::Configuration::type_type::categorycolor;
         case Kolab::Configuration::TypeSnippet:
             return KolabXSD::Configuration::type_type::snippets;
+        case Kolab::Configuration::TypeRelation:
+            return KolabXSD::Configuration::type_type::relation;
+        case Kolab::Configuration::TypeFileDriver:
+            return KolabXSD::Configuration::type_type::file_driver;
         default:
             CRITICAL("Invalid configuration type");
     }
@@ -159,7 +170,7 @@ std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &
 //             WARNING("missing last_modification_date, fallback to current timestamp");
             lastModificationDate = fromDateTime(timestamp());
         }
-        KolabXSD::Configuration n(uid, getProductId(prod), created, lastModificationDate, getConfiguratinoType(configuration.type()));
+        KolabXSD::Configuration n(uid, getProductId(prod), created, lastModificationDate, getConfigurationType(configuration.type()));
 
         switch (configuration.type()) {
             case Kolab::Configuration::TypeDictionary: {
@@ -187,6 +198,43 @@ std::string serializeObject <Kolab::Configuration> (const Kolab::Configuration &
                     }
                     n.snippet().push_back(snippet);
                 }
+            }
+                break;
+            case Kolab::Configuration::TypeRelation: {
+                const Kolab::Relation &relation = configuration.relation();
+                n.name(relation.name());
+                if (!relation.type().empty()) {
+                    n.relationType(relation.type());
+                }
+                if (!relation.color().empty()) {
+                    n.color(relation.color());
+                }
+                if (!relation.iconName().empty()) {
+                    n.iconName(relation.iconName());
+                }
+                if (!relation.parent().empty()) {
+                    n.parent(relation.parent());
+                }
+                if (!relation.priority() != 0) {
+                    n.priority(fromInt<KolabXSD::Configuration::priority_type>(relation.priority()));
+                }
+                BOOST_FOREACH(const std::string &s, relation.members()) {
+                    n.member().push_back(s);
+                }
+            }
+                break;
+            case Kolab::Configuration::TypeFileDriver: {
+                const Kolab::FileDriver &fileDriver = configuration.fileDriver();
+                n.driver(fileDriver.driver());
+                n.title(fileDriver.title());
+                n.enabled(fileDriver.enabled());
+
+                KolabXSD::FileDriverSettings settings;
+                settings.host(fileDriver.host());
+                settings.port(fileDriver.port());
+                settings.username(fileDriver.username());
+                settings.password(fileDriver.password());
+                n.settings(settings);
             }
                 break;
             default:
@@ -515,6 +563,52 @@ boost::shared_ptr<Kolab::Configuration> deserializeObject <Kolab::Configuration>
             collection.setSnippets(snippets);
 
             n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(collection));
+        } else if (configuration->type() == KolabXSD::ConfigurationType::relation) {
+            std::string name;
+            if (configuration->name()) {
+                name = *configuration->name();
+            }
+            std::string type;
+            if (configuration->relationType()) {
+                type = *configuration->relationType();
+            }
+            Relation relation(name, type);
+            if (configuration->color()) {
+                relation.setColor(*configuration->color());
+            }
+            if (configuration->iconName()) {
+                relation.setIconName(*configuration->iconName());
+            }
+            if (configuration->parent()) {
+                relation.setParent(*configuration->parent());
+            }
+            if (configuration->priority()) {
+                relation.setPriority(convertToInt(*configuration->priority()));
+            }
+            relation.setMembers(toStringList(configuration->member()));
+
+            n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(relation));
+        } else if (configuration->type() == KolabXSD::ConfigurationType::file_driver) {
+            std::string driver;
+            if (configuration->driver()) {
+                driver = *configuration->driver();
+            }
+            std::string title;
+            if (configuration->title()) {
+                title = *configuration->title();
+            }
+            Kolab::FileDriver fileDriver(driver, title);
+            fileDriver.setEnabled(*configuration->enabled());
+            if (configuration->settings()) {
+                fileDriver.setHost(*configuration->settings()->host());
+                fileDriver.setPort(convertToInt(*configuration->settings()->port()));
+                fileDriver.setUsername(*configuration->settings()->username());
+                fileDriver.setPassword(*configuration->settings()->password());
+            } else {
+                CRITICAL("Settings are missing");
+            }
+
+            n = boost::shared_ptr<Kolab::Configuration>(new Kolab::Configuration(fileDriver));
         } else {
             CRITICAL("No valid configuration type");
         }

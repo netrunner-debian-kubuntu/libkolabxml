@@ -121,6 +121,52 @@ $xml = kolabformat::writeEvent($e1);
 #print $xml;
 assertcontains($xml, '<byday>2MO</byday><byday>-1FR</byday>', "Recurrence by weekday");
 
+$att1 = new Attendee(new ContactReference("john@kolab.org"));
+$att1->setPartStat(kolabformat::PartDelegated);
+$att2 = new Attendee(new ContactReference("jane@kolab.org"));
+$att1->setPartStat(kolabformat::PartNeedsAction);
+
+$vdelegatees = new vectorcontactref;
+$vdelegatees->push($att2->contact());
+$att1->setDelegatedTo($vdelegatees);
+
+$vdelegators = new vectorcontactref;
+$vdelegators->push($att1->contact());
+$att2->setDelegatedFrom($vdelegators);
+
+$attendees = new vectorattendee;
+$attendees->push($att1);
+$attendees->push($att2);
+$e1->setAttendees($attendees);
+
+$xml = kolabformat::writeEvent($e1);
+assertcontains($xml, '<delegated-to><cal-address>mailto:%3Cjane%40kolab.org%3E</cal-address>', "Delegated-To");
+assertcontains($xml, '<delegated-from><cal-address>mailto:%3Cjohn%40kolab.org%3E</cal-address>', "Delegated-From");
+
+$e2 = kolabformat::readEvent($xml, false);
+$attendees_ = $e2->attendees();
+assertequal($attendees_->size(), 2, "Event::attendees()");
+$att1_ = $attendees_->get(0);
+$att2_ = $attendees_->get(1);
+assertequal($att1_->contact()->email(), "john@kolab.org", "Attendee email");
+$vdelegatees_ = $att1_->delegatedTo();
+assertequal($vdelegatees_->size(), 1, "Attendee::delegatedTo()");
+assertequal($vdelegatees_->get(0)->email(), "jane@kolab.org", "Delegated-To email");
+
+
+/////// Test Todo
+
+$t = new Todo();
+$t->setCreated(new cDateTime(2014,3,14, 9,5,30, true));
+$due = new cDateTime(2014,5,20, 17,30,0);
+$t->setDue($due);
+$t->setStart(new cDateTime(2014,4,30, 8,0,0));
+$t->setSummary('Test Task');
+
+$xml = kolabformat::writeTodo($t);
+#print $xml;
+assertcontains($xml, '<due><date-time>2014-05-20T17:30:00</date-time></due>', "Todo::setDue() with date/time");
+assertcontains($xml, '<dtstart><date-time>2014-04-30T08:00:00</date-time></dtstart>', "Todo::setStart() with date/time");
 
 
 /////// Test Contact

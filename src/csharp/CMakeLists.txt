@@ -33,6 +33,9 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Email.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Event.cs
         ${CMAKE_CURRENT_BINARY_DIR}/File.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/FileDriver.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Freebusy.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/FreebusyPeriod.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Geo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Journal.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Key.cs
@@ -40,17 +43,15 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/NameComponents.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Note.cs
         ${CMAKE_CURRENT_BINARY_DIR}/PartStatus.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Period.cs
         ${CMAKE_CURRENT_BINARY_DIR}/RecurrenceRule.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Related.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/Relation.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Relative.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Role.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Snippet.cs
         ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Status.cs
-        ${CMAKE_CURRENT_BINARY_DIR}/Snippet.cs
-        ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.cs
-        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.cs
-        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_std__vectorT_Kolab__Todo_t.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Todo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Url.cs
@@ -66,13 +67,16 @@ set(KOLAB_SWIG_CSHARP_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectordaypos.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectoremail.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorevent.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorfreebusyperiod.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorgeo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectori.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorkey.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorperiod.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorrelated.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectors.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorsnippet.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectortelephone.cs
+        ${CMAKE_CURRENT_BINARY_DIR}/vectortodo.cs
         ${CMAKE_CURRENT_BINARY_DIR}/vectorurl.cs
         ${CMAKE_CURRENT_BINARY_DIR}/Weekday.cs
     )

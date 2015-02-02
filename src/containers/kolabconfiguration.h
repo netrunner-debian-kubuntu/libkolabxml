@@ -109,12 +109,100 @@ private:
     std::vector<Snippet> mSnippets;
 };
 
+struct Relation {
+    Relation(){}
+    Relation(const std::string &name, const std::string &type): mName(name), mType(type) {}
+
+    bool operator==(const Relation &other) const {
+        return mName == other.mName &&
+               mType == other.mType &&
+               mColor == other.mColor &&
+               mIconName == other.mIconName &&
+               mParent == other.mParent &&
+               mMembers == other.mMembers;
+    }
+
+    std::string name() const { return mName; }
+    std::string type() const { return mType; }
+
+    void setColor(const std::string &color) { mColor = color; }
+    std::string color() const { return mColor; }
+
+    void setIconName(const std::string &icon) { mIconName = icon; }
+    std::string iconName() const { return mIconName; }
+
+    void setParent(const std::string &parent) { mParent = parent; }
+    std::string parent() const { return mParent; }
+
+    void setPriority(int priority) { mPriority = priority; }
+    int priority() const { return mPriority; }
+
+    void setMembers(const std::vector<std::string> &members) { mMembers = members; }
+    std::vector<std::string> members() const { return mMembers; }
+
+private:
+    std::string mName;
+    std::string mType;
+    std::string mColor;
+    std::string mIconName;
+    std::string mParent;
+    int mPriority;
+    std::vector<std::string> mMembers;
+};
+
+struct FileDriver {
+    FileDriver(): mEnabled(false) {}
+    FileDriver(const std::string &driver, const std::string &title): mDriver(driver), mTitle(title), mEnabled(true) {}
+
+    bool operator==(const FileDriver &other) const {
+        return mDriver == other.mDriver
+            && mTitle == other.mTitle
+            && mEnabled == other.mEnabled
+            && mHost == other.mHost
+            && mPort == other.mPort
+            && mUsername == other.mUsername
+            && mPassword == other.mPassword;
+    }
+
+    void setDriver(const std::string &driver) { mDriver = driver; }
+    std::string driver() const { return mDriver; }
+
+    void setTitle(const std::string &title) { mTitle = title; }
+    std::string title() const { return mTitle; }
+
+    void setEnabled(bool enabled) { mEnabled = enabled; }
+    bool enabled() const { return mEnabled; }
+
+    void setHost(const std::string &host) { mHost = host; }
+    std::string host() const { return mHost; }
+
+    void setPort(int port) { mPort = port; }
+    int port() const { return mPort; }
+
+    void setUsername(const std::string &username) { mUsername = username; }
+    std::string username() const { return mUsername; }
+
+    void setPassword(const std::string &password) { mPassword = password; }
+    std::string password() const { return mPassword; }
+
+private:
+    std::string mDriver;
+    std::string mTitle;
+    bool mEnabled;
+    std::string mHost;
+    int mPort;
+    std::string mUsername;
+    std::string mPassword;
+};
+
 class Configuration {
 public:
     Configuration();
     Configuration(const std::vector<CategoryColor> &);
     Configuration(const Dictionary &);
     Configuration(const SnippetsCollection &);
+    Configuration(const Relation &);
+    Configuration(const FileDriver &);
     Configuration(const Configuration &);
     ~Configuration();
     void operator=(const Configuration &);
@@ -134,12 +222,17 @@ public:
         Invalid,
         TypeDictionary,
         TypeCategoryColor,
-        TypeSnippet
+        TypeSnippet,
+        TypeRelation,
+        TypeFileDriver
     };
     ConfigurationType type() const;
     std::vector<CategoryColor> categoryColor() const;
     Dictionary dictionary() const;
     SnippetsCollection snippets() const;
+    Relation relation() const;
+    FileDriver fileDriver() const;
+
 private:
     struct Private;
     boost::scoped_ptr<Private> d;

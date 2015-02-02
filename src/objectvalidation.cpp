@@ -31,7 +31,7 @@ namespace Kolab {
 
 static boost::unordered_set<std::string> initializeTzSet() {
     boost::unordered_set<std::string> set;
-    for (int i = 0; i < numOlsonTimezones; i++) {
+    for (unsigned int i = 0; i < numOlsonTimezones; i++) {
         set.insert(olsonTimezones[i]);
     }
     return set;
@@ -110,32 +110,32 @@ void validate(const Journal& journal)
     ASSERTVALID(journal.start());
 }
 
-void validate(const Contact& contact)
+void validate(const Contact& /* contact */)
 {
 
 }
 
-void validate(const DistList& distlist)
+void validate(const DistList& /* distlist */)
 {
 
 }
 
-void validate(const Freebusy& freebusy)
+void validate(const Freebusy& /* freebusy */)
 {
 
 }
 
-void validate(const Note& note)
+void validate(const Note& /* note */)
 {
 
 }
 
-void validate(const Configuration& configuration)
+void validate(const Configuration& /* configuration */)
 {
 
 }
 
-void validate(const File& file)
+void validate(const File& /* file */)
 {
 
 }
