@@ -2,6 +2,7 @@ libkolabxml (1.0.2-3) UNRELEASED; urgency=medium
 
   * Update symbols file with other architecture build logs.
     This should fix (Closes: #761934)
+  * Update Standards-Version to 3.9.6. No changes needed.
 
  -- Diane Trout <diane@ghic.org>  Fri, 13 Feb 2015 08:48:39 -0800
 
