@@ -1,3 +1,10 @@
+libkolabxml (1.0.2-3) UNRELEASED; urgency=medium
+
+  * Update symbols file with other architecture build logs.
+    This should fix (Closes: #761934)
+
+ -- Diane Trout <diane@ghic.org>  Fri, 13 Feb 2015 08:48:39 -0800
+
 libkolabxml (1.0.2-2) unstable; urgency=medium
 
   * Fix symbols file. Part of it was accidentally deleted.
