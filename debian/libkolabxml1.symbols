@@ -3016,8 +3016,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-i386 powerpc ppc64el sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011GeoPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011GeoPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011GeoPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UidPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!alpha !armel !armhf !kfreebsd-amd64 !mips !mipsel)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_011UrlPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3028,16 +3028,16 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_012DirParamTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_012KolabVersionEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_012KolabVersionEED2Ev@Base 1.0.1
- (optional=templinst|arch=!hppa !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!hppa !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !hppa !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !hppa !i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013ClassPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!alpha !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013DtendPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst|arch=!alpha !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013DtendPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013DtendPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013DtendPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RdatePropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_013RoleParamTypeEED1Ev@Base 1.0.1
@@ -3064,20 +3064,20 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=amd64 arm64 armel armhf kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014AttachPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014AttachPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014AttachPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=alpha arm64 armel armhf hppa hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=alpha arm64 armel armhf hppa hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExdatePropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExrulePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst|arch=!i386 !kfreebsd-i386)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExrulePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExrulePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ExrulePropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=amd64 arm64 kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=amd64 arm64 kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=arm64 kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=arm64 kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014MethodPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=amd64 arm64 armel armhf kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=amd64 arm64 armel armhf kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=arm64 armel armhf kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=arm64 armel armhf kfreebsd-amd64 mips mipsel powerpc s390x sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014ProdidPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014RangeParamTypeEED1Ev@Base 1.0.1
@@ -3086,26 +3086,26 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=!hurd-i386 !i386 !kfreebsd-i386 !mips !mipsel)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014RepeatPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014RepeatPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014RepeatPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014StatusPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TranspPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TranspPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TranspPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TranspPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!alpha !armel !armhf !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!alpha !armel !armhf !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !amd64 !armel !armhf !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !amd64 !armel !armhf !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_014TznamePropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015AltrepParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015AltrepParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!hppa !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!hppa !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CommentPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !arm64 !hppa !kfreebsd-amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !arm64 !hppa !kfreebsd-amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!arm64 !hppa !kfreebsd-amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!arm64 !hppa !kfreebsd-amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015ContactPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!hppa !hurd-i386 !i386 !kfreebsd-i386 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CreatedPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3114,12 +3114,12 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CreatedPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CutypeParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015CutypeParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstampPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!arm64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!arm64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !arm64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !arm64 !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015DtstartPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015FbtypeParamTypeEED1Ev@Base 1.0.1
@@ -3128,8 +3128,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015MemberParamTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SentByParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SentByParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!armel !armhf)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!armel !armhf)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !armel !armhf)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !armel !armhf)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015SummaryPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!kfreebsd-amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015TriggerPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3142,26 +3142,26 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015VersionPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015XlabelParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_015XlabelParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !mips !mipsel !powerpc !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016AttendeePropTypeEED2Ev@Base 1.0.1
- (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016CalscalePropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016DurationPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FmttypeParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FmttypeParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !powerpc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016FreebusyPropTypeEED2Ev@Base 1.0.1
- (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016LocationPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_016PriorityPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3184,14 +3184,14 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017EncodingParamTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017LanguageParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017LanguageParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=alpha arm64 armel armhf hppa powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=alpha arm64 armel armhf hppa powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017OrganizerPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017PartstatParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017PartstatParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!arm64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!arm64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !arm64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !arm64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017RelatedToPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_017ResourcesPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3206,8 +3206,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=!mips !mipsel !ppc64el !s390x)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=alpha amd64 armel armhf hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=alpha amd64 armel armhf hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha armel armhf hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=alpha armel armhf hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020DelegatedToParamTypeEED1Ev@Base 1.0.1
@@ -3216,8 +3216,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=!arm64)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020LastModifiedPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020LastModifiedPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020LastModifiedPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !arm64 !mips !mipsel !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !arm64 !mips !mipsel !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!arm64 !mips !mipsel !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!arm64 !mips !mipsel !x32)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020RecurrenceIdPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!hppa)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_020TzoffsetfromPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3232,8 +3232,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_022DelegatedFromParamTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_022ScheduleAgentParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_022ScheduleAgentParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!armel !armhf !kfreebsd-amd64 !powerpc !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!armel !armhf !kfreebsd-amd64 !powerpc !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !armel !armhf !kfreebsd-amd64 !powerpc !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !armel !armhf !kfreebsd-amd64 !powerpc !sparc)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023PercentCompletePropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree27element_factory_initializerILm0EcN13icalendar_2_023ScheduleStatusParamTypeEED1Ev@Base 1.0.1
@@ -3624,8 +3624,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=!arm64 !kfreebsd-amd64)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TranspPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TranspPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TranspPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_014TznamePropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_015AltrepParamTypeEED1Ev@Base 1.0.1
@@ -3672,12 +3672,12 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_015VersionPropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_015XlabelParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_015XlabelParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !hppa !mips !mipsel !s390x)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!alpha !amd64 !hppa !mips !mipsel !s390x)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !hppa !mips !mipsel !s390x)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!alpha !hppa !mips !mipsel !s390x)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016AttendeePropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!hppa !kfreebsd-amd64 !sparc)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!hppa !kfreebsd-amd64 !sparc)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !hppa !kfreebsd-amd64 !sparc)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !hppa !kfreebsd-amd64 !sparc)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016CalscalePropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!s390x)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016DurationPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3702,8 +3702,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016RelatedParamTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016ReltypeParamTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016ReltypeParamTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa !sparc !x32)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!amd64 !hppa !sparc !x32)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!hppa !sparc !x32)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!hppa !sparc !x32)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_016SequencePropTypeEED2Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_017CompletedPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3732,8 +3732,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=!arm64 !powerpc !x32)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018CategoriesPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018CategoriesPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018CategoriesPropTypeEED2Ev@Base 1.0.1
- (optional=templinst|arch=!mips !mipsel)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
- (optional=templinst|arch=!mips !mipsel)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !mips !mipsel)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
+ (optional=templinst|arch=!amd64 !mips !mipsel)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEEC2EPKcS7_S7_S7_@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEED1Ev@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_018TzoffsettoPropTypeEED2Ev@Base 1.0.1
  (optional=templinst|arch=!ppc64el)_ZN3xsd3cxx4tree30element_serializer_initializerILm0EcN13icalendar_2_019DescriptionPropTypeEEC1EPKcS7_S7_S7_@Base 1.0.1
@@ -3989,6 +3989,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN3xsd3cxx4tree5_type16dom_content_typeD1Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_content_typeD2Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_info4nodeEv@Base 1.0.1
+ (arch=amd64)_ZN3xsd3cxx4tree5_type16dom_element_infoC1ERN11xercesc_3_110DOMElementERS2_b@Base 1.0.2
+ (arch=amd64)_ZN3xsd3cxx4tree5_type16dom_element_infoC2ERN11xercesc_3_110DOMElementERS2_b@Base 1.0.2
  _ZN3xsd3cxx4tree5_type16dom_element_infoD0Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_infoD1Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_infoD2Ev@Base 1.0.1
@@ -7419,7 +7421,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=armel)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN5boost10shared_ptrIN5Kolab8FreebusyEEES7_EET0_T_S9_S8_@Base 1.0.1
  (optional=templinst|arch=alpha armel armhf hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc s390x sparc)_ZNSt3mapIN3xsd3cxx3xml14qualified_nameIcEEPFSt8auto_ptrINS1_4tree5_typeEERKN11xercesc_3_110DOMElementENS6_5flagsEPS7_ESt4lessIS4_ESaISt4pairIKS4_SG_EEEixERSK_@Base 1.0.1
  (optional=templinst|arch=armel)_ZNSt3mapIN5boost16exception_detail10type_info_ENS0_10shared_ptrINS1_15error_info_baseEEESt4lessIS2_ESaISt4pairIKS2_S5_EEEixERS9_@Base 1.0.1
- (optional=templinst|arch=alpha amd64 hppa hurd-i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc s390x sparc x32)_ZNSt3mapIPKSt9type_infoN3xsd3cxx4tree19type_serializer_mapIcE9type_infoENS7_18type_id_comparatorESaISt4pairIKS2_S8_EEEixERSB_@Base 1.0.1
+ (optional=templinst|arch=alpha hppa hurd-i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc s390x sparc x32)_ZNSt3mapIPKSt9type_infoN3xsd3cxx4tree19type_serializer_mapIcE9type_infoENS7_18type_id_comparatorESaISt4pairIKS2_S8_EEEixERSB_@Base 1.0.1
  (optional=templinst)_ZNSt3mapISsN3xsd3cxx3xml3dom14namespace_infoIcEESt4lessISsESaISt4pairIKSsS5_EEEixERS9_@Base 1.0.1
  (optional=templinst)_ZNSt4pairIKN3xsd3cxx3xml14qualified_nameIcEESt3mapIPKSt9type_infoNS1_4tree19type_serializer_mapIcE9type_infoENSC_18type_id_comparatorESaIS_IKS9_SD_EEEED1Ev@Base 1.0.1
  (optional=templinst)_ZNSt4pairIKN3xsd3cxx3xml14qualified_nameIcEESt3mapIPKSt9type_infoNS1_4tree19type_serializer_mapIcE9type_infoENSC_18type_id_comparatorESaIS_IKS9_SD_EEEED2Ev@Base 1.0.1
