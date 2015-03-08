@@ -1,5 +1,10 @@
-libkolabxml (1.0.2-3) UNRELEASED; urgency=medium
+libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
 
+  [ Sandro Knauß ]
+  * Team upload.
+  * New upstream release.
+
+  [ Diane Trout ]
   * Update symbols file with other architecture build logs.
     This should fix (Closes: #761934)
   * Update Standards-Version to 3.9.6. No changes needed.
