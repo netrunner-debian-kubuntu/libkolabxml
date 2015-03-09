@@ -420,5 +420,5 @@ static const char* olsonTimezones[] = {
     "Africa/Harare"
 };
 
-static const int numOlsonTimezones = sizeof olsonTimezones / sizeof *olsonTimezones;
+static const long unsigned int numOlsonTimezones = sizeof olsonTimezones / sizeof *olsonTimezones;
 

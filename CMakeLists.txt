@@ -41,11 +41,11 @@ endif()
 # 0.2 (0.2 development version)
 
 set (Libkolabxml_VERSION_MAJOR 1)
-set (Libkolabxml_VERSION_MINOR 0)
+set (Libkolabxml_VERSION_MINOR 1)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 2)
-set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
-#set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
+set (Libkolabxml_VERSION_PATCH 0)
+#set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
+set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
 set (Libkolabxml_VERSION_STRING ${CMAKE_PROJECT_NAME}-${Libkolabxml_VERSION})
 set (KOLAB_FORMAT_VERSION "3.1.0")

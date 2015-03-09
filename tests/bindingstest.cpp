@@ -105,6 +105,61 @@ void BindingsTest::snippetConfigurationCompletness()
     QCOMPARE(re.snippets(), snippets);
 }
 
+void BindingsTest::relationConfigurationCompletness()
+{
+    Kolab::Relation relation("name1", "type1");
+    relation.setColor("color");
+    relation.setIconName("icon");
+    relation.setParent("parent");
+    relation.setPriority(3);
+    std::vector<std::string> members;
+    members.push_back("member1");
+    members.push_back("member2");
+    relation.setMembers(members);
+
+    Kolab::Configuration configuration(relation);
+    configuration.setUid("uid");
+    configuration.setCreated(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+    configuration.setLastModified(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+
+    const std::string &result = Kolab::writeConfiguration(configuration);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+//     std::cout << result << std::endl;
+    const Kolab::Configuration &re = Kolab::readConfiguration(result, false);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+    QCOMPARE(re.uid(), configuration.uid());
+    QCOMPARE(re.created(), configuration.created());
+    QCOMPARE(re.lastModified(), configuration.lastModified());
+    QCOMPARE(re.type(), Kolab::Configuration::TypeRelation);
+    QCOMPARE(re.relation(), relation);
+}
+
+void BindingsTest::fileDriverConfigurationCompletness()
+{
+    Kolab::FileDriver fileDriver("driver", "title");
+    fileDriver.setEnabled(false);
+    fileDriver.setHost("host");
+    fileDriver.setPort(9);
+    fileDriver.setUsername("username");
+    fileDriver.setPassword("password");
+
+    Kolab::Configuration configuration(fileDriver);
+    configuration.setUid("uid");
+    configuration.setCreated(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+    configuration.setLastModified(Kolab::cDateTime(2006,1,6,12,0,0,true)); //UTC
+
+    const std::string &result = Kolab::writeConfiguration(configuration);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+//     std::cout << result << std::endl;
+    const Kolab::Configuration &re = Kolab::readConfiguration(result, false);
+    QCOMPARE(Kolab::error(), Kolab::NoError);
+    QCOMPARE(re.uid(), configuration.uid());
+    QCOMPARE(re.created(), configuration.created());
+    QCOMPARE(re.lastModified(), configuration.lastModified());
+    QCOMPARE(re.type(), Kolab::Configuration::TypeFileDriver);
+    QCOMPARE(re.fileDriver(), fileDriver);
+}
+
 void BindingsTest::noteCompletness()
 {
     Kolab::Note note;
@@ -712,6 +767,23 @@ void BindingsTest::contactCompletness()
     QCOMPARE(e.keys(), c.keys());
     QCOMPARE(e.crypto(), c.crypto());
     QCOMPARE(e.customProperties(), c.customProperties());
+}
+
+void BindingsTest::dateOnlyDates()
+{
+    Kolab::Contact c;
+    c.setUid("1045b57d-ff7f-0000-d814-867b4d7f0000");
+    c.setName("name");
+    c.setBDay(Kolab::cDateTime(2001,12,10));
+    c.setAnniversary(Kolab::cDateTime(2001,3,2));
+
+    const std::string result = Kolab::writeContact(c);
+    QVERIFY(Kolab::error() == Kolab::NoError);
+//     std::cout << result << endl;
+    Kolab::Contact e = Kolab::readContact(result, false);
+    QVERIFY(Kolab::error() == Kolab::NoError);
+    QCOMPARE(e.bDay(), c.bDay());
+    QCOMPARE(e.anniversary(), c.anniversary());
 }
 
 void BindingsTest::distlistCompletness()

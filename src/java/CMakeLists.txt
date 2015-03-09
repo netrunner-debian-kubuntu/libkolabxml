@@ -23,6 +23,10 @@ set(KOLAB_SWIG_JAVA_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/Duration.java
         ${CMAKE_CURRENT_BINARY_DIR}/ErrorSeverity.java
         ${CMAKE_CURRENT_BINARY_DIR}/Event.java
+        ${CMAKE_CURRENT_BINARY_DIR}/File.java
+        ${CMAKE_CURRENT_BINARY_DIR}/FileDriver.java
+        ${CMAKE_CURRENT_BINARY_DIR}/Freebusy.java
+        ${CMAKE_CURRENT_BINARY_DIR}/FreebusyPeriod.java
         ${CMAKE_CURRENT_BINARY_DIR}/Geo.java
         ${CMAKE_CURRENT_BINARY_DIR}/Journal.java
         ${CMAKE_CURRENT_BINARY_DIR}/Key.java
@@ -32,14 +36,15 @@ set(KOLAB_SWIG_JAVA_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/NameComponents.java
         ${CMAKE_CURRENT_BINARY_DIR}/Note.java
         ${CMAKE_CURRENT_BINARY_DIR}/PartStatus.java
+        ${CMAKE_CURRENT_BINARY_DIR}/Period.java
         ${CMAKE_CURRENT_BINARY_DIR}/RecurrenceRule.java
+        ${CMAKE_CURRENT_BINARY_DIR}/Relation.java
         ${CMAKE_CURRENT_BINARY_DIR}/Related.java
         ${CMAKE_CURRENT_BINARY_DIR}/Relative.java
         ${CMAKE_CURRENT_BINARY_DIR}/Role.java
         ${CMAKE_CURRENT_BINARY_DIR}/Status.java
         ${CMAKE_CURRENT_BINARY_DIR}/Snippet.java
         ${CMAKE_CURRENT_BINARY_DIR}/SnippetsCollection.java
-        ${CMAKE_CURRENT_BINARY_DIR}/SWIGTYPE_p_Kolab__Freebusy.java
         ${CMAKE_CURRENT_BINARY_DIR}/Telephone.java
         ${CMAKE_CURRENT_BINARY_DIR}/Todo.java
         ${CMAKE_CURRENT_BINARY_DIR}/Url.java
@@ -53,13 +58,18 @@ set(KOLAB_SWIG_JAVA_FILES
         ${CMAKE_CURRENT_BINARY_DIR}/vectorcs.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectordatetime.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectordaypos.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectoremail.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorevent.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorfreebusyperiod.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorgeo.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectori.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorkey.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectorperiod.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorrelated.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectors.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorsnippet.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectortelephone.java
+        ${CMAKE_CURRENT_BINARY_DIR}/vectortodo.java
         ${CMAKE_CURRENT_BINARY_DIR}/vectorurl.java
         ${CMAKE_CURRENT_BINARY_DIR}/Weekday.java
     )

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<configuration xmlns="http://kolab.org" version="3.0dev1">
+  <uid>6194e99c-69c0-11e4-9911-080027fe5a4c</uid>
+  <prodid>Roundcube-libkolab-1.1 Libkolabxml-1.1</prodid>
+  <creation-date>2014-11-11T16:32:51Z</creation-date>
+  <last-modification-date>2014-11-11T16:32:51Z</last-modification-date>
+  <type>relation</type>
+</configuration>
