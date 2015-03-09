@@ -3,6 +3,9 @@ libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
   [ Sandro Knauß ]
   * Team upload.
   * New upstream release.
+  * Switched downloadurl to http://mirror.kolabsys.com/pub/releases/
+    (there are also signed packages available, but unfortunately not
+    detached)
 
   [ Diane Trout ]
   * Update symbols file with other architecture build logs.

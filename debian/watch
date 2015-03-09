@@ -1,3 +1,2 @@
 version=3
-http://git.kolab.org/libkolabxml/ \
-  /libkolabxml/snapshot/libkolabxml-([0-9\.]+)\.tar\.gz
+http://mirror.kolabsys.com/pub/releases/libkolabxml-([0-9\.]+)\.tar\.gz
