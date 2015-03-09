@@ -5,6 +5,7 @@ Maintainer: Debian Kolab Maintainers <pkg-kolab-devel@lists.alioth.debian.org>
 Uploaders: Paul Klos <kolab@klos2day.nl>, Diane Trout <diane@ghic.org>, Sandro Knauß <bugs@sandroknauss.de>
 Build-Depends: cmake,
                debhelper (>= 9),
+               dh-python,
                pkg-kde-tools (>= 0.12),
                libxerces-c-dev,
                xsdcxx (>= 4.0),

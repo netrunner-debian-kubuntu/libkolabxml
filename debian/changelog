@@ -4,6 +4,8 @@ libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
   * Team upload.
   * New upstream release.
   * Added myself to uploaders with Diane's permission.
+  * Added dh-python as BuildDep.
+    - A warning in build process suggested this
   * Switched downloadurl to http://mirror.kolabsys.com/pub/releases/
     (there are also signed packages available, but unfortunately not
     detached)
