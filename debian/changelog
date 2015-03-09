@@ -13,7 +13,7 @@ libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
     libkolab does not use this symbol. So the missing symbol can be seen
     as an internal one at the moment.
     - the other one uses auto_ptr, all auto_ptr symbols are internal ones.
-  * Updated copyright file.
+  * Updated and reorderd copyright file.
   * Updated libkolabxml1.lintian-overrides to new soname.
   * Switched downloadurl to http://mirror.kolabsys.com/pub/releases/
     (there are also signed packages available, but unfortunately not
