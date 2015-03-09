@@ -6,6 +6,13 @@ libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
   * Added myself to uploaders with Diane's permission.
   * Added dh-python as BuildDep.
     - A warning in build process suggested this
+  * Updated libkolabxml1.symbols (two missing symbols, no SONAME bumping).
+    - one missing symbol:
+    KolabObjects::getConfiguratinoType(Configuration::ConfigurationType)
+    only a typo, till now only libkolab is dependend on libkolabxml and
+    libkolab does not use this symbol. So the missing symbol can be seen
+    as an internal one at the moment.
+    - the other one uses auto_ptr, all auto_ptr symbols are internal ones.
   * Updated libkolabxml1.lintian-overrides to new soname.
   * Switched downloadurl to http://mirror.kolabsys.com/pub/releases/
     (there are also signed packages available, but unfortunately not

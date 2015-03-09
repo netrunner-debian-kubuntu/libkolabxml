@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 1.0.2 amd64 arm64 armel armhf i386 kfreebsd-amd64 kfreebsd-i386 mips mipsel powerpc ppc64el s390x sparc
+# SymbolsHelper-Confirmed: 1.1.0 amd64
 libkolabxml.so.1 libkolabxml1 #MINVER#
  _Z13base64_decodeRKSs@Base 1.0.1
  _Z13base64_encodePKhj@Base 1.0.1
@@ -4069,7 +4069,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN3xsd3cxx4tree6stringIcNS1_11simple_typeIcNS1_5_typeEEEED0Ev@Base 1.0.1
  _ZN3xsd3cxx4tree6stringIcNS1_11simple_typeIcNS1_5_typeEEEED1Ev@Base 1.0.1
  _ZN3xsd3cxx4tree6stringIcNS1_11simple_typeIcNS1_5_typeEEEED2Ev@Base 1.0.1
- (optional=templinst|arch=!amd64 !i386 !kfreebsd-amd64 !kfreebsd-i386 !powerpc)_ZN3xsd3cxx4tree6traitsINS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEEcLNS1_11schema_type5valueE0EE6createERKN11xercesc_3_110DOMElementENS1_5flagsEPS5_@Base 1.0.2
+ (optional=templinst|arch=!i386 !kfreebsd-amd64 !kfreebsd-i386 !powerpc)_ZN3xsd3cxx4tree6traitsINS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEEcLNS1_11schema_type5valueE0EE6createERKN11xercesc_3_110DOMElementENS1_5flagsEPS5_@Base 1.0.2
  (optional=templinst)_ZN3xsd3cxx4tree6traitsIfcLNS1_11schema_type5valueE0EE6createERKN11xercesc_3_110DOMElementENS1_5flagsEPNS1_5_typeE@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree6traitsIfcLNS1_11schema_type5valueE0EE6createERKSsPKN11xercesc_3_110DOMElementENS1_5flagsEPNS1_5_typeE@Base 1.0.1
  _ZN3xsd3cxx4tree7nmtokenIcNS1_5tokenIcNS1_17normalized_stringIcNS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEEEEEEED0Ev@Base 1.0.1
@@ -4301,6 +4301,10 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN3xsd3cxx4tree8optionalIN13icalendar_2_07UriTypeELb0EE3setESt8auto_ptrIS4_E@Base 1.0.1
  (optional=templinst)_ZN3xsd3cxx4tree8optionalIN13icalendar_2_07UriTypeELb0EE5true_Ev@Base 1.0.1
  _ZN3xsd3cxx4tree8optionalIN13icalendar_2_07UriTypeELb0EEaSERKS5_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree8optionalIN8KolabXSD18FileDriverSettingsELb0EE3setERKS4_NS1_5flagsE@Base 1.1.0
+ (optional=templinst)_ZN3xsd3cxx4tree8optionalIN8KolabXSD18FileDriverSettingsELb0EE3setESt8auto_ptrIS4_E@Base 1.1.0
+ (optional=templinst)_ZN3xsd3cxx4tree8optionalIN8KolabXSD18FileDriverSettingsELb0EE5true_Ev@Base 1.1.0
+ (optional=templinst)_ZN3xsd3cxx4tree8optionalIN8KolabXSD18FileDriverSettingsELb0EEaSERKS5_@Base 1.1.0
  (optional=templinst|arch=amd64)_ZN3xsd3cxx4tree8optionalIN8KolabXSD21classifcationPropTypeELb0EE3setERKS4_@Base 1.0.1
  _ZN3xsd3cxx4tree8optionalIN8KolabXSD21classifcationPropTypeELb0EE3setERKS4_NS1_5flagsE@Base 1.0.1
  _ZN3xsd3cxx4tree8optionalIN8KolabXSD21classifcationPropTypeELb0EE3setESt8auto_ptrIS4_E@Base 1.0.1
@@ -4409,6 +4413,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=arm64 armel armhf mips mipsel)_ZN3xsd3cxx4tree8optionalINS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEELb0EEC1ERKS8_NS1_5flagsEPS5_@Base 1.0.2
  (optional=templinst|arch=arm64 armel armhf mips mipsel)_ZN3xsd3cxx4tree8optionalINS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEELb0EEC2ERKS8_NS1_5flagsEPS5_@Base 1.0.2
  _ZN3xsd3cxx4tree8optionalINS1_6stringIcNS1_11simple_typeIcNS1_5_typeEEEEELb0EEaSERKS8_@Base 1.0.1
+ (optional=templinst)_ZN3xsd3cxx4tree8optionalIbLb1EE5true_Ev@Base 1.1.0
  (optional=templinst)_ZN3xsd3cxx4tree8optionalIxLb1EE5true_Ev@Base 1.0.1
  (optional=templinst|arch=armel armhf mips mipsel)_ZN3xsd3cxx4tree8optionalIxLb1EEaSERKS3_@Base 1.0.2
  (optional=templinst)_ZN3xsd3cxx4tree8optionalIyLb1EE5true_Ev@Base 1.0.1
@@ -4482,6 +4487,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN5Kolab10AttachmentaSERKS0_@Base 1.0.1
  _ZN5Kolab10DictionaryD1Ev@Base 1.0.1
  _ZN5Kolab10DictionaryD2Ev@Base 1.0.1
+ _ZN5Kolab10FileDriverD1Ev@Base 1.1.0
+ _ZN5Kolab10FileDriverD2Ev@Base 1.1.0
  _ZN5Kolab10writeEventERKNS_5EventERKSs@Base 1.0.1
  _ZN5Kolab11AffiliationC1ERKS0_@Base 1.0.1
  _ZN5Kolab11AffiliationC2ERKS0_@Base 1.0.1
@@ -4501,7 +4508,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN5Kolab12KolabObjects17deserializeObjectINS_13ConfigurationEEEN5boost10shared_ptrIT_EERKSsb@Base 1.0.1
  (optional=templinst)_ZN5Kolab12KolabObjects17deserializeObjectINS_4FileEEEN5boost10shared_ptrIT_EERKSsb@Base 1.0.1
  (optional=templinst)_ZN5Kolab12KolabObjects17deserializeObjectINS_4NoteEEEN5boost10shared_ptrIT_EERKSsb@Base 1.0.1
- _ZN5Kolab12KolabObjects20getConfiguratinoTypeENS_13Configuration17ConfigurationTypeE@Base 1.0.1
+ _ZN5Kolab12KolabObjects20getConfigurationTypeENS_13Configuration17ConfigurationTypeE@Base 1.1.0
  _ZN5Kolab12errorMessageEv@Base 1.0.1
  _ZN5Kolab12readDistlistERKSsb@Base 1.0.1
  _ZN5Kolab12readFreebusyERKSsb@Base 1.0.1
@@ -4515,12 +4522,16 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN5Kolab13Configuration15setLastModifiedERKNS_9cDateTimeE@Base 1.0.1
  _ZN5Kolab13Configuration6setUidERKSs@Base 1.0.1
  _ZN5Kolab13ConfigurationC1ERKNS_10DictionaryE@Base 1.0.1
+ _ZN5Kolab13ConfigurationC1ERKNS_10FileDriverE@Base 1.1.0
  _ZN5Kolab13ConfigurationC1ERKNS_18SnippetsCollectionE@Base 1.0.1
+ _ZN5Kolab13ConfigurationC1ERKNS_8RelationE@Base 1.1.0
  _ZN5Kolab13ConfigurationC1ERKS0_@Base 1.0.1
  _ZN5Kolab13ConfigurationC1ERKSt6vectorINS_13CategoryColorESaIS2_EE@Base 1.0.1
  _ZN5Kolab13ConfigurationC1Ev@Base 1.0.1
  _ZN5Kolab13ConfigurationC2ERKNS_10DictionaryE@Base 1.0.1
+ _ZN5Kolab13ConfigurationC2ERKNS_10FileDriverE@Base 1.1.0
  _ZN5Kolab13ConfigurationC2ERKNS_18SnippetsCollectionE@Base 1.0.1
+ _ZN5Kolab13ConfigurationC2ERKNS_8RelationE@Base 1.1.0
  _ZN5Kolab13ConfigurationC2ERKS0_@Base 1.0.1
  _ZN5Kolab13ConfigurationC2ERKSt6vectorINS_13CategoryColorESaIS2_EE@Base 1.0.1
  _ZN5Kolab13ConfigurationC2Ev@Base 1.0.1
@@ -4958,6 +4969,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN5Kolab8FreebusyD1Ev@Base 1.0.1
  _ZN5Kolab8FreebusyD2Ev@Base 1.0.1
  _ZN5Kolab8FreebusyaSERKS0_@Base 1.0.1
+ _ZN5Kolab8RelationD1Ev@Base 1.1.0
+ _ZN5Kolab8RelationD2Ev@Base 1.1.0
  _ZN5Kolab8readFileERKSsb@Base 1.0.1
  _ZN5Kolab8readNoteERKSsb@Base 1.0.1
  _ZN5Kolab8readTodoERKSsb@Base 1.0.1
@@ -5276,6 +5289,10 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN8KolabXSD13CategoryColorD1Ev@Base 1.0.1
  _ZN8KolabXSD13CategoryColorD2Ev@Base 1.0.1
  _ZN8KolabXSD13CategoryColoraSERKS0_@Base 1.0.1
+ _ZN8KolabXSD13Configuration12relationTypeERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration12relationTypeERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration12relationTypeESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration12relationTypeEv@Base 1.1.0
  _ZN8KolabXSD13Configuration13categorycolorERKN3xsd3cxx4tree8sequenceINS_13CategoryColorELb0EEE@Base 1.0.1
  _ZN8KolabXSD13Configuration13categorycolorEv@Base 1.0.1
  _ZN8KolabXSD13Configuration13creation_dateERKN3xsd3cxx4tree9date_timeIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.0.1
@@ -5296,16 +5313,48 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN8KolabXSD13Configuration4typeERKNS_17ConfigurationTypeE@Base 1.0.1
  _ZN8KolabXSD13Configuration4typeESt8auto_ptrINS_17ConfigurationTypeEE@Base 1.0.1
  _ZN8KolabXSD13Configuration4typeEv@Base 1.0.1
+ _ZN8KolabXSD13Configuration5colorERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5colorERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5colorESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5colorEv@Base 1.1.0
  _ZN8KolabXSD13Configuration5parseERN3xsd3cxx3xml3dom6parserIcEENS2_4tree5flagsE@Base 1.0.1
+ _ZN8KolabXSD13Configuration5titleERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5titleERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5titleESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration5titleEv@Base 1.1.0
+ _ZN8KolabXSD13Configuration6driverERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6driverERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6driverESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6driverEv@Base 1.1.0
+ _ZN8KolabXSD13Configuration6memberERKN3xsd3cxx4tree8sequenceINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6memberEv@Base 1.1.0
+ _ZN8KolabXSD13Configuration6parentERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6parentERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6parentESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration6parentEv@Base 1.1.0
  _ZN8KolabXSD13Configuration6prodidERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.0.1
  _ZN8KolabXSD13Configuration6prodidESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.0.1
  _ZN8KolabXSD13Configuration6prodidEv@Base 1.0.1
+ _ZN8KolabXSD13Configuration7enabledERKN3xsd3cxx4tree8optionalIbLb1EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration7enabledERKb@Base 1.1.0
+ _ZN8KolabXSD13Configuration7enabledEv@Base 1.1.0
  _ZN8KolabXSD13Configuration7snippetERKN3xsd3cxx4tree8sequenceINS_7SnippetELb0EEE@Base 1.0.1
  _ZN8KolabXSD13Configuration7snippetEv@Base 1.0.1
+ _ZN8KolabXSD13Configuration8iconNameERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8iconNameERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8iconNameESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8iconNameEv@Base 1.1.0
  _ZN8KolabXSD13Configuration8languageERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.0.1
  _ZN8KolabXSD13Configuration8languageERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.0.1
  _ZN8KolabXSD13Configuration8languageESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.0.1
  _ZN8KolabXSD13Configuration8languageEv@Base 1.0.1
+ _ZN8KolabXSD13Configuration8priorityERKN3xsd3cxx4tree8optionalIxLb1EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8priorityERKx@Base 1.1.0
+ _ZN8KolabXSD13Configuration8priorityEv@Base 1.1.0
+ _ZN8KolabXSD13Configuration8settingsERKN3xsd3cxx4tree8optionalINS_18FileDriverSettingsELb0EEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8settingsERKNS_18FileDriverSettingsE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8settingsESt8auto_ptrINS_18FileDriverSettingsEE@Base 1.1.0
+ _ZN8KolabXSD13Configuration8settingsEv@Base 1.1.0
  _ZN8KolabXSD13ConfigurationC1ERKN11xercesc_3_110DOMElementEN3xsd3cxx4tree5flagsEPNS7_5_typeE@Base 1.0.1
  _ZN8KolabXSD13ConfigurationC1ERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEESA_RKNS3_9date_timeIcS7_EESE_RKNS_17ConfigurationTypeE@Base 1.0.1
  _ZN8KolabXSD13ConfigurationC1ERKS0_N3xsd3cxx4tree5flagsEPNS5_5_typeE@Base 1.0.1
@@ -5383,6 +5432,32 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN8KolabXSD17ConfigurationTypeD1Ev@Base 1.0.1
  _ZN8KolabXSD17ConfigurationTypeD2Ev@Base 1.0.1
  _ZN8KolabXSD17ConfigurationTypeaSENS0_5valueE@Base 1.0.1
+ _ZN8KolabXSD18FileDriverSettings4hostERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4hostERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4hostESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4hostEv@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4portERKN3xsd3cxx4tree8optionalIxLb1EEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4portERKx@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings4portEv@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings5parseERN3xsd3cxx3xml3dom6parserIcEENS2_4tree5flagsE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8passwordERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8passwordERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8passwordESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8passwordEv@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8usernameERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8usernameERKN3xsd3cxx4tree8optionalINS3_6stringIcNS3_11simple_typeIcNS3_5_typeEEEEELb0EEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8usernameESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettings8usernameEv@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC1ERKN11xercesc_3_110DOMElementEN3xsd3cxx4tree5flagsEPNS7_5_typeE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC1ERKS0_N3xsd3cxx4tree5flagsEPNS5_5_typeE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC1Ev@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC2ERKN11xercesc_3_110DOMElementEN3xsd3cxx4tree5flagsEPNS7_5_typeE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC2ERKS0_N3xsd3cxx4tree5flagsEPNS5_5_typeE@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsC2Ev@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsD0Ev@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsD1Ev@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsD2Ev@Base 1.1.0
+ _ZN8KolabXSD18FileDriverSettingsaSERKS0_@Base 1.1.0
  _ZN8KolabXSD18attachmentPropType10parametersERKNS_10parametersE@Base 1.0.1
  _ZN8KolabXSD18attachmentPropType10parametersESt8auto_ptrINS_10parametersEE@Base 1.0.1
  _ZN8KolabXSD18attachmentPropType10parametersEv@Base 1.0.1
@@ -5593,6 +5668,9 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN8KolabXSD9KolabBase21version_default_valueEv@Base 1.0.1
  _ZN8KolabXSD9KolabBase22version_default_value_E@Base 1.0.1
  _ZN8KolabXSD9KolabBase5parseERN3xsd3cxx3xml3dom6parserIcEENS2_4tree5flagsE@Base 1.0.1
+ _ZN8KolabXSD9KolabBase7versionERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.1.0
+ _ZN8KolabXSD9KolabBase7versionESt8auto_ptrIN3xsd3cxx4tree6stringIcNS4_11simple_typeIcNS4_5_typeEEEEEE@Base 1.1.0
+ _ZN8KolabXSD9KolabBase7versionEv@Base 1.1.0
  _ZN8KolabXSD9KolabBaseC1ERKN11xercesc_3_110DOMElementEN3xsd3cxx4tree5flagsEPNS7_5_typeE@Base 1.0.1
  _ZN8KolabXSD9KolabBaseC1ERKS0_N3xsd3cxx4tree5flagsEPNS5_5_typeE@Base 1.0.1
  _ZN8KolabXSD9KolabBaseC1Ev@Base 1.0.1
@@ -5609,6 +5687,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_13ConfigurationE@Base 1.0.1
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_14textformatTypeE@Base 1.0.1
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_17ConfigurationTypeE@Base 1.0.1
+ _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_18FileDriverSettingsE@Base 1.1.0
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_18attachmentPropTypeE@Base 1.0.1
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_21classifcationPropTypeE@Base 1.0.1
  _ZN8KolabXSDlsERN11xercesc_3_110DOMElementERKNS_4FileE@Base 1.0.1
@@ -6973,12 +7052,14 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZNK5Kolab10Attachment8mimetypeEv@Base 1.0.1
  _ZNK5Kolab10AttachmenteqERKS0_@Base 1.0.1
  _ZNK5Kolab13Configuration10dictionaryEv@Base 1.0.1
+ _ZNK5Kolab13Configuration10fileDriverEv@Base 1.1.0
  _ZNK5Kolab13Configuration12lastModifiedEv@Base 1.0.1
  _ZNK5Kolab13Configuration13categoryColorEv@Base 1.0.1
  _ZNK5Kolab13Configuration3uidEv@Base 1.0.1
  _ZNK5Kolab13Configuration4typeEv@Base 1.0.1
  _ZNK5Kolab13Configuration7createdEv@Base 1.0.1
  _ZNK5Kolab13Configuration7isValidEv@Base 1.0.1
+ _ZNK5Kolab13Configuration8relationEv@Base 1.1.0
  _ZNK5Kolab13Configuration8snippetsEv@Base 1.0.1
  _ZNK5Kolab14FreebusyPeriod12eventSummaryEv@Base 1.0.1
  _ZNK5Kolab14FreebusyPeriod13eventLocationEv@Base 1.0.1
@@ -7204,6 +7285,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZNK8KolabXSD13CategoryColor5colorEv@Base 1.0.1
  _ZNK8KolabXSD13CategoryColor6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
  _ZNK8KolabXSD13CategoryColor8categoryEv@Base 1.0.1
+ _ZNK8KolabXSD13Configuration12relationTypeEv@Base 1.1.0
  _ZNK8KolabXSD13Configuration13categorycolorEv@Base 1.0.1
  _ZNK8KolabXSD13Configuration13creation_dateEv@Base 1.0.1
  _ZNK8KolabXSD13Configuration1eEv@Base 1.0.1
@@ -7211,16 +7293,30 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZNK8KolabXSD13Configuration3uidEv@Base 1.0.1
  _ZNK8KolabXSD13Configuration4nameEv@Base 1.0.1
  _ZNK8KolabXSD13Configuration4typeEv@Base 1.0.1
+ _ZNK8KolabXSD13Configuration5colorEv@Base 1.1.0
+ _ZNK8KolabXSD13Configuration5titleEv@Base 1.1.0
  _ZNK8KolabXSD13Configuration6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
+ _ZNK8KolabXSD13Configuration6driverEv@Base 1.1.0
+ _ZNK8KolabXSD13Configuration6memberEv@Base 1.1.0
+ _ZNK8KolabXSD13Configuration6parentEv@Base 1.1.0
  _ZNK8KolabXSD13Configuration6prodidEv@Base 1.0.1
+ _ZNK8KolabXSD13Configuration7enabledEv@Base 1.1.0
  _ZNK8KolabXSD13Configuration7snippetEv@Base 1.0.1
+ _ZNK8KolabXSD13Configuration8iconNameEv@Base 1.1.0
  _ZNK8KolabXSD13Configuration8languageEv@Base 1.0.1
+ _ZNK8KolabXSD13Configuration8priorityEv@Base 1.1.0
+ _ZNK8KolabXSD13Configuration8settingsEv@Base 1.1.0
  _ZNK8KolabXSD14textformatType27_xsd_textformatType_convertEv@Base 1.0.1
  _ZNK8KolabXSD14textformatType6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
  _ZNK8KolabXSD14textformatTypecvNS0_5valueEEv@Base 1.0.1
  _ZNK8KolabXSD17ConfigurationType30_xsd_ConfigurationType_convertEv@Base 1.0.1
  _ZNK8KolabXSD17ConfigurationType6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
  _ZNK8KolabXSD17ConfigurationTypecvNS0_5valueEEv@Base 1.0.1
+ _ZNK8KolabXSD18FileDriverSettings4hostEv@Base 1.1.0
+ _ZNK8KolabXSD18FileDriverSettings4portEv@Base 1.1.0
+ _ZNK8KolabXSD18FileDriverSettings6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.1.0
+ _ZNK8KolabXSD18FileDriverSettings8passwordEv@Base 1.1.0
+ _ZNK8KolabXSD18FileDriverSettings8usernameEv@Base 1.1.0
  _ZNK8KolabXSD18attachmentPropType10parametersEv@Base 1.0.1
  _ZNK8KolabXSD18attachmentPropType3uriEv@Base 1.0.1
  _ZNK8KolabXSD18attachmentPropType6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
@@ -7607,7 +7703,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZNSt8auto_ptrIN5Kolab14RecurrenceRuleEED2Ev@Base 1.0.1
  _ZNSt8auto_ptrIN8KolabXSD13ConfigurationEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrIN8KolabXSD4NoteEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
- _ZNSt8auto_ptrIN9vcard_4_010VcardsTypeEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
+ (optional=templinst)_ZNSt8auto_ptrIN9vcard_4_010VcardsTypeEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrISt3mapIPKN3xsd3cxx4tree8identityEPNS3_5_typeENS7_19identity_comparatorESaISt4pairIKS6_S8_EEEE5resetEPSE_@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrISt3mapIPKN3xsd3cxx4tree8identityEPNS3_5_typeENS7_19identity_comparatorESaISt4pairIKS6_S8_EEEED1Ev@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrISt3mapIPKN3xsd3cxx4tree8identityEPNS3_5_typeENS7_19identity_comparatorESaISt4pairIKS6_S8_EEEED2Ev@Base 1.0.1
@@ -7879,6 +7975,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTIN8KolabXSD13ConfigurationE@Base 1.0.1
  _ZTIN8KolabXSD14textformatTypeE@Base 1.0.1
  _ZTIN8KolabXSD17ConfigurationTypeE@Base 1.0.1
+ _ZTIN8KolabXSD18FileDriverSettingsE@Base 1.1.0
  _ZTIN8KolabXSD18attachmentPropTypeE@Base 1.0.1
  _ZTIN8KolabXSD21classifcationPropTypeE@Base 1.0.1
  _ZTIN8KolabXSD4FileE@Base 1.0.1
@@ -8201,6 +8298,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTSN8KolabXSD13ConfigurationE@Base 1.0.1
  _ZTSN8KolabXSD14textformatTypeE@Base 1.0.1
  _ZTSN8KolabXSD17ConfigurationTypeE@Base 1.0.1
+ _ZTSN8KolabXSD18FileDriverSettingsE@Base 1.1.0
  _ZTSN8KolabXSD18attachmentPropTypeE@Base 1.0.1
  _ZTSN8KolabXSD21classifcationPropTypeE@Base 1.0.1
  _ZTSN8KolabXSD4FileE@Base 1.0.1
@@ -8511,6 +8609,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTVN8KolabXSD13ConfigurationE@Base 1.0.1
  _ZTVN8KolabXSD14textformatTypeE@Base 1.0.1
  _ZTVN8KolabXSD17ConfigurationTypeE@Base 1.0.1
+ _ZTVN8KolabXSD18FileDriverSettingsE@Base 1.1.0
  _ZTVN8KolabXSD18attachmentPropTypeE@Base 1.0.1
  _ZTVN8KolabXSD21classifcationPropTypeE@Base 1.0.1
  _ZTVN8KolabXSD4FileE@Base 1.0.1
