@@ -1,4 +1,4 @@
-# hardening-check --verbose libkolabxml.so.0 reports
+# hardening-check --verbose libkolabxml.so.1 reports
 # Fortify Source functions: no, only unprotected functions found!
 #        unprotected: memmove
 #        unprotected: memcpy
