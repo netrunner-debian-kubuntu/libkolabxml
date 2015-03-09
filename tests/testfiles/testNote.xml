@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note version="3.0dev1" xmlns="http://kolab.org">
+  <uid>uid</uid>
+  <prodid></prodid>
+  <creation-date>2014-11-11T16:32:51Z</creation-date>
+  <last-modification-date>2014-11-11T16:32:51Z</last-modification-date>
+  <classification>PUBLIC</classification>
+  <summary>summarytext</summary>
+  <color>#ffff00</color>
+</note>
+

@@ -4,14 +4,10 @@
     xmlns="http://kolab.org"
     elementFormDefault="qualified">
 
+  <xs:complexType name="KolabBase">
+       <xs:attribute name="version" type="xs:string" default="3.0" />
+  </xs:complexType>
 
-    
-    <xs:complexType name="KolabBase">
-        <xs:attribute name="version" type="xs:string" fixed="3.0" />
-    </xs:complexType>
-
-
-  
   <xs:complexType name="attachmentPropType">
     <xs:sequence> 
       <xs:element name="parameters">
@@ -102,6 +98,8 @@
       <xs:enumeration value="dictionary"/>
       <xs:enumeration value="categorycolor"/>
       <xs:enumeration value="snippets"/>
+      <xs:enumeration value="relation"/>
+      <xs:enumeration value="file_driver"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -138,6 +136,17 @@
   </xs:complexType>
 
   <xs:element name="snippet" type="Snippet"/>
+
+  <xs:complexType name="FileDriverSettings" mixed="true" >
+    <xs:sequence>
+      <xs:element name="host" type="xs:string" minOccurs="0"/>
+      <xs:element name="port" type="xs:integer" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="settings" type="FileDriverSettings"/>
   
   <xs:complexType name="Configuration">
     <xs:complexContent mixed="false">
@@ -156,6 +165,19 @@
           <!-- Snippets -->
           <xs:element name="name" type="xs:string" minOccurs="0"/>
           <xs:element name="snippet" type="Snippet" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- Relation -->
+          <!-- xs:element name="name" type="xs:string" minOccurs="0"/ -->
+          <xs:element name="relationType" type="xs:string" minOccurs="0"/>
+          <xs:element name="color" type="xs:string" minOccurs="0"/>
+          <xs:element name="iconName" type="xs:string" minOccurs="0"/>
+          <xs:element name="priority" type="xs:integer" minOccurs="0"/>
+          <xs:element name="parent" type="xs:string" minOccurs="0"/>
+          <xs:element name="member" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          <!-- FileDriver -->
+          <xs:element name="driver" type="xs:string" minOccurs="0"/>
+          <xs:element name="title" type="xs:string" minOccurs="0"/>
+          <xs:element name="enabled" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="settings" type="FileDriverSettings" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

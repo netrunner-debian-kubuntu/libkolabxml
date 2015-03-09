@@ -25,6 +25,8 @@ class BindingsTest : public QObject
     void categorycolorConfigurationCompletness();
     void dictionaryConfigurationCompletness();
     void snippetConfigurationCompletness();
+    void relationConfigurationCompletness();
+    void fileDriverConfigurationCompletness();
     void noteCompletness();
     void fileCompletness();
     void eventCompletness();
@@ -36,6 +38,7 @@ class BindingsTest : public QObject
     void freebusyCompletness();
     
     void contactCompletness();
+    void dateOnlyDates();
     void distlistCompletness();
 
     void generateTimestampIfEmpty();

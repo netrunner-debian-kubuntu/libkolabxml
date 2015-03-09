@@ -15,6 +15,7 @@
     #include "containers/kolabnote.h"
     #include "containers/kolabconfiguration.h"
     #include "containers/kolabfile.h"
+    #include "containers/kolabfreebusy.h"
 %}
 
 %include "std_string.i"
@@ -39,12 +40,15 @@ namespace std {
     %template(vectorevent) vector<Kolab::Event>;
     %template(vectorrelated) vector<Kolab::Related>;
     %template(vectortelephone) vector<Kolab::Telephone>;
+    %template(vectortodo) vector<Kolab::Todo>;
     %template(vectoremail) vector<Kolab::Email>;
     %template(vectordatetime) vector<Kolab::cDateTime>;
     %template(vectorurl) vector<Kolab::Url>;
     %template(vectorkey) vector<Kolab::Key>;
     %template(vectorcategorycolor) vector<Kolab::CategoryColor>;
     %template(vectorsnippet) vector<Kolab::Snippet>;
+    %template(vectorfreebusyperiod) vector<Kolab::FreebusyPeriod>;
+    %template(vectorperiod) vector<Kolab::Period>;
 };
 
 %rename(readKolabFile) Kolab::readFile;
@@ -60,3 +64,4 @@ namespace std {
 %include "containers/kolabnote.h"
 %include "containers/kolabconfiguration.h"
 %include "containers/kolabfile.h"
+%include "containers/kolabfreebusy.h"

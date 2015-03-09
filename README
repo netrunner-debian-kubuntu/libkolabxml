@@ -1,7 +1,10 @@
 = About =
 
-Libkolabxml is the reference implementation of the Kolab XML Format as defined in http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
-It provides serialization/deserialization from/to in-memory representations for all Kolab Objects, including input validation.
+Libkolabxml is the reference implementation of the Kolab XML Format as
+defined in http://wiki.kolab.org/User:Mollekopf/Drafts/KEP:17.
+
+It provides serialization/deserialization from/to in-memory
+representations for all Kolab Objects, including input validation.
 
 = Bindings =
 
@@ -15,60 +18,72 @@ For more information about the usage please see src/kolabformat.h
 
 Build with:
 
-$mkdir build
-$cd build
-$cmake ..
-$make
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
 
 == CMake options ==
 
-Options can either be supplied on the commandline or edited in the cmake cache.
+Options can either be supplied on the commandline or edited in the
+cmake cache.
 
 Library installation path:
 
-LIB_INSTALL_DIR=/usr/lib
+    LIB_INSTALL_DIR=/usr/lib
+
+Note that LIB_SUFFIX is honored since version 1.0.2
 
 Set the installation prefix:
 
-CMAKE_INSTALL_PREFIX=/usr
+    CMAKE_INSTALL_PREFIX=/usr
 
 Installation location for header files:
 
-INCLUDE_INSTALL_DIR=/usr/include
+    INCLUDE_INSTALL_DIR=/usr/include
 
-Building of bindings can be controlled using cmake configuration options:
-PYTHON_BINDINGS
-PHP_BINDINGS
-JAVA_BINDINGS
-CSHARP_BINDINGS
+Building of bindings can be controlled using cmake configuration
+options:
+
+    PYTHON_BINDINGS
+    PHP_BINDINGS
+    JAVA_BINDINGS
+    CSHARP_BINDINGS
 
 The path to install the bindings:
-PYTHON_INSTALL_DIR
-PHP_INSTALL_DIR
-JAVA_INSTALL_DIR
-CSHARP_INSTALL_DIR
+
+    PYTHON_INSTALL_DIR
+    PHP_INSTALL_DIR
+    JAVA_INSTALL_DIR
+    CSHARP_INSTALL_DIR
 
 === Example ===
 
-Find libraries in lib64, install to /usr/lib64, build python and phpbindings:
+Find libraries in lib64, install to /usr/lib64, build python and
+phpbindings:
 
-$cmake -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR=/usr/lib64 -DPYTHON_BINDINGS=TRUE -DPYTHON_INSTALL_DIR=/usr/lib64/python$x.$y/site-packages/ -DPHP_BINDINGS=TRUE ..
+$ cmake -DCMAKE_INSTALL_PREFIX=/usr -DLIB_INSTALL_DIR=/usr/lib64 \
+    -DPYTHON_BINDINGS=TRUE \
+    -DPYTHON_INSTALL_DIR=/usr/lib64/python$x.$y/site-packages/ \
+    -DPHP_BINDINGS=TRUE ..
 
 == Requirements ==
 
 Minimum requirements are:
--cmake 2.6
--boost >= 1.41
--xerces-c >= 3.0
--cxx >= 3.0 (http://www.codesynthesis.com/products/xsd/)
--libcurl
+
+    - cmake 2.6
+    - boost >= 1.41
+    - xerces-c >= 3.0
+    - cxx >= 3.0 (http://www.codesynthesis.com/products/xsd/)
+    - libcurl
 
 For further features:
--SWIG >= 2.0
+
+    - SWIG >= 2.0
 
 For building test (controlled by -DBUILD_TESTS=TRUE):
--Qt >= 4.7
+
+    - Qt >= 4.7
 
 
 For further information see src/DEVELOPMENT.
-

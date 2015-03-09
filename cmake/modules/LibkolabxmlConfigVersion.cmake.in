@@ -3,8 +3,12 @@
 # if the current version is >= requested version.
 
 set(PACKAGE_VERSION @Libkolabxml_VERSION_MAJOR@.@Libkolabxml_VERSION_MINOR@.@Libkolabxml_VERSION_PATCH@)
+set(PACKAGE_VERSION_MAJOR @Libkolabxml_VERSION_MAJOR@)
 
 if("${PACKAGE_VERSION}" VERSION_LESS "${PACKAGE_FIND_VERSION}" )
+   set(PACKAGE_VERSION_COMPATIBLE FALSE)
+elseif(NOT "${PACKAGE_FIND_VERSION_MAJOR}" VERSION_EQUAL "${PACKAGE_VERSION_MAJOR}" )
+   #Major versions are incompatible and require an explicit switch
    set(PACKAGE_VERSION_COMPATIBLE FALSE)
 else("${PACKAGE_VERSION}" VERSION_LESS "${PACKAGE_FIND_VERSION}" )
    set(PACKAGE_VERSION_COMPATIBLE TRUE)
