@@ -32,7 +32,9 @@ License: GPL-3+
 Files: src/containers/kolabfreebusy.cpp
        tests/parsingtest.*
        tests/validationtest.*
+       tests/kolabconversationtest.*
 Copyright: 2012-2013 Christian Mollekopf <mollekopf@kolabsys.com>
+           2014      Sandro Knauß <knauss@kolabsys.com>
 License: LGPL-2.1+
 
 License: LGPL-3+
@@ -54,6 +56,7 @@ License: LGPL-3+
 
 Files: schemas/*
 Copyright: 2011-2012 by The Calendaring and Scheduling Consortium, Inc.
+           2010-2011 by OASIS Open
 License: Apache-2.0
  Files from http://www.calconnect.org/artifacts/ical-art.shtml
  All material contained in files linked from this page is licensed
