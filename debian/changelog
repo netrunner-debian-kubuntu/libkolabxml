@@ -1,4 +1,4 @@
-libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
+libkolabxml (1.1.0-1) experimental; urgency=medium
 
   [ Sandro Knauß ]
   * Team upload.
@@ -24,7 +24,7 @@ libkolabxml (1.1.0-1) UNRELEASED; urgency=medium
     This should fix (Closes: #761934)
   * Update Standards-Version to 3.9.6. No changes needed.
 
- -- Diane Trout <diane@ghic.org>  Fri, 13 Feb 2015 08:48:39 -0800
+ -- Sandro Knauß <bugs@sandroknauss.de>  Mon, 09 Mar 2015 17:42:42 +0100
 
 libkolabxml (1.0.2-2) unstable; urgency=medium
 
