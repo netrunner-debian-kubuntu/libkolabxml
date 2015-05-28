@@ -1,3 +1,10 @@
+libkolabxml (1.1.0-2) unstable; urgency=medium
+
+  * Get libkolabxml into unstable. It was uploaded to expermental because of
+    the freeze.
+
+ -- Sandro Knauß <bugs@sandroknauss.de>  Wed, 27 May 2015 17:59:20 +0200
+
 libkolabxml (1.1.0-1) experimental; urgency=medium
 
   [ Sandro Knauß ]
