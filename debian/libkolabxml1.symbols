@@ -7243,7 +7243,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZNK5Kolab8DistList4nameEv@Base 1.0.1
  _ZNK5Kolab8DistList7isValidEv@Base 1.0.1
  _ZNK5Kolab8DistList7membersEv@Base 1.0.1
- (arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 x32)_ZNK5Kolab8DurationeqERKS0_@Base 1.0.1
+ (arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 m68k x32)_ZNK5Kolab8DurationeqERKS0_@Base 1.1.0
  _ZNK5Kolab8Freebusy3endEv@Base 1.0.1
  _ZNK5Kolab8Freebusy3uidEv@Base 1.0.1
  _ZNK5Kolab8Freebusy5startEv@Base 1.0.1
