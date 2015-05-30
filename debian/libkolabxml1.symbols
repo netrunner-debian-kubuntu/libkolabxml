@@ -3987,8 +3987,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZN3xsd3cxx4tree5_type16dom_content_typeD1Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_content_typeD2Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_info4nodeEv@Base 1.0.1
- (arch=amd64)_ZN3xsd3cxx4tree5_type16dom_element_infoC1ERN11xercesc_3_110DOMElementERS2_b@Base 1.0.2
- (arch=amd64)_ZN3xsd3cxx4tree5_type16dom_element_infoC2ERN11xercesc_3_110DOMElementERS2_b@Base 1.0.2
+ (optional=xsdinternal|arch=amd64 m68k mipsel sh4 x32)_ZN3xsd3cxx4tree5_type16dom_element_infoC1ERN11xercesc_3_110DOMElementERS2_b@Base 1.1.0
+ (optional=xsdinternal|arch=amd64 m68k mipsel sh4 x32)_ZN3xsd3cxx4tree5_type16dom_element_infoC2ERN11xercesc_3_110DOMElementERS2_b@Base 1.1.0
  _ZN3xsd3cxx4tree5_type16dom_element_infoD0Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_infoD1Ev@Base 1.0.1
  _ZN3xsd3cxx4tree5_type16dom_element_infoD2Ev@Base 1.0.1
@@ -5029,14 +5029,14 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN5boost15foreach_detail_14simple_variantISt6vectorIiSaIiEEED2Ev@Base 1.0.1
  (optional=templinst)_ZN5boost15throw_exceptionINS_16bad_lexical_castEEEvRKT_@Base 1.0.1
  (optional=templinst)_ZN5boost15throw_exceptionINS_16exception_detail19error_info_injectorISt13runtime_errorEEEEvRKT_@Base 1.0.1
- _ZN5boost16bad_lexical_castD0Ev@Base 1.0.1
- _ZN5boost16bad_lexical_castD1Ev@Base 1.0.1
- _ZN5boost16bad_lexical_castD2Ev@Base 1.0.1
- _ZN5boost16exception_detail10bad_alloc_C1ERKS1_@Base 1.0.1
- _ZN5boost16exception_detail10bad_alloc_C2ERKS1_@Base 1.0.1
- _ZN5boost16exception_detail10bad_alloc_D0Ev@Base 1.0.1
- _ZN5boost16exception_detail10bad_alloc_D1Ev@Base 1.0.1
- _ZN5boost16exception_detail10bad_alloc_D2Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16bad_lexical_castD0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16bad_lexical_castD1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16bad_lexical_castD2Ev@Base 1.0.1
+ (optional=boostinternal|arch=!m68k)_ZN5boost16exception_detail10bad_alloc_C1ERKS1_@Base 1.1.0
+ (optional=boostinternal|arch=!m68k)_ZN5boost16exception_detail10bad_alloc_C2ERKS1_@Base 1.1.0
+ (optional=boostinternal)_ZN5boost16exception_detail10bad_alloc_D0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16exception_detail10bad_alloc_D1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16exception_detail10bad_alloc_D2Ev@Base 1.0.1
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_10bad_alloc_EED0Ev@Base 1.0.1
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_10bad_alloc_EED1Ev@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost16exception_detail10clone_implINS0_10bad_alloc_EED2Ev@Base 1.1.0
@@ -5051,11 +5051,11 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=m68k)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEED2Ev@Base 1.1.0
  (optional=templinst|arch=!m68k)_ZN5boost16exception_detail12refcount_ptrINS0_20error_info_containerEE5adoptEPS2_@Base 1.0.1
  (optional=templinst)_ZN5boost16exception_detail12refcount_ptrINS0_20error_info_containerEE7releaseEv@Base 1.0.1
- _ZN5boost16exception_detail14bad_exception_C1ERKS1_@Base 1.0.1
- _ZN5boost16exception_detail14bad_exception_C2ERKS1_@Base 1.0.1
- _ZN5boost16exception_detail14bad_exception_D0Ev@Base 1.0.1
- _ZN5boost16exception_detail14bad_exception_D1Ev@Base 1.0.1
- _ZN5boost16exception_detail14bad_exception_D2Ev@Base 1.0.1
+ (optional=boostinternal|arch=!m68k)_ZN5boost16exception_detail14bad_exception_C1ERKS1_@Base 1.1.0
+ (optional=boostinternal|arch=!m68k)_ZN5boost16exception_detail14bad_exception_C2ERKS1_@Base 1.1.0
+ (optional=boostinternal)_ZN5boost16exception_detail14bad_exception_D0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16exception_detail14bad_exception_D1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost16exception_detail14bad_exception_D2Ev@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost16exception_detail16throw_exception_ISt13runtime_errorEEvRKT_PKcS7_i@Base 1.1.0
  (optional=templinst|arch=armel armhf hppa m68k)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC1ERKS3_@Base 1.0.1
  (optional=templinst|arch=armel armhf hppa m68k)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC2ERKS3_@Base 1.0.1
@@ -5101,16 +5101,17 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=armel armhf hppa mips mipsel sh4)_ZN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcED0Ev@Base 1.0.1
  (optional=templinst|arch=armel armhf hppa mips mipsel sh4)_ZN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcED1Ev@Base 1.0.1
  (optional=templinst|arch=armel armhf hppa mips mipsel sh4)_ZN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcED2Ev@Base 1.0.1
- (arch=armel)_ZN5boost6detail12shared_countC1ERKS1_@Base 1.0.1
+ (optional=boostinternal|arch=armel)_ZN5boost6detail12shared_countC1ERKS1_@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost6detail12shared_countC1IN5Kolab13ConfigurationEEEPT_@Base 1.1.0
- (arch=armel)_ZN5boost6detail12shared_countC2ERKS1_@Base 1.0.1
+ (optional=boostinternal|arch=armel)_ZN5boost6detail12shared_countC2ERKS1_@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost6detail12shared_countC2IN5Kolab13ConfigurationEEEPT_@Base 1.1.0
- (arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 x32)_ZN5boost6detail12shared_countD1Ev@Base 1.0.1
- (arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 x32)_ZN5boost6detail12shared_countD2Ev@Base 1.0.1
+ (optional=boostinternal|arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 x32)_ZN5boost6detail12shared_countD1Ev@Base 1.0.1
+ (optional=boostinternal|arch=amd64 hurd-i386 i386 kfreebsd-amd64 kfreebsd-i386 x32)_ZN5boost6detail12shared_countD2Ev@Base 1.0.1
  (optional=templinst)_ZN5boost6detail13parse_inf_nanIcdEEbPKT_S4_RT0_@Base 1.0.1
- (arch=armel)_ZN5boost6detail13spinlock_poolILi1EE5pool_E@Base 1.0.1
+ (optional=boostinternal|arch=armel m68k)_ZN5boost6detail13spinlock_poolILi1EE5pool_E@Base 1.1.0
  _ZN5boost6detail15sp_counted_base7destroyEv@Base 1.0.1
- (arch=!amd64 !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !x32)_ZN5boost6detail15sp_counted_base7releaseEv@Base 1.0.1
+ (optional=boostinternal|arch=!amd64 !hurd-i386 !i386 !kfreebsd-amd64 !kfreebsd-i386 !x32)_ZN5boost6detail15sp_counted_base7releaseEv@Base 1.0.1
+ (optional=boostinternal|arch=m68k)_ZN5boost6detail16atomic_incrementEPi@Base 1.1.0
  (optional=templinst)_ZN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEE11get_deleterERKSt9type_info@Base 1.0.1
  (optional=templinst|arch=!m68k)_ZN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEE19get_untyped_deleterEv@Base 1.0.1
  (optional=templinst)_ZN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEE7disposeEv@Base 1.0.1
@@ -5208,18 +5209,18 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst|arch=alpha amd64 arm64 kfreebsd-amd64 ppc64el s390x)_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EEclEv@Base 1.0.1
  (optional=templinst|subst)_ZN5boost6random6detail19fill_array_int_implILi32EL{size_t}624ENS_5uuids6detail18generator_iteratorINS4_8seed_rngEEEjEEvRT1_S8_RAT0__T2_@Base 1.0.1
  (optional=templinst|subst)_ZN5boost6random6detail20generate_uniform_intINS0_23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEmEET0_RT_S5_S5_N4mpl_5bool_ILb1EEE@Base 1.0.1
- (arch=!armel !armhf)_ZN5boost6system12system_errorD0Ev@Base 1.0.1
- (arch=!armel !armhf)_ZN5boost6system12system_errorD1Ev@Base 1.0.1
- (arch=!armel !armhf)_ZN5boost6system12system_errorD2Ev@Base 1.0.1
- _ZN5boost7numeric16bad_numeric_castD0Ev@Base 1.0.1
- _ZN5boost7numeric16bad_numeric_castD1Ev@Base 1.0.1
- _ZN5boost7numeric16bad_numeric_castD2Ev@Base 1.0.1
- _ZN5boost7numeric17negative_overflowD0Ev@Base 1.0.1
- _ZN5boost7numeric17negative_overflowD1Ev@Base 1.0.1
- _ZN5boost7numeric17negative_overflowD2Ev@Base 1.0.1
- _ZN5boost7numeric17positive_overflowD0Ev@Base 1.0.1
- _ZN5boost7numeric17positive_overflowD1Ev@Base 1.0.1
- _ZN5boost7numeric17positive_overflowD2Ev@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZN5boost6system12system_errorD0Ev@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZN5boost6system12system_errorD1Ev@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZN5boost6system12system_errorD2Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric16bad_numeric_castD0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric16bad_numeric_castD1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric16bad_numeric_castD2Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17negative_overflowD0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17negative_overflowD1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17negative_overflowD2Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17positive_overflowD0Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17positive_overflowD1Ev@Base 1.0.1
+ (optional=boostinternal)_ZN5boost7numeric17positive_overflowD2Ev@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost9algorithm6detail21find_format_all_impl2ISsNS1_13first_finderFIPKcNS0_8is_equalEEENS1_13const_formatFINS_14iterator_rangeIS5_EEEENS9_IN9__gnu_cxx17__normal_iteratorIPcSsEEEESA_EEvRT_T0_T1_T2_T3_@Base 1.1.0
  (optional=templinst|arch=m68k)_ZN5boost9algorithm6detail22process_segment_helperILb0EEclISt5dequeIcSaIcEESsN9__gnu_cxx17__normal_iteratorIPcSsEEEET1_RT_RT0_SC_SC_SC_@Base 1.1.0
  _ZN5boost9exceptionD0Ev@Base 1.0.1
@@ -5231,7 +5232,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZN5boost9unordered6detail16node_constructorISaINS1_8ptr_nodeISsEEEED2Ev@Base 1.0.1
  (optional=templinst|arch=!armel !armhf !m68k !mips !mipsel !powerpc !ppc64el !s390x)_ZN5boost9unordered6detail17array_constructorISaINS1_10ptr_bucketEEED1Ev@Base 1.0.1
  (optional=templinst|arch=!armel !armhf !m68k !mips !mipsel !powerpc !ppc64el !s390x)_ZN5boost9unordered6detail17array_constructorISaINS1_10ptr_bucketEEED2Ev@Base 1.0.1
- (arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 mips mipsel powerpc sparc x32)_ZN5boost9unordered6detail19prime_list_templateIjE5valueE@Base 1.0.1
+ (optional=boostinternal|arch=armel armhf hppa hurd-i386 i386 kfreebsd-i386 m68k mips mipsel powerpc sh4 sparc x32)_ZN5boost9unordered6detail19prime_list_templateIjE5valueE@Base 1.1.0
  (optional=templinst|arch=!m68k)_ZN5boost9unordered6detail5tableINS1_3setISaISsESsNS_4hashISsEESt8equal_toISsEEEE14delete_bucketsEv@Base 1.0.1
  (optional=templinst|arch=m68k)_ZN5boost9unordered6detail7bucketsISaISsENS1_10ptr_bucketENS1_8ptr_nodeISsEEE14delete_bucketsEv@Base 1.1.0
  _ZN8KolabXSD10CustomType10identifierERKN3xsd3cxx4tree6stringIcNS3_11simple_typeIcNS3_5_typeEEEEE@Base 1.0.1
@@ -7273,15 +7274,15 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEE7rethrowEv@Base 1.0.1
  (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEE5cloneEv@Base 1.0.1
  (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEE7rethrowEv@Base 1.0.1
- _ZNK5boost16exception_detail25error_info_container_impl22diagnostic_informationEPKc@Base 1.0.1
- _ZNK5boost16exception_detail25error_info_container_impl3getERKNS0_10type_info_E@Base 1.0.1
- _ZNK5boost16exception_detail25error_info_container_impl5cloneEv@Base 1.0.1
- _ZNK5boost16exception_detail25error_info_container_impl7add_refEv@Base 1.0.1
- _ZNK5boost16exception_detail25error_info_container_impl7releaseEv@Base 1.0.1
- (arch=!armel !armhf)_ZNK5boost6system12system_error4whatEv@Base 1.0.1
- _ZNK5boost7numeric16bad_numeric_cast4whatEv@Base 1.0.1
- _ZNK5boost7numeric17negative_overflow4whatEv@Base 1.0.1
- _ZNK5boost7numeric17positive_overflow4whatEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost16exception_detail25error_info_container_impl22diagnostic_informationEPKc@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost16exception_detail25error_info_container_impl3getERKNS0_10type_info_E@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost16exception_detail25error_info_container_impl5cloneEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost16exception_detail25error_info_container_impl7add_refEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost16exception_detail25error_info_container_impl7releaseEv@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZNK5boost6system12system_error4whatEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost7numeric16bad_numeric_cast4whatEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost7numeric17negative_overflow4whatEv@Base 1.0.1
+ (optional=boostinternal)_ZNK5boost7numeric17positive_overflow4whatEv@Base 1.0.1
  _ZNK8KolabXSD10CustomType10identifierEv@Base 1.0.1
  _ZNK8KolabXSD10CustomType5valueEv@Base 1.0.1
  _ZNK8KolabXSD10CustomType6_cloneEN3xsd3cxx4tree5flagsEPNS3_5_typeE@Base 1.0.1
@@ -7719,7 +7720,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZNSt8auto_ptrIN3xsd3cxx4tree5_type12content_typeEE5resetEPS4_@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrIN5Kolab14RecurrenceRuleEED1Ev@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrIN5Kolab14RecurrenceRuleEED2Ev@Base 1.0.1
- _ZNSt8auto_ptrIN8KolabXSD13ConfigurationEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
+ (optional=templinst|arch=!armel)_ZNSt8auto_ptrIN8KolabXSD13ConfigurationEEaSESt12auto_ptr_refIS1_E@Base 1.1.0
  (optional=templinst)_ZNSt8auto_ptrIN8KolabXSD4NoteEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
  (optional=templinst|arch=!m68k !mipsel !sh4)_ZNSt8auto_ptrIN9vcard_4_010VcardsTypeEEaSESt12auto_ptr_refIS1_E@Base 1.0.1
  (optional=templinst)_ZNSt8auto_ptrISt3mapIPKN3xsd3cxx4tree8identityEPNS3_5_typeENS7_19identity_comparatorESaISt4pairIKS6_S8_EEEE5resetEPSE_@Base 1.0.1
@@ -7963,10 +7964,10 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTIN5boost16exception_detail25error_info_container_implE@Base 1.0.1
  _ZTIN5boost19thread_specific_ptrI16XMLParserWrapperE11delete_dataE@Base 1.0.1
  _ZTIN5boost19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataE@Base 1.0.1
- (arch=armel armhf hppa mips mipsel)_ZTIN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.0.1
- (arch=armel armhf)_ZTIN5boost6detail14do_heap_deleteINS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataEEE@Base 1.0.1
- (arch=armel armhf)_ZTIN5boost6detail14do_heap_deleteINS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataEEE@Base 1.0.1
- _ZTIN5boost6detail15sp_counted_baseE@Base 1.0.1
+ (optional=boostinternal|arch=armel armhf hppa mips mipsel sh4)_ZTIN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.1.0
+ (optional=boostinternal|arch=armel armhf)_ZTIN5boost6detail14do_heap_deleteINS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataEEE@Base 1.0.1
+ (optional=boostinternal|arch=armel armhf)_ZTIN5boost6detail14do_heap_deleteINS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataEEE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost6detail15sp_counted_baseE@Base 1.0.1
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEEE@Base 1.0.1
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab4FileEEE@Base 1.0.1
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab4NoteEEE@Base 1.0.1
@@ -7977,17 +7978,17 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab8DistListEEE@Base 1.0.1
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab8FreebusyEEE@Base 1.0.1
  _ZTIN5boost6detail17sp_counted_impl_pIN5Kolab9cDateTimeEEE@Base 1.0.1
- _ZTIN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
- _ZTIN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
- (subst)_ZTIN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
- _ZTIN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataENS0_14do_heap_deleteIS5_EEEE@Base 1.0.1
- _ZTIN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataENS0_14do_heap_deleteIS7_EEEE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
+ (optional=boostinternal|subst)_ZTIN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataENS0_14do_heap_deleteIS5_EEEE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataENS0_14do_heap_deleteIS7_EEEE@Base 1.0.1
  _ZTIN5boost6detail20tss_cleanup_functionE@Base 1.0.1
- (arch=!armel !armhf)_ZTIN5boost6system12system_errorE@Base 1.0.1
- _ZTIN5boost7numeric16bad_numeric_castE@Base 1.0.1
- _ZTIN5boost7numeric17negative_overflowE@Base 1.0.1
- _ZTIN5boost7numeric17positive_overflowE@Base 1.0.1
- _ZTIN5boost9exceptionE@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZTIN5boost6system12system_errorE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost7numeric16bad_numeric_castE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost7numeric17negative_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost7numeric17positive_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTIN5boost9exceptionE@Base 1.0.1
  _ZTIN8KolabXSD10CustomTypeE@Base 1.0.1
  _ZTIN8KolabXSD10parametersE@Base 1.0.1
  _ZTIN8KolabXSD13CategoryColorE@Base 1.0.1
@@ -8272,24 +8273,24 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTSN3xsd3cxx4tree9exceptionIcEE@Base 1.0.1
  _ZTSN3xsd3cxx4tree9time_zoneE@Base 1.0.1
  _ZTSN3xsd3cxx9exceptionE@Base 1.0.1
- _ZTSN5boost16bad_lexical_castE@Base 1.0.1
- _ZTSN5boost16exception_detail10bad_alloc_E@Base 1.0.1
- _ZTSN5boost16exception_detail10clone_baseE@Base 1.0.1
- _ZTSN5boost16exception_detail10clone_implINS0_10bad_alloc_EEE@Base 1.0.1
- _ZTSN5boost16exception_detail10clone_implINS0_14bad_exception_EEE@Base 1.0.1
- _ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 1.0.1
- _ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEEE@Base 1.0.1
- _ZTSN5boost16exception_detail14bad_exception_E@Base 1.0.1
- _ZTSN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 1.0.1
- _ZTSN5boost16exception_detail19error_info_injectorISt13runtime_errorEE@Base 1.0.1
- _ZTSN5boost16exception_detail20error_info_containerE@Base 1.0.1
- _ZTSN5boost16exception_detail25error_info_container_implE@Base 1.0.1
- _ZTSN5boost19thread_specific_ptrI16XMLParserWrapperE11delete_dataE@Base 1.0.1
- _ZTSN5boost19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataE@Base 1.0.1
- (arch=armel armhf hppa mips mipsel)_ZTSN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.0.1
- _ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataEEE@Base 1.0.1
- _ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataEEE@Base 1.0.1
- _ZTSN5boost6detail15sp_counted_baseE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16bad_lexical_castE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10bad_alloc_E@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10clone_baseE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10clone_implINS0_10bad_alloc_EEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10clone_implINS0_14bad_exception_EEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail14bad_exception_E@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail19error_info_injectorISt13runtime_errorEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail20error_info_containerE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost16exception_detail25error_info_container_implE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost19thread_specific_ptrI16XMLParserWrapperE11delete_dataE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataE@Base 1.0.1
+ (optional=boostinternal)(optional=boostinternal|arch=armel armhf hppa mips mipsel sh4)_ZTSN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.1.0
+ (optional=boostinternal)_ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail15sp_counted_baseE@Base 1.0.1
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEEE@Base 1.0.1
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab4FileEEE@Base 1.0.1
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab4NoteEEE@Base 1.0.1
@@ -8300,17 +8301,17 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab8DistListEEE@Base 1.0.1
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab8FreebusyEEE@Base 1.0.1
  _ZTSN5boost6detail17sp_counted_impl_pIN5Kolab9cDateTimeEEE@Base 1.0.1
- _ZTSN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
- _ZTSN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
- (subst)_ZTSN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
- _ZTSN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataENS0_14do_heap_deleteIS5_EEEE@Base 1.0.1
- _ZTSN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataENS0_14do_heap_deleteIS7_EEEE@Base 1.0.1
- _ZTSN5boost6detail20tss_cleanup_functionE@Base 1.0.1
- (arch=!armel !armhf)_ZTSN5boost6system12system_errorE@Base 1.0.1
- _ZTSN5boost7numeric16bad_numeric_castE@Base 1.0.1
- _ZTSN5boost7numeric17negative_overflowE@Base 1.0.1
- _ZTSN5boost7numeric17positive_overflowE@Base 1.0.1
- _ZTSN5boost9exceptionE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
+ (optional=boostinternal|subst)_ZTSN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataENS0_14do_heap_deleteIS5_EEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataENS0_14do_heap_deleteIS7_EEEE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost6detail20tss_cleanup_functionE@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZTSN5boost6system12system_errorE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost7numeric16bad_numeric_castE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost7numeric17negative_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost7numeric17positive_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTSN5boost9exceptionE@Base 1.0.1
  _ZTSN8KolabXSD10CustomTypeE@Base 1.0.1
  _ZTSN8KolabXSD10parametersE@Base 1.0.1
  _ZTSN8KolabXSD13CategoryColorE@Base 1.0.1
@@ -8380,12 +8381,13 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTSN9vcard_4_08DateTypeE@Base 1.0.1
  _ZTSN9vcard_4_08signprefE@Base 1.0.1
  _ZTSN9vcard_4_09nPropTypeE@Base 1.0.1
+ (optional=boostinternal|arch=m68k)_ZTSPN5boost27tag_original_exception_typeE@Base 1.1.0
  _ZTSSs@Base 1.0.1
  _ZTTN3xsd3cxx10zc_istreamIcEE@Base 1.0.1
- _ZTTN5boost16exception_detail10clone_implINS0_10bad_alloc_EEE@Base 1.0.1
- _ZTTN5boost16exception_detail10clone_implINS0_14bad_exception_EEE@Base 1.0.1
- _ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 1.0.1
- _ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEEE@Base 1.0.1
+ (optional=boostinternal|arch=!m68k)_ZTTN5boost16exception_detail10clone_implINS0_10bad_alloc_EEE@Base 1.1.0
+ (optional=boostinternal|arch=!m68k)_ZTTN5boost16exception_detail10clone_implINS0_14bad_exception_EEE@Base 1.1.0
+ (optional=boostinternal|arch=!m68k)_ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 1.1.0
+ (optional=boostinternal|arch=!m68k)_ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorISt13runtime_errorEEEE@Base 1.1.0
  _ZTV20grammar_input_stream@Base 1.0.1
  (arch=!armel !armhf)_ZTVN11xercesc_3_110XMLDeleterE@Base 1.0.1
  _ZTVN11xercesc_3_113MemoryManagerE@Base 1.0.1
@@ -8599,8 +8601,8 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTVN5boost16exception_detail25error_info_container_implE@Base 1.0.1
  _ZTVN5boost19thread_specific_ptrI16XMLParserWrapperE11delete_dataE@Base 1.0.1
  _ZTVN5boost19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataE@Base 1.0.1
- (arch=armel armhf hppa mips mipsel)_ZTVN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.0.1
- _ZTVN5boost6detail15sp_counted_baseE@Base 1.0.1
+ (optional=boostinternal|arch=armel armhf hppa mips mipsel sh4)_ZTVN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.1.0
+ (optional=boostinternal)_ZTVN5boost6detail15sp_counted_baseE@Base 1.0.1
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab13ConfigurationEEE@Base 1.0.1
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab4FileEEE@Base 1.0.1
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab4NoteEEE@Base 1.0.1
@@ -8611,17 +8613,17 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab8DistListEEE@Base 1.0.1
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab8FreebusyEEE@Base 1.0.1
  _ZTVN5boost6detail17sp_counted_impl_pIN5Kolab9cDateTimeEEE@Base 1.0.1
- _ZTVN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
- _ZTVN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
- (subst)_ZTVN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_10bad_alloc_EEEEE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost6detail17sp_counted_impl_pINS_16exception_detail10clone_implINS2_14bad_exception_EEEEE@Base 1.0.1
+ (optional=boostinternal|subst)_ZTVN5boost6detail17sp_counted_impl_pINS_6random23mersenne_twister_engineIjL{size_t}32EL{size_t}624EL{size_t}397EL{size_t}31ELj2567483615EL{size_t}11ELj4294967295EL{size_t}7ELj2636928640EL{size_t}15ELj4022730752EL{size_t}18ELj1812433253EEEEE@Base 1.0.1
  _ZTVN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataENS0_14do_heap_deleteIS5_EEEE@Base 1.0.1
  _ZTVN5boost6detail18sp_counted_impl_pdIPNS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataENS0_14do_heap_deleteIS7_EEEE@Base 1.0.1
- _ZTVN5boost6detail20tss_cleanup_functionE@Base 1.0.1
- (arch=!armel !armhf)_ZTVN5boost6system12system_errorE@Base 1.0.1
- _ZTVN5boost7numeric16bad_numeric_castE@Base 1.0.1
- _ZTVN5boost7numeric17negative_overflowE@Base 1.0.1
- _ZTVN5boost7numeric17positive_overflowE@Base 1.0.1
- _ZTVN5boost9exceptionE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost6detail20tss_cleanup_functionE@Base 1.0.1
+ (optional=boostinternal|arch=!armel !armhf !m68k)_ZTVN5boost6system12system_errorE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost7numeric16bad_numeric_castE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost7numeric17negative_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost7numeric17positive_overflowE@Base 1.0.1
+ (optional=boostinternal)_ZTVN5boost9exceptionE@Base 1.0.1
  _ZTVN8KolabXSD10CustomTypeE@Base 1.0.1
  _ZTVN8KolabXSD10parametersE@Base 1.0.1
  _ZTVN8KolabXSD13CategoryColorE@Base 1.0.1
