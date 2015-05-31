@@ -1,3 +1,10 @@
+libkolabxml (1.1.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files to build on all plattforms.
+
+ -- Sandro Knauß <bugs@sandroknauss.de>  Sun, 31 May 2015 22:49:24 +0200
+
 libkolabxml (1.1.0-2) unstable; urgency=medium
 
   * Get libkolabxml into unstable. It was uploaded to expermental because of
