@@ -14,6 +14,8 @@ option( PYTHON_BINDINGS "Build bindings for python" FALSE )
 option( PHP_BINDINGS "Build bindings for php" FALSE )
 option( CSHARP_BINDINGS "Build bindings for csharp" FALSE )
 option( JAVA_BINDINGS "Build bindings for java" FALSE )
+option( QT5_BUILD "Build libkolabxml using the Qt5 framework" FALSE)
+
 
 
 set(Libkolabxml_MODULE_DIR ${Libkolabxml_SOURCE_DIR}/cmake/modules)
@@ -43,9 +45,9 @@ endif()
 set (Libkolabxml_VERSION_MAJOR 1)
 set (Libkolabxml_VERSION_MINOR 1)
 # Enable the full x.y.z version only for release versions
-set (Libkolabxml_VERSION_PATCH 0)
-#set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
-set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
+set (Libkolabxml_VERSION_PATCH 1)
+set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}.${Libkolabxml_VERSION_PATCH}" )
+#set (Libkolabxml_VERSION "${Libkolabxml_VERSION_MAJOR}.${Libkolabxml_VERSION_MINOR}" )
 
 set (Libkolabxml_VERSION_STRING ${CMAKE_PROJECT_NAME}-${Libkolabxml_VERSION})
 set (KOLAB_FORMAT_VERSION "3.1.0")
