@@ -1,6 +1,8 @@
 libkolabxml (1.1.0-4) UNRELEASED; urgency=medium
 
   * Update Diane Trout's email address
+  * Rename libkolabxml1 to libkolabxml1v5 and create a new symbols
+    file as many symbols changed because of the transition to gcc-5
 
  -- Diane Trout <diane@debian.org>  Mon, 03 Aug 2015 15:51:15 -0700
 

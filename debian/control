@@ -25,7 +25,7 @@ Homepage: http://git.kolab.org/libkolabxml
 Vcs-Git: git://anonscm.debian.org/pkg-kolab/libkolabxml.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kolab/libkolabxml.git
 
-Package: libkolabxml1
+Package: libkolabxml1v5
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
@@ -40,7 +40,7 @@ Description: Kolab XML format (shared library)
 
 Package: php-kolabformat
 Architecture: any
-Depends: libkolabxml1 (= ${binary:Version}),
+Depends: libkolabxml1v5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
          ${php:Depends},
@@ -54,7 +54,7 @@ Description: PHP bindings for Kolab Format 3.0 XML parsing
 Package: python-kolabformat
 Architecture: any
 Section: python
-Depends: libkolabxml1 (= ${binary:Version}),
+Depends: libkolabxml1v5 (= ${binary:Version}),
          python,
          ${misc:Depends},
          ${shlibs:Depends}
@@ -67,7 +67,7 @@ Description: Python bindings for Kolab Format 3.0 XML parsing
 Package: libkolabxml-dev
 Section: libdevel
 Architecture: any
-Depends: libkolabxml1 (= ${binary:Version}),
+Depends: libkolabxml1v5 (= ${binary:Version}),
          ${misc:Depends}, libboost-dev, libboost-thread-dev, libxerces-c-dev,
          libcurl4-gnutls-dev
 Description: Development files for libkolabxml
