@@ -280,9 +280,12 @@ void ConversionTest::threadLocalTest()
 void ConversionTest::uuidGeneratorTest()
 {
     const std::string &s = getUID();
-    std::cout << s << std::endl;
+    // std::cout << s << std::endl;
     QVERIFY(!s.empty());
     QCOMPARE(s.size(), (std::size_t)36ul);
+    //Ensure we don't get the same uuid twice
+    const std::string &s2 = getUID();
+    QVERIFY(s != s2);
 }
 
 void ConversionTest::uuidGeneratorTest2()
