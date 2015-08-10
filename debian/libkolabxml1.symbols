@@ -8287,7 +8287,7 @@ libkolabxml.so.1 libkolabxml1 #MINVER#
  (optional=boostinternal)_ZTSN5boost16exception_detail25error_info_container_implE@Base 1.0.1
  (optional=boostinternal)_ZTSN5boost19thread_specific_ptrI16XMLParserWrapperE11delete_dataE@Base 1.0.1
  (optional=boostinternal)_ZTSN5boost19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataE@Base 1.0.1
- (optional=boostinternal)(optional=boostinternal|arch=armel armhf hppa mips mipsel sh4)_ZTSN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.1.0
+ (optional=boostinternal|arch=armel armhf hppa mips mipsel sh4)_ZTSN5boost6detail10parser_bufISt15basic_streambufIcSt11char_traitsIcEEcEE@Base 1.1.0
  (optional=boostinternal)_ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrI16XMLParserWrapperE11delete_dataEEE@Base 1.0.1
  (optional=boostinternal)_ZTSN5boost6detail14do_heap_deleteINS_19thread_specific_ptrIN5Kolab5Utils6GlobalEE11delete_dataEEE@Base 1.0.1
  (optional=boostinternal)_ZTSN5boost6detail15sp_counted_baseE@Base 1.0.1
