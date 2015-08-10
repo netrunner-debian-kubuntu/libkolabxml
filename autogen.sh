@@ -50,16 +50,11 @@ else
 fi
 
 # Rebuilds the entire foo in one go. One shot, one kill.
-if [ ${doprep} -eq 1 ]; then
-    rm -rf build/
-    mkdir -p build
-fi
-
+rm -rf build/
+mkdir -p build
 cd build
-
 if [ ${doprep} -eq 1 ]; then
     cmake \
-        -DCMAKE_COLOR_MAKEFILE=OFF \
         -DCMAKE_VERBOSE_MAKEFILE=ON \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DINCLUDE_INSTALL_DIR=/usr/include \
@@ -68,39 +63,32 @@ if [ ${doprep} -eq 1 ]; then
         -DJAVA_BINDINGS=ON \
         -DPHP_BINDINGS=ON \
         -DPYTHON_BINDINGS=ON \
-        .. || exit 1
+        ..
 fi
 
 if [ ${dobuild} -eq 1 ]; then
-    make || exit 1
+    make
 fi
 
 if [ ${dotest} -eq 1 ]; then
     # Execute some tests?
 
-    retval=0
-
     pushd tests
-    ./bindingstest ; retval=$(( ${retval} + $? ))
-    ./conversiontest ; retval=$(( ${retval} + $? ))
-    ./parsingtest ; retval=$(( ${retval} + $? ))
+    ./bindingstest
+    ./conversiontest
+    ./parsingtest
     popd
 
     if [ -f "${srcdir}/build/src/csharp/test.exe" ]; then
-       LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/build/src/csharp/ MONO_LOG_LEVEL=debug mono ${srcdir}/build/src/csharp/test.exe ; retval=$(( ${retval} + $? ))
+       LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/build/src/csharp/ MONO_LOG_LEVEL=debug mono ${srcdir}/build/src/csharp/test.exe
     fi
 
     if [ -f "${srcdir}/build/src/php/test.php" ]; then
-        php -d enable_dl=On -dextension=${srcdir}/build/src/php/kolabformat.so ${srcdir}/build/src/php/test.php ; retval=$(( ${retval} + $? ))
+        php -d enable_dl=On -dextension=${srcdir}/build/src/php/kolabformat.so ${srcdir}/build/src/php/test.php
     fi
 
     if [ -f "${srcdir}/build/src/python/test.py" ]; then
-        python ${srcdir}/build/src/python/test.py ; retval=$(( ${retval} + $? ))
-    fi
-
-    if [ ${retval} -ne 0 ]; then
-        echo "FAILED: Accumulated errors."
-        exit ${retval}
+        python ${srcdir}/build/src/python/test.py
     fi
 fi
 

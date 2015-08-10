@@ -127,6 +127,10 @@ std::string getUID(const std::string &s)
         uuid_class()
             : boost::uuids::uuid(boost::uuids::random_generator()())
         {}
+
+        operator boost::uuids::uuid() const {
+            return static_cast<boost::uuids::uuid const&>(*this);
+        }
     };
 
     uuid_class u; // initialize uuid
