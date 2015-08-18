@@ -29,6 +29,8 @@ Package: libkolabxml1v5
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
+Breaks: libkolabxml1
+Replaces: libkolabxml1
 Description: Kolab XML format (shared library)
  Libkolabxml is the reference implementation of the Kolab XML format.
  .

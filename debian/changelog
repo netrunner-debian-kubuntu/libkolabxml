@@ -1,3 +1,9 @@
+libkolabxml (1.1.1-2) UNRELEASED; urgency=medium
+
+  * Add breaks/replaces on pre-gcc5 library name.
+
+ -- Diane Trout <diane@debian.org>  Tue, 18 Aug 2015 14:52:14 -0700
+
 libkolabxml (1.1.1-1) unstable; urgency=medium
 
   * Update Diane Trout's email address
